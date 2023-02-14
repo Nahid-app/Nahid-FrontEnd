@@ -1,7 +1,11 @@
 // tailwind.config.js
 
 module.exports = {
-  content: ["./App.{js,jsx,ts,tsx}", "./screens/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./App.{js,jsx,ts,tsx}",
+    "./screens/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     colors: {
       primary: "#6949FF",
@@ -71,6 +75,14 @@ module.exports = {
     },
     // font size
     // font title sizes
+    fontFamily: {
+      Tajawal: ["./assets/fonts/Tajawal-Black.ttf"],
+      TajawalBold: "./assets/fonts/Tajawal-Bold.ttf",
+      TajawalExtraBold: "./assets/fonts/Tajawal-ExtraBold.ttf",
+      TajawalLight: "./assets/fonts/Tajawal-Light.ttf",
+      TajawalMedium: "./assets/fonts/Tajawal-Medium.ttf",
+      TajawalRegular: "./assets/fonts/Tajawal-Regular.ttf",
+    },
     fontSize: {
       h1: [
         "48px",
