@@ -1,45 +1,26 @@
 import * as React from "react";
-import { View, Text } from "react-native";
+import { View, Text, StatusBar, Image, I18nManager } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { store } from "./store";
 import { Provider } from "react-redux";
-import Onboarding from "./components/Onboarding/Onboarding";
 import { useFonts } from "expo-font";
-import { SafeAreaView } from "react-native-safe-area-context";
-import PrimaryColorButton from "./components/buttons/PrimaryColorButton";
 import AppLoading from "expo-app-loading";
-import OnBoardingButtonWhite from "./components/buttons/OnBoardingButtonWhite";
 
-function BoardingScreen() {
-  return (
-    <View className="items-center justify-center bg-white">
-      <SafeAreaView>
-        <Onboarding />
-        <View
-          className="flex-col pt-6"
-          style={{ borderTopColor: "#F5F5F5", borderTopWidth: 3 }}
-        >
-          <View className="items-center justify-center">
-            <PrimaryColorButton
-              title="البدء"
-              onPress={() => console.log("pressed")}
-              color="white"
-            />
-          </View>
-          <View className="pt-4 items-center justify-center py-3">
-            <OnBoardingButtonWhite
-              title="تسجيل الدخول"
-              onPress={() => console.log("pressed")}
-            />
-          </View>
-        </View>
-      </SafeAreaView>
-    </View>
-  );
-}
+import WalkthroughScreen from "./screens/WalkthroughScreen";
+import SignUpScreen from "./screens/signUpScreen/SignUpScreen";
+import LoginScreen from "./screens/loginScreen/LoginScreen";
+
+import ArrowLeft from "./assets/svg/ArrowLeft.png";
 
 const Stack = createNativeStackNavigator();
+const shouldBeRTL = true;
+
+if (shouldBeRTL !== I18nManager.isRTL && Platform.OS !== "web") {
+  I18nManager.allowRTL(shouldBeRTL);
+  I18nManager.forceRTL(shouldBeRTL);
+  Updates.reloadAsync();
+}
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -59,12 +40,35 @@ export default function App() {
       <Provider store={store}>
         <Stack.Navigator>
           <Stack.Screen
-            name="Home"
-            component={BoardingScreen}
-            options={{ headerTitle: "", headerShown: false }}
+            name="WalkthroughScreen"
+            component={WalkthroughScreen}
+            options={{ headerTitle: "", headerTransparent: true }}
+          />
+          <Stack.Screen
+            name="signUpScreen"
+            component={SignUpScreen}
+            options={{
+              headerTitle: "",
+              headerTransparent: true,
+              headerTintColor: "black",
+              headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
+            }}
+          />
+          <Stack.Screen
+            name="loginScreen"
+            component={LoginScreen}
+            options={{
+              headerTitle: "",
+              headerTransparent: false,
+              headerShadowVisible: false,
+              headerTintColor: "black",
+              headerBackTitleVisible: false,
+              headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
+            }}
           />
         </Stack.Navigator>
       </Provider>
+      <StatusBar animated={true} barStyle={"dark-content"} />
     </NavigationContainer>
   );
 }

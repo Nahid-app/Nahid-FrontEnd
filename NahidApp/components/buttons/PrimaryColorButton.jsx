@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import React from "react";
 
-const PrimaryColorButton = ({ onPress, title }) => {
+const PrimaryColorButton = ({ onPress, title, scrollTo }) => {
   return (
     <View style={styles.buttonContainer}>
       <TouchableOpacity
