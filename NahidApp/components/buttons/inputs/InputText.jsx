@@ -10,20 +10,16 @@ export default function InputText({
   keyboardType,
   textAlign,
   autoComplete,
+  inputValue,
 }) {
-  const [inputValue, setInputValue] = useState("");
-  const handleInputChange = (text) => {
-    setInputValue(text);
-    onValueChange(text);
-  };
-
+  // console.log({ inputValueComponent });
+  function updateInput(inputValue) {
+    setInputValue(inputValue);
+  }
   return (
     <View className="pb-8 w-full justify-start content-start items-start  ">
       <Text className="text-h6 font-[TajawalMedium] pb-5">{title}</Text>
       <TextInput
-        onChangeText={handleInputChange}
-        value={inputValue}
-        defaultValue={inputValue}
         textContentType={textContentType}
         placeholder={placeholder}
         style={{ justifyContent: "start" }}
@@ -33,6 +29,7 @@ export default function InputText({
         keyboardType={keyboardType}
         textAlign={textAlign}
         autoComplete={autoComplete}
+       
       />
     </View>
   );

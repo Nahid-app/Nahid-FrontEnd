@@ -10,8 +10,7 @@ import AppLoading from "expo-app-loading";
 import WalkthroughScreen from "./screens/WalkthroughScreen";
 import SignUpScreen from "./screens/signUpScreen/SignUpScreen";
 import LoginScreen from "./screens/loginScreen/LoginScreen";
-
-import ArrowLeft from "./assets/svg/ArrowLeft.png";
+import HomeScreen from "./screens/homeScreen/HomeScreen";
 
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
@@ -57,6 +56,18 @@ export default function App() {
           <Stack.Screen
             name="loginScreen"
             component={LoginScreen}
+            options={{
+              headerTitle: "",
+              headerTransparent: false,
+              headerShadowVisible: false,
+              headerTintColor: "black",
+              headerBackTitleVisible: false,
+              headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
+            }}
+          />
+          <Stack.Screen
+            name="HomeScreen"
+            component={HomeScreen}
             options={{
               headerTitle: "",
               headerTransparent: false,
