@@ -6,33 +6,9 @@ import InputText from "../../components/buttons/inputs/InputText";
 import Checkbox from "expo-checkbox";
 import axios from "axios";
 import { Formik, handleSubmit } from "formik";
-let userToken;
+import { postLogin } from "../../api/login";
 
 export default function LoginScreen({ navigation }) {
-  function postLogin(values) {
-    axios
-      .post(
-        "https://3tivhvae37dhevdfev7qch7gha0zqora.lambda-url.me-south-1.on.aws/api/login/",
-        {
-          email: values.email,
-          password: values.password,
-        },
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      )
-      .then((response) => {
-        userToken = response.data["access_token"];
-        if (userToken) {
-          navigation.navigate("HomeScreen");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
   const [isChecked, setChecked] = useState(false);
   const form = {
     titleEmail: "البريد الإلكتروني",
@@ -55,7 +31,7 @@ export default function LoginScreen({ navigation }) {
   };
 
   return (
-    <View className="flex-1 w-ful flex-col content-center items-center p-6 bg-white">
+    <View className="flex-1 w-full flex-col content-center items-center p-6 bg-white">
       <View className="items-start w-full justify-center ">
         <Text className="font-[TajawalBold] text-h3 items-start pt-6 ">
           أهلا بك 👋
@@ -64,7 +40,7 @@ export default function LoginScreen({ navigation }) {
       <View className="items-start w-full ">
         <Formik
           initialValues={{ email: "", password: "" }}
-          onSubmit={(values) => postLogin(values)}
+          onSubmit={(values) => postLogin(values, { navigation })}
         >
           {({ handleChange, handleBlur, handleSubmit, values }) => (
             <View className="py-8 w-full content-start items-start ">

@@ -15,7 +15,7 @@ export default function WalkthroughScreen({ navigation }) {
   return (
     <>
       <View
-        className="flex-1 justify-center content-center items-center "
+        className="flex-1 justify-center content-center items-center bg-white "
         style={{ height: "90%" }}
       >
         <Swiper
@@ -50,7 +50,7 @@ export default function WalkthroughScreen({ navigation }) {
           })}
         </Swiper>
       </View>
-      <View className="pb-7 justify-center content-center items-center">
+      <View className="pb-7 justify-center content-center items-center bg-white">
         <PrimaryColorButton
           title={index === 2 ? "إبدء" : "التالي"}
           onPress={() =>
@@ -60,7 +60,7 @@ export default function WalkthroughScreen({ navigation }) {
           }
         />
       </View>
-      <View className="pb-7 justify-center content-center items-center">
+      <View className="pb-7 justify-center content-center items-center bg-white">
         <OnBoardingButtonWhite
           title={"سجل دخولك معنا"}
           onPress={() => navigation.navigate("loginScreen")}

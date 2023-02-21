@@ -48,8 +48,10 @@ export default function App() {
             component={SignUpScreen}
             options={{
               headerTitle: "",
-              headerTransparent: true,
+              headerTransparent: false,
+              headerShadowVisible: false,
               headerTintColor: "black",
+              headerBackTitleVisible: false,
               headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
             }}
           />
