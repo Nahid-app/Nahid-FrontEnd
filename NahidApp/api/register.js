@@ -1,6 +1,14 @@
 import axios from "axios";
+import Toast from "react-native-root-toast";
 let userToken;
-export function register(values, { navigation }) {
+
+export function register(
+  values,
+  { navigation },
+  error,
+  setErrorEmail,
+  errorPassword
+) {
   axios
     .post(
       "https://3tivhvae37dhevdfev7qch7gha0zqora.lambda-url.me-south-1.on.aws/api/register/",
@@ -17,16 +25,25 @@ export function register(values, { navigation }) {
       }
     )
     .then((response) => {
-      console.log(response);
-      navigation.navigate("HomeScreen");
+      userToken = response.data["access_token"];
+
+      if (userToken) {
+        navigation.navigate("HomeScreen");
+        Toast.show("تم إنشاء الحساب بنجاح");
+      }
     })
     .catch(function (error) {
       if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
-        console.log(error.response.data);
-        console.log(error.response.status);
-        console.log(error.response.headers);
+        if (error.response.data["errors"]["email"]) {
+          setErrorEmail("");
+          return setErrorEmail(error.response.data["errors"]["email"]);
+        }
+        if (error.response.data["errors"]["password"]) {
+          setErrorEmail();
+          return setErrorEmail(error.response.data["errors"]["password"]);
+        } else {
+          Toast.show("خطأ في تسجيل الدخول");
+        }
       }
     });
 }

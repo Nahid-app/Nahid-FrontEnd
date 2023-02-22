@@ -1,4 +1,5 @@
 import axios from "axios";
+import Toast from "react-native-root-toast";
 
 let userToken;
 export function postLogin(values, { navigation }) {
@@ -19,9 +20,10 @@ export function postLogin(values, { navigation }) {
       userToken = response.data["access_token"];
       if (userToken) {
         navigation.navigate("HomeScreen");
+        Toast.show("تم تسجيل الدخول بنجاح");
       }
     })
     .catch(function (error) {
-      console.log(error);
+      Toast.show("خطأ في تسجيل الدخول");
     });
 }

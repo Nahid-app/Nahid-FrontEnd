@@ -3,8 +3,8 @@ import React from "react";
 
 export default function HomeScreen() {
   return (
-    <View>
-      <Text>HomeScreen</Text>
+    <View className="bg-white flex-1">
+      <Text className="text-h2">Welcome to HomeScreen</Text>
     </View>
   );
 }

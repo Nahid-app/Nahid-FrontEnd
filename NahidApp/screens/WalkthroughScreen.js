@@ -14,10 +14,7 @@ export default function WalkthroughScreen({ navigation }) {
 
   return (
     <>
-      <View
-        className="flex-1 justify-center content-center items-center bg-white "
-        style={{ height: "90%" }}
-      >
+      <View className="flex-1 justify-center content-center items-center bg-white ">
         <Swiper
           paginationStyle={{
             position: "absolute",
@@ -26,26 +23,27 @@ export default function WalkthroughScreen({ navigation }) {
           loop={false}
           index={index}
           onMomentumScrollEnd={() => {
-            index >= 0 ? setIndex(index + 1) : console.log("lastSlide");
+            index === 2 ? "lastSlide" : setIndex(index + 1);
           }}
           activeDotColor={"#6949FF"}
           activeDotStyle={{ width: 30 }}
         >
           {slides.map((i) => {
             return (
-              <SafeAreaView>
-                <View
-                  style={{
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Image source={i.image} />
-                  <Text className="pt-20 flex-wrap font-[TajawalBold] text-h3 px-4 justify-center content-center text-center">
+              <View
+                style={{
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "90%",
+                }}
+              >
+                <Image source={i.image} />
+                <View>
+                  <Text className="py-10 flex-wrap font-[TajawalBold] text-h3 px-4 justify-center content-center text-center">
                     {i.title}
                   </Text>
                 </View>
-              </SafeAreaView>
+              </View>
             );
           })}
         </Swiper>
@@ -54,9 +52,9 @@ export default function WalkthroughScreen({ navigation }) {
         <PrimaryColorButton
           title={index === 2 ? "إبدء" : "التالي"}
           onPress={() =>
-            index !== 2
-              ? setIndex(index + 1)
-              : navigation.navigate("signUpScreen")
+            index === 2
+              ? navigation.navigate("signUpScreen")
+              : setIndex(index + 1)
           }
         />
       </View>
