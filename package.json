@@ -1,0 +1,47 @@
+{
+  "name": "nahidapp",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@expo-google-fonts/inter": "^0.2.2",
+    "@react-native-async-storage/async-storage": "^1.17.11",
+    "@react-native-community/progress-view": "^1.4.0-beta.0",
+    "@react-navigation/native-stack": "^6.9.9",
+    "@reduxjs/toolkit": "^1.9.2",
+    "axios": "^1.3.3",
+    "expo": "~47.0.12",
+    "expo-app-loading": "~2.1.1",
+    "expo-checkbox": "~2.2.2",
+    "expo-font": "~11.0.1",
+    "expo-image": "^1.0.0",
+    "expo-localization": "~14.0.0",
+    "expo-status-bar": "~1.4.2",
+    "formik": "^2.2.9",
+    "i18n-js": "^4.2.2",
+    "nativewind": "^2.0.11",
+    "react": "18.1.0",
+    "react-native": "0.70.5",
+    "react-native-heroicons": "^3.2.0",
+    "react-native-paper": "^5.2.0",
+    "react-native-root-toast": "^3.4.1",
+    "react-native-safe-area-context": "^4.4.1",
+    "react-native-screens": "~3.18.0",
+    "react-native-svg": "^13.4.0",
+    "react-native-svg-transformer": "^1.0.0",
+    "react-native-swiper": "^1.6.0",
+    "react-redux": "^8.0.5",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.4.2",
+    "tailwindcss": "^3.2.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9"
+  },
+  "private": true
+}
