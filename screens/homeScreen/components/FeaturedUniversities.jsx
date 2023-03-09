@@ -1,86 +1,21 @@
-import { View, Text, Image, ScrollView } from "react-native";
+import { View, Text } from "react-native";
 import React from "react";
+import ArrowLeft from "../../../assets/svg/ArrowLeft";
 
 const FeaturedUniversities = () => {
   return (
-    <View className="pb-3.5 pl-6">
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        <View className="mr-5 justify-center">
-          <View className="h-20 w-20 rounded-full mb-2">
-            <Image
-              className="h-20 w-20 bg-cover"
-              source={{
-                uri: "https://destinationlisting.com/wp-content/uploads/2015/10/jubail-in.png",
-              }}
-            />
-          </View>
-          <View>
-            <Text className="font-[TajawalBold] text-h7 w-20 text-center	">
-              كلية الجبيل الصناعية
-            </Text>
+    <View className="flex-row justify-between px-6 justify-between pb-2.5">
+      <Text className="font-[TajawalBold] text-h4">الجامعات</Text>
+      <View className="justify-center">
+        <View className="flex-row ">
+          <Text className="font-[TajawalBold] text-h6 px-4 color-primary">
+            عرض الجميع
+          </Text>
+          <View className="justify-center pt-1.5">
+            <ArrowLeft />
           </View>
         </View>
-        <View className="mr-5 justify-center">
-          <View className="h-20 w-20 rounded-full mb-2">
-            <Image
-              className="h-20 w-20 bg-cover"
-              source={{
-                uri: "https://destinationlisting.com/wp-content/uploads/2015/10/jubail-in.png",
-              }}
-            />
-          </View>
-          <View>
-            <Text className="font-[TajawalBold] text-h7 w-20 text-center	">
-              كلية الجبيل الصناعية
-            </Text>
-          </View>
-        </View>
-        <View className="mr-5 justify-center">
-          <View className="h-20 w-20 rounded-full mb-2">
-            <Image
-              className="h-20 w-20 bg-cover"
-              source={{
-                uri: "https://destinationlisting.com/wp-content/uploads/2015/10/jubail-in.png",
-              }}
-            />
-          </View>
-          <View>
-            <Text className="font-[TajawalBold] text-h7 w-20 text-center	">
-              كلية الجبيل الصناعية
-            </Text>
-          </View>
-        </View>
-        <View className="mr-5 justify-center">
-          <View className="h-20 w-20 rounded-full mb-2">
-            <Image
-              className="h-20 w-20 bg-cover"
-              source={{
-                uri: "https://destinationlisting.com/wp-content/uploads/2015/10/jubail-in.png",
-              }}
-            />
-          </View>
-          <View>
-            <Text className="font-[TajawalBold] text-h7 w-20 text-center	">
-              كلية الجبيل الصناعية
-            </Text>
-          </View>
-        </View>
-        <View className="mr-5 justify-center">
-          <View className="h-20 w-20 rounded-full mb-2">
-            <Image
-              className="h-20 w-20 bg-cover"
-              source={{
-                uri: "https://destinationlisting.com/wp-content/uploads/2015/10/jubail-in.png",
-              }}
-            />
-          </View>
-          <View>
-            <Text className="font-[TajawalBold] text-h7 w-20 text-center	">
-              كلية الجبيل الصناعية
-            </Text>
-          </View>
-        </View>
-      </ScrollView>
+      </View>
     </View>
   );
 };

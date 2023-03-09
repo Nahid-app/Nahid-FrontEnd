@@ -2,10 +2,10 @@ import { View, Text } from "react-native";
 import React from "react";
 import ArrowLeft from "../../../assets/svg/ArrowLeft";
 
-const FeaturedHeader = () => {
+const FeaturedClubsActevities = () => {
   return (
     <View className="flex-row justify-between px-6 justify-between pb-2.5">
-      <Text className="font-[TajawalBold] text-h4">الجامعات</Text>
+      <Text className="font-[TajawalBold] text-h4">الأنشطة الطلابية</Text>
       <View className="justify-center">
         <View className="flex-row ">
           <Text className="font-[TajawalBold] text-h6 px-4 color-primary">
@@ -20,4 +20,4 @@ const FeaturedHeader = () => {
   );
 };
 
-export default FeaturedHeader;
+export default FeaturedClubsActevities;
