@@ -7,6 +7,7 @@ import FeaturedUniversities from "./components/FeaturedUniversities";
 import Universities from "./components/Universities";
 import FeaturedClubsActevities from "./components/FeaturedClubsActevities";
 import ClubsActivities from "./components/ClubsActivities";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
   return (
@@ -28,5 +29,6 @@ export default function HomeScreen() {
         <ClubsActivities />
       </View>
     </ScrollView>
+    // </SafeAreaView>
   );
 }

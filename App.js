@@ -1,15 +1,23 @@
 import * as React from "react";
-import { View, Text, StatusBar, Image, I18nManager } from "react-native";
+import {
+  View,
+  Text,
+  StatusBar,
+  Image,
+  I18nManager,
+  Platform,
+} from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 import { RootSiblingParent } from "react-native-root-siblings";
 
-// import WalkthroughScreen from "./screens/walkThroughScreen/WalkthroughScreen";
+import WalkthroughScreen from "./screens/walkThroughScreen/WalkthroughScreen";
 import SignUpScreen from "./screens/signUpScreen/SignUpScreen";
 import LoginScreen from "./screens/loginScreen/LoginScreen";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
+import UniversitiesScreen from "./screens/universitiesScreen/UniversitiesScreen";
 
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
@@ -30,9 +38,9 @@ export default function App() {
     TajawalRegular: require("./assets/fonts/Tajawal-Regular.ttf"),
   });
 
-  // if (!fontsLoaded) {
-  //   return <AppLoading />;
-  // }
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
 
   return (
     <RootSiblingParent>
@@ -71,15 +79,27 @@ export default function App() {
                 headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
               }}
             /> */}
-          <Stack.Screen
+          {/* <Stack.Screen
             name="HomeScreen"
             component={HomeScreen}
             options={{
               headerTitle: "",
-              headerTransparent: false,
+              headerTransparent: true,
               headerShadowVisible: false,
               headerBackTitleVisible: false,
               headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
+            }}
+          /> */}
+          <Stack.Screen
+            name="UniversitiesScreen"
+            component={UniversitiesScreen}
+            options={{
+              headerTitle: "جميع الجامعات",
+              headerShown: true,
+              headerShadowVisible: false,
+              headerBackTitleVisible: false,
+              headerTitleStyle: { color: "#6949FF" },
+              headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
           />
         </Stack.Navigator>
