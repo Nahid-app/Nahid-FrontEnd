@@ -18,6 +18,7 @@ import SignUpScreen from "./screens/signUpScreen/SignUpScreen";
 import LoginScreen from "./screens/loginScreen/LoginScreen";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
 import UniversitiesScreen from "./screens/universitiesScreen/UniversitiesScreen";
+import ActivitiesScreen from "./screens/activitiesScreen/ActivitiesScreen";
 
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
@@ -90,11 +91,23 @@ export default function App() {
               headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
             }}
           /> */}
-          <Stack.Screen
+          {/* <Stack.Screen
             name="UniversitiesScreen"
             component={UniversitiesScreen}
             options={{
               headerTitle: "جميع الجامعات",
+              headerShown: true,
+              headerShadowVisible: false,
+              headerBackTitleVisible: false,
+              headerTitleStyle: { color: "#6949FF" },
+              headerTitleAlign: Platform.OS === "android" ? "center" : "",
+            }}
+          /> */}
+          <Stack.Screen
+            name="Activi"
+            component={ActivitiesScreen}
+            options={{
+              headerTitle: "جميع الأنشطة",
               headerShown: true,
               headerShadowVisible: false,
               headerBackTitleVisible: false,
@@ -108,3 +121,10 @@ export default function App() {
     </RootSiblingParent>
   );
 }
+// ** avatarUrl,
+// title,
+// date,
+// type,
+// imageUrl,
+// clubName,
+// clubId,

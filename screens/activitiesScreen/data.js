@@ -1,0 +1,38 @@
+export default [
+  {
+    avatarUrl: require("../../assets/imgs/logos/KFU.png"),
+    clubId: "1",
+    clubName: "نادي الحاسب بالأحساء",
+    title: "بداية في علم الحاسب",
+    date: "13/04/2022",
+    type: "ندوة",
+    imageUrl: require("../../assets/imgs/laptop.jpg"),
+  },
+  {
+    avatarUrl: require("../../assets/imgs/logos/King_Saud_University_logo.png"),
+    clubId: "2",
+    clubName: "نادي الحاسب بجامعة الملك سعود",
+    title: "مقدمة في علم البيانات",
+    date: "16/09/2021",
+    type: "فعالية",
+    imageUrl: require("../../assets/imgs/Image.png"),
+  },
+  {
+    avatarUrl: require("../../assets/imgs/logos/jic.png"),
+    clubId: "3",
+    clubName: "نادي الحاسب بكلية الجبيل الصناعية",
+    title: "مسابقة التقط العلم",
+    date: "16/12/2023",
+    type: "مسابقة",
+    imageUrl: require("../../assets/imgs/Image.png"),
+  },
+  {
+    avatarUrl: require("../../assets/imgs/logos/KFUPM.png"),
+    clubId: "4",
+    clubName: "نادي الحاسب بجامعة الملك فهد للبترول و المعادن",
+    title: "مقدمة في علم البيانات",
+    date: "16/12/2023",
+    type: "فعالية",
+    imageUrl: require("../../assets/imgs/Image.png"),
+  },
+];
