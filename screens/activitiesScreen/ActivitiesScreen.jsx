@@ -10,6 +10,7 @@ import {
 import Ticket from "../../assets/svg/Ticket";
 import Calender from "../../assets/svg/Calender1";
 import data from "./data";
+import SingleActivityScreen from "../singleActivityScreen/SingleActivityScreen";
 
 // Cards
 const Activities = ({
@@ -20,11 +21,19 @@ const Activities = ({
   imageUrl,
   clubName,
   clubId,
+  navigation,
 }) => {
   return (
     <>
-      <TouchableOpacity>
-        <View className="flex-row justify-center items-center ">
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("SingleActivityScreen", {
+            title: title,
+            clubName: clubName,
+          })
+        }
+      >
+        <View className="flex-row justify-center items-center">
           <View
             className="w-1/3 max-h-28 "
             style={{
@@ -57,7 +66,7 @@ const Activities = ({
             }}
           >
             <View className="px-4 h-full content-center py-3 justify-between w-full ">
-              <Text className="align-baseline border justify-center text-left font-[Tajawal] text-h6 pt-1">
+              <Text className="align-baseline border justify-center text-left font-[TajawalBold] text-h6 pt-1">
                 {title}
               </Text>
               <View
@@ -96,9 +105,9 @@ const Activities = ({
   );
 };
 // Main All Activities
-const ActivitiesList = () => {
+const ActivitiesList = ({ navigation }) => {
   return (
-    <View className="bg-white flex-1 px-6 ">
+    <View className="bg-white flex-1 px-6 pt-6">
       <FlatList
         data={data}
         keyExtractor={(item) => item.clubId.toString()}
@@ -110,9 +119,10 @@ const ActivitiesList = () => {
             date={item.date}
             imageUrl={item.imageUrl}
             type={item.type}
+            navigation={navigation}
           />
         )}
-        ItemSeparatorComponent={<View className="pt-4"></View>}
+        ItemSeparatorComponent={<View className="pt-4" />}
       />
     </View>
   );
