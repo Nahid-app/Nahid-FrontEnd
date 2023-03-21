@@ -18,6 +18,8 @@ import SignUpScreen from "./screens/signUpScreen/SignUpScreen";
 import LoginScreen from "./screens/loginScreen/LoginScreen";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
 import UniversitiesScreen from "./screens/universitiesScreen/UniversitiesScreen";
+import ActivitiesScreen from "./screens/activitiesScreen/ActivitiesScreen";
+import SingleActivityScreen from "./screens/singleActivityScreen/SingleActivityScreen";
 
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
@@ -90,11 +92,35 @@ export default function App() {
               headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
             }}
           /> */}
-          <Stack.Screen
+          {/* <Stack.Screen
             name="UniversitiesScreen"
             component={UniversitiesScreen}
             options={{
               headerTitle: "جميع الجامعات",
+              headerShown: true,
+              headerShadowVisible: false,
+              headerBackTitleVisible: false,
+              headerTitleStyle: { color: "#6949FF" },
+              headerTitleAlign: Platform.OS === "android" ? "center" : "",
+            }}
+          /> */}
+          <Stack.Screen
+            name="ActivitiesScreen"
+            component={ActivitiesScreen}
+            options={{
+              headerTitle: "جميع الأنشطة",
+              headerShown: true,
+              headerShadowVisible: false,
+              headerBackTitleVisible: false,
+              headerTitleStyle: { color: "#6949FF" },
+              headerTitleAlign: Platform.OS === "android" ? "center" : "",
+            }}
+          />
+          <Stack.Screen
+            name="SingleActivityScreen"
+            component={SingleActivityScreen}
+            options={{
+              headerTitle: "hello",
               headerShown: true,
               headerShadowVisible: false,
               headerBackTitleVisible: false,
