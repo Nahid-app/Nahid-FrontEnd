@@ -19,6 +19,7 @@ import LoginScreen from "./screens/loginScreen/LoginScreen";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
 import UniversitiesScreen from "./screens/universitiesScreen/UniversitiesScreen";
 import ActivitiesScreen from "./screens/activitiesScreen/ActivitiesScreen";
+import SingleActivityScreen from "./screens/singleActivityScreen/SingleActivityScreen";
 
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
@@ -104,10 +105,22 @@ export default function App() {
             }}
           /> */}
           <Stack.Screen
-            name="Activi"
+            name="ActivitiesScreen"
             component={ActivitiesScreen}
             options={{
               headerTitle: "جميع الأنشطة",
+              headerShown: true,
+              headerShadowVisible: false,
+              headerBackTitleVisible: false,
+              headerTitleStyle: { color: "#6949FF" },
+              headerTitleAlign: Platform.OS === "android" ? "center" : "",
+            }}
+          />
+          <Stack.Screen
+            name="SingleActivityScreen"
+            component={SingleActivityScreen}
+            options={{
+              headerTitle: "hello",
               headerShown: true,
               headerShadowVisible: false,
               headerBackTitleVisible: false,
@@ -121,10 +134,3 @@ export default function App() {
     </RootSiblingParent>
   );
 }
-// ** avatarUrl,
-// title,
-// date,
-// type,
-// imageUrl,
-// clubName,
-// clubId,
