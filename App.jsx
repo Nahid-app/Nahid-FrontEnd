@@ -20,6 +20,8 @@ import HomeScreen from "./screens/homeScreen/HomeScreen";
 import UniversitiesScreen from "./screens/universitiesScreen/UniversitiesScreen";
 import ActivitiesScreen from "./screens/activitiesScreen/ActivitiesScreen";
 import SingleActivityScreen from "./screens/singleActivityScreen/SingleActivityScreen";
+import ProfileScreen from "./screens/profileScreen/ProfileScreen";
+import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
 
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
@@ -45,10 +47,13 @@ export default function App() {
   }
 
   return (
-    <RootSiblingParent>
-      <NavigationContainer>
-        <Stack.Navigator>
-          {/* <Stack.Screen
+    <>
+      <ExpoStatusBar />
+
+      <RootSiblingParent>
+        <NavigationContainer>
+          <Stack.Navigator>
+            {/* <Stack.Screen
               name="WalkthroughScreen"
               component={WalkthroughScreen}
               options={{
@@ -81,18 +86,18 @@ export default function App() {
                 headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
               }}
             /> */}
-          {/* <Stack.Screen
-            name="HomeScreen"
-            component={HomeScreen}
-            options={{
-              headerTitle: "",
-              headerTransparent: true,
-              headerShadowVisible: false,
-              headerBackTitleVisible: false,
-              headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
-            }}
-          /> */}
-          {/* <Stack.Screen
+            {/* <Stack.Screen
+              name="HomeScreen"
+              component={HomeScreen}
+              options={{
+                headerTitle: "",
+                headerTransparent: true,
+                headerShadowVisible: false,
+                headerBackTitleVisible: false,
+                headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
+              }}
+            /> */}
+            {/* <Stack.Screen
             name="UniversitiesScreen"
             component={UniversitiesScreen}
             options={{
@@ -104,7 +109,7 @@ export default function App() {
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
           /> */}
-          <Stack.Screen
+            {/* <Stack.Screen
             name="ActivitiesScreen"
             component={ActivitiesScreen}
             options={{
@@ -127,10 +132,20 @@ export default function App() {
               headerTitleStyle: { color: "#6949FF" },
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
-          />
-        </Stack.Navigator>
-        <StatusBar animated={true} barStyle={"dark-content"} />
-      </NavigationContainer>
-    </RootSiblingParent>
+          /> */}
+            <Stack.Screen
+              name="ProfileScreen"
+              component={ProfileScreen}
+              options={{
+                headerShown: false,
+                headerShadowVisible: false,
+                headerBackTitleVisible: false,
+              }}
+            />
+          </Stack.Navigator>
+          <StatusBar animated={true} barStyle={"dark-content"} />
+        </NavigationContainer>
+      </RootSiblingParent>
+    </>
   );
 }
