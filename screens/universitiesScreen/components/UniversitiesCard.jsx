@@ -24,7 +24,7 @@ export const UniversitiesCard = ({
             {universitiesName}
           </Text>
           <View className="flex-row flex-wrap justify-center align-middle content-center items-baseline text-gray700">
-            <Text className="text-left font-[TajawalRegular]  pt-1">
+            <Text className="text-left font-[TajawalRegular]  pt-1 text-gray700">
               عدد الأندية: {clubsNumber}
             </Text>
             <Text className=" text-xsRegular text-left font-[TajawalRegular] pl-1 text-gray700 pt-1">
