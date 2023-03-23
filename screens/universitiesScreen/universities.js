@@ -1,22 +1,30 @@
 export default [
   {
     id: 1,
-    title: "كلية الجبيل الصناعية",
+    universitiesName: "كلية الجبيل الصناعية",
+    clubsNumber: 5,
+    registeredStudentNumber: 200,
     avatar: require("../../assets/imgs/logos/jic.png"),
   },
   {
     id: 2,
-    title: "جامعة الملك سعود بالرياض",
-    avatar: require("../../assets/imgs/logos/King_Saud_University_logo.png"),
+    clubsNumber: 2,
+    registeredStudentNumber: 1000,
+    universitiesName: "جامعة الملك سعود",
+    avatar: require("../../assets/imgs/logos/KSU.jpg"),
   },
   {
     id: 3,
-    title: "جامعة الملك فهد للبترول والمعادن",
+    universitiesName: "جامعة الملك فهد",
+    clubsNumber: 6,
+    registeredStudentNumber: 400,
     avatar: require("../../assets/imgs/logos/KFUPM.png"),
   },
   {
     id: 4,
-    title: "جامعة الملك فيصل",
+    universitiesName: "جامعة الملك فيصل",
+    clubsNumber: 2,
+    registeredStudentNumber: 100,
     avatar: require("../../assets/imgs/logos/KFU.png"),
   },
 ];
