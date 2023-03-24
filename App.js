@@ -92,7 +92,7 @@ export default function App() {
               headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
             }}
           /> */}
-          {/* <Stack.Screen
+          <Stack.Screen
             name="UniversitiesScreen"
             component={UniversitiesScreen}
             options={{
@@ -103,8 +103,8 @@ export default function App() {
               headerTitleStyle: { color: "#6949FF" },
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
-          /> */}
-          <Stack.Screen
+          />
+          {/* <Stack.Screen
             name="ActivitiesScreen"
             component={ActivitiesScreen}
             options={{
@@ -127,7 +127,7 @@ export default function App() {
               headerTitleStyle: { color: "#6949FF" },
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
-          />
+          /> */}
         </Stack.Navigator>
         <StatusBar animated={true} barStyle={"dark-content"} />
       </NavigationContainer>

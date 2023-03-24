@@ -15,32 +15,25 @@ import Universities from "./universities";
 export default function UniversitiesScreen() {
   //   card should be here
   const Item = ({ item }) => (
-    <View style={styles.item} className="w-1/2">
-      <UniversitiesCard title={item.title} avatar={item.avatar} />
+    <View className="justify-center content-center ">
+      <UniversitiesCard
+        universitiesName={item.universitiesName}
+        avatar={item.avatar}
+        clubsNumber={item.clubsNumber}
+        registeredStudentNumber={item.registeredStudentNumber}
+      />
     </View>
   );
   return (
-    <View className="bg-white flex-1 w-full content-center items-center">
-      <View className="bg-white flex-1 w-full  ">
+    <View className="bg-white flex-1 w-full content-center items-center ">
+      <View className="flex-1 w-full px-6 content-center pt-6">
         <FlatList
           data={Universities}
           renderItem={({ item }) => <Item item={item} />}
           keyExtractor={(item) => item.id}
-          numColumns={2}
+          ItemSeparatorComponent={() => <View className="pt-6" />}
         />
       </View>
     </View>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
-  },
-  item: {
-    padding: 20,
-  },
-  title: {
-    fontSize: 32,
-  },
-});
