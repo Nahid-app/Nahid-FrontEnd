@@ -110,29 +110,29 @@ export default function App() {
             }}
           /> */}
             {/* <Stack.Screen
-            name="ActivitiesScreen"
-            component={ActivitiesScreen}
-            options={{
-              headerTitle: "جميع الأنشطة",
-              headerShown: true,
-              headerShadowVisible: false,
-              headerBackTitleVisible: false,
-              headerTitleStyle: { color: "#6949FF" },
-              headerTitleAlign: Platform.OS === "android" ? "center" : "",
-            }}
-          />
-          <Stack.Screen
-            name="SingleActivityScreen"
-            component={SingleActivityScreen}
-            options={{
-              headerTitle: "hello",
-              headerShown: true,
-              headerShadowVisible: false,
-              headerBackTitleVisible: false,
-              headerTitleStyle: { color: "#6949FF" },
-              headerTitleAlign: Platform.OS === "android" ? "center" : "",
-            }}
-          /> */}
+              name="ActivitiesScreen"
+              component={ActivitiesScreen}
+              options={{
+                headerTitle: "جميع الأنشطة",
+                headerShown: true,
+                headerShadowVisible: false,
+                headerBackTitleVisible: false,
+                headerTitleStyle: { color: "#6949FF" },
+                headerTitleAlign: Platform.OS === "android" ? "center" : "",
+              }}
+            /> */}
+            {/* <Stack.Screen
+              name="SingleActivityScreen"
+              component={SingleActivityScreen}
+              options={{
+                headerTitle: "hello",
+                headerShown: true,
+                headerShadowVisible: false,
+                headerBackTitleVisible: false,
+                headerTitleStyle: { color: "#6949FF" },
+                headerTitleAlign: Platform.OS === "android" ? "center" : "",
+              }}
+            /> */}
             <Stack.Screen
               name="ProfileScreen"
               component={ProfileScreen}
