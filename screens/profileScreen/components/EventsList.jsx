@@ -22,7 +22,7 @@ const EventsList = (props) => {
                 <Text className="font-[TajawalBold] text-h6 text-gray900">
                   {item.eventTitle}
                 </Text>
-                <View className="flex-row">
+                <View className="flex-row items-center">
                   <Text className="font-[TajawalMedium] text-gray700 ">
                     {item.eventDate}
                   </Text>
