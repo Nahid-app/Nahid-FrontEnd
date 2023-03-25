@@ -6,7 +6,7 @@ import Settings from "../../../assets/svg/Settings";
 const ProfileHeader = () => {
   return (
     <View className="flex-row justify-between">
-      <View className="flex-row">
+      <View className="flex-row items-center">
         <View className="py-1.5">
           <Logo />
         </View>

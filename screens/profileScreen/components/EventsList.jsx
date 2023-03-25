@@ -19,7 +19,7 @@ const EventsList = (props) => {
                 }}
                 style={{ width: 140, height: 107 }}
               />
-              <View className="overflow-hidden justify-around px-4">
+              <View className="overflow-hidden justify-around px-4 items-start">
                 <Text className="font-[TajawalBold] text-h6 text-gray900">
                   {item.eventTitle}
                 </Text>

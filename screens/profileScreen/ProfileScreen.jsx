@@ -5,6 +5,7 @@ import BannerImage from "./components/BannerImage";
 import EventsList from "./components/EventsList";
 import EventsListHeader from "./components/EventsListHeader";
 import ProfileHeader from "./components/ProfileHeader";
+import UserAccount from "./components/UserAccount";
 import UserData from "./components/UserData";
 
 export default function ProfileScreen() {
@@ -14,6 +15,8 @@ export default function ProfileScreen() {
       <ProfileHeader />
       {/* Banner Image */}
       <BannerImage />
+      {/* User Account */}
+      <UserAccount />
       {/* User Data */}
       <UserData />
       {/* List of Activities */}

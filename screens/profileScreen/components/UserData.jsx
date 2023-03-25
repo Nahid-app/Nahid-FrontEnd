@@ -5,7 +5,7 @@ const UserData = () => {
   return (
     <View className="pb-6">
       <View className="w-full bg-gray300 h-px"></View>
-      <View className="flex-row justify-around py-3 ">
+      <View className="flex-row justify-around items-center py-3 ">
         <View className="items-center">
           <Text className="font-[TajawalBold] text-h5 text-gray900 ">6.9</Text>
           <Text className="font-[TajawalMedium] text-lSemiBold">
