@@ -4,7 +4,7 @@ import React from "react";
 const UserAccount = () => {
   return (
     <View className="flex-row justify-between items-center pb-3">
-      <View className=" flex-row">
+      <View className=" flex-row ">
         <Image
           className="rounded-full"
           source={{
@@ -12,7 +12,7 @@ const UserAccount = () => {
           }}
           style={{ width: 64, height: 64 }}
         />
-        <View className="pl-5 justify-centerlu">
+        <View className="pl-5 justify-center">
           <Text className="font-[TajawalBold] text-gray900 text-h5">
             فيصل يغمور
           </Text>
@@ -21,7 +21,7 @@ const UserAccount = () => {
           </Text>
         </View>
       </View>
-      <View className="bg-primary w-24 h-8 rounded-full justify-center">
+      <View className="bg-primary w-24 h-8 rounded-full justify-center ">
         <Text className="font-[TajawalMedium] text-mSemiBold text-white text-center">
           عدل حسابي
         </Text>

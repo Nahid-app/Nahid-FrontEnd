@@ -23,10 +23,10 @@ const EventsList = (props) => {
                   {item.eventTitle}
                 </Text>
                 <View className="flex-row">
-                  <Text className="font-[TajawalMedium] text-gray700 pl-2">
+                  <Text className="font-[TajawalMedium] text-gray700 ">
                     {item.eventDate}
                   </Text>
-                  <Text className=" text-xsRegular text-left font-[TajawalRegular] pl-1 text-gray700 pt-1">
+                  <Text className=" text-xsRegular text-left font-[TajawalRegular] px-2 text-gray700 pt-1">
                     {"\u25CF"}
                   </Text>
                   <Text className="font-[TajawalMedium] text-gray700">
