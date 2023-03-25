@@ -10,7 +10,7 @@ import UserData from "./components/UserData";
 
 export default function ProfileScreen() {
   return (
-    <SafeAreaView className="pt-4 mx-6 flex-1">
+    <SafeAreaView className="pt-4 px-6 flex-1 bg-white">
       {/* Profile Header */}
       <ProfileHeader />
       {/* Banner Image */}
