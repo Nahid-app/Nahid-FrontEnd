@@ -1,5 +1,5 @@
-import * as React from "react"
-import Svg, { Path } from "react-native-svg"
+import * as React from "react";
+import Svg, { Path } from "react-native-svg";
 
 function Sort(props) {
   return (
@@ -24,7 +24,7 @@ function Sort(props) {
         fill="#6949FF"
       />
     </Svg>
-  )
+  );
 }
 
-export default Sort
+export default Sort;

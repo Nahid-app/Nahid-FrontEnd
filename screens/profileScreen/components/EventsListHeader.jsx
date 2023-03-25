@@ -10,11 +10,11 @@ const EventsListHeader = () => {
         الأنشطة
       </Text>
       <View className="justify-center items-center">
-        <View className="flex-row items-center ">
+        <View className="flex-row items-center justify-center ">
           <Text className="font-[TajawalBold] text-h6 px-4 color-primary">
             ترتيب
           </Text>
-          <View className="justify-center items-center pt-1.5">
+          <View className="justify-center items-center">
             <Sort />
           </View>
         </View>
