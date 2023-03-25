@@ -26,7 +26,7 @@ const EventsList = (props) => {
                   <Text className="font-[TajawalMedium] text-gray700 ">
                     {item.eventDate}
                   </Text>
-                  <Text className=" text-xsRegular text-left font-[TajawalRegular] px-2 text-gray700 pt-1">
+                  <Text className=" text-xsRegular text-left font-[TajawalRegular] px-2 text-gray700">
                     {"\u25CF"}
                   </Text>
                   <Text className="font-[TajawalMedium] text-gray700">
