@@ -10,10 +10,9 @@ const EventsList = (props) => {
         data={eventsData}
         keyExtractor={(item) => item.eventId.toString()}
         renderItem={({ item }) => (
-          <View className="border border-gray300 rounded-xl">
+          <View className="border border-gray300 rounded-xl overflow-hidden">
             <View className="flex-row rounded-xl w-full">
               <Image
-                className="rounded-r-xl"
                 source={{
                   uri: item.eventImage,
                 }}
