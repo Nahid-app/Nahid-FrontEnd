@@ -1,37 +1,45 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 
-export const UniversitiesCard = ({ title, avatar }) => {
+export const UniversitiesCard = ({
+  clubsNumber,
+  universitiesName,
+  avatar,
+  registeredStudentNumber,
+}) => {
   return (
     <TouchableOpacity>
-      <View
-        className="bg-white rounded-xl justify-between max-w-xs "
-        style={[
-          {
-            shadowColor: "#000",
-            shadowOffset: {
-              width: 0,
-              height: 2,
-            },
-            shadowOpacity: 0.25,
-            shadowRadius: 3.84,
-            elevation: 5,
-          },
-        ]}
-      >
-        <View className="p-2 bg-[#EEEEEE]">
+      <View className="flex-row content-center items-center">
+        <View className="pr-5">
           <Image
             source={avatar}
-            className="w-full rounded-t-xl bg-[#EEEEEE] h-32"
             resizeMode="contain"
+            style={styles.avatar}
+            resizeMethod="resize"
+            className="rounded-full"
           />
         </View>
-        <View className="h-20 align-middle justify-center content-center items-center w-full max-w-xs">
-          <Text className="font-[Tajawal] w-full align-middle text-center p-3">
-            {title}
+        <View className="flex-col items-start justify-between">
+          <Text className="text-h6 font-[TajawalBold] pb-1 pt-1">
+            {universitiesName}
           </Text>
+          <View className="flex-row flex-wrap justify-center align-middle content-center items-baseline text-gray700">
+            <Text className="text-left font-[TajawalRegular]  pt-1 text-gray700">
+              عدد الأندية: {clubsNumber}
+            </Text>
+            <Text className=" text-xsRegular text-left font-[TajawalRegular] pl-1 text-gray700 pt-1">
+              {"\u25CF"}
+            </Text>
+            <Text className="text-left font-[TajawalRegular] pl-1 text-gray700 pt-1">
+              عدد الطلاب : {registeredStudentNumber}
+            </Text>
+          </View>
         </View>
       </View>
     </TouchableOpacity>
   );
 };
+
+const styles = StyleSheet.create({
+  avatar: { height: 60, width: 60, maxHeight: 60, minHeight: 60, minWidth: 60 },
+});
