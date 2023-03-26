@@ -3,7 +3,7 @@ import { View, Text, Image, FlatList } from "react-native";
 import Group from "../../../assets/svg/Group";
 import eventsData from "./eventsData";
 
-const EventsList = (props) => {
+const EventsList = () => {
   return (
     <>
       <FlatList

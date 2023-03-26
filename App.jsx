@@ -20,6 +20,8 @@ import HomeScreen from "./screens/homeScreen/HomeScreen";
 import UniversitiesScreen from "./screens/universitiesScreen/UniversitiesScreen";
 import ActivitiesScreen from "./screens/activitiesScreen/ActivitiesScreen";
 import SingleActivityScreen from "./screens/singleActivityScreen/SingleActivityScreen";
+import ProfileScreen from "./screens/profileScreen/ProfileScreen";
+import AccountEditingScreen from "./screens/accountEditingScreen.jsx/AccountEditingScreen";
 
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
@@ -56,19 +58,20 @@ export default function App() {
                 headerTransparent: false,
                 headerShadowVisible: false,
               }}
-            />
-            <Stack.Screen
-              name="signUpScreen"
-              component={SignUpScreen}
-              options={{
-                headerTitle: "",
-                headerTransparent: false,
-                headerShadowVisible: false,
-                headerTintColor: "black",
-                headerBackTitleVisible: false,
-                headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
-              }}
-            />
+            />*/}
+          {/* <Stack.Screen
+            name="signUpScreen"
+            component={SignUpScreen}
+            options={{
+              headerTitle: "",
+              headerTransparent: false,
+              headerShadowVisible: false,
+              headerTintColor: "black",
+              headerBackTitleVisible: false,
+              headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
+            }}
+          /> */}
+          {/* 
             <Stack.Screen
               name="loginScreen"
               component={LoginScreen}
@@ -92,12 +95,34 @@ export default function App() {
               headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
             }}
           /> */}
-          <Stack.Screen
+          {/* <Stack.Screen
             name="UniversitiesScreen"
             component={UniversitiesScreen}
             options={{
               headerTitle: "جميع الجامعات",
               headerShown: true,
+              headerShadowVisible: false,
+              headerBackTitleVisible: false,
+              headerTitleStyle: { color: "#6949FF" },
+              headerTitleAlign: Platform.OS === "android" ? "center" : "",
+            }}
+          /> */}
+          {/* <Stack.Screen
+            name="ProfileScreen"
+            component={ProfileScreen}
+            options={{
+              headerShown: false,
+              headerShadowVisible: false,
+              headerBackTitleVisible: false,
+              headerTitleStyle: { color: "#6949FF" },
+              headerTitleAlign: Platform.OS === "android" ? "center" : "",
+            }}
+          /> */}
+          <Stack.Screen
+            name="AccountEditingScreen"
+            component={AccountEditingScreen}
+            options={{
+              headerShown: false,
               headerShadowVisible: false,
               headerBackTitleVisible: false,
               headerTitleStyle: { color: "#6949FF" },
