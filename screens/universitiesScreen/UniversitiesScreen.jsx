@@ -13,7 +13,7 @@ import GridFlatList from "grid-flatlist-react-native";
 import Universities from "./universities";
 
 export default function UniversitiesScreen() {
-  //   card should be here
+  //   rendered card style and customization here
   const Item = ({ item }) => (
     <View className="justify-center content-center ">
       <UniversitiesCard
