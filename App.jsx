@@ -21,7 +21,7 @@ import UniversitiesScreen from "./screens/universitiesScreen/UniversitiesScreen"
 import ActivitiesScreen from "./screens/activitiesScreen/ActivitiesScreen";
 import SingleActivityScreen from "./screens/singleActivityScreen/SingleActivityScreen";
 import ProfileScreen from "./screens/profileScreen/ProfileScreen";
-import AccountEditingScreen from "./screens/accountEditingScreen.jsx/AccountEditingScreen";
+import ProfileEditingScreen from "./screens/profileEditingScreen.jsx/profileEditingScreen";
 
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
@@ -119,8 +119,8 @@ export default function App() {
             }}
           /> */}
           <Stack.Screen
-            name="AccountEditingScreen"
-            component={AccountEditingScreen}
+            name="ProfileEditingScreen"
+            component={ProfileEditingScreen}
             options={{
               headerShown: false,
               headerShadowVisible: false,

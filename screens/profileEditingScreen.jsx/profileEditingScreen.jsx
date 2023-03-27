@@ -1,21 +1,42 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView } from "react-native-safe-area-context";
 import ArrowRight from "../../assets/svg/arrowRight";
-import { Image, Text, View, platform, Button } from "react-native";
+import { Image, Text, View, platform, Pressable } from "react-native";
 import TextField from "./components/TextField";
-import DateTimePicker from "@react-native-community/datetimepicker";
 import { useState } from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+import DateTimePickerModal from "react-native-modal-datetime-picker";
+import Calendar from "../../assets/svg/Calendar";
 
-export default function AccountEditingScreen() {
-  const [date, setDate] = useState(new Date());
-  const [show, setShow] = useState(false);
-  const [text, setText] = useState("Empty");
+export default function ProfileEditingScreen() {
+  const [visiblity, setVisibility] = useState(false);
+  const [dateText, setDateText] = useState("");
+
+  const visibiltyStatus = () => {
+    setVisibility(!visiblity);
+  };
+
+  const handleConfirm = (currentDate) => {
+    let tempDate = new Date(currentDate);
+
+    let formattedDate =
+      tempDate.getDate() +
+      "/" +
+      (tempDate.getMonth() + 1) +
+      "/" +
+      tempDate.getFullYear();
+    setDateText(formattedDate);
+
+    console.warn("A date has been picked: ", formattedDate);
+
+    visibiltyStatus();
+  };
+
   return (
     <>
       <StatusBar />
       <SafeAreaView className="bg-white flex-1 px-6 pt-5">
-        {/* Account Editing Header */}
+        {/* Profile Editing Header */}
         <View className="flex-row items-center">
           <ArrowRight />
           <Text className="font-[TajawalBold] text-h4 text-grey900 px-4">
@@ -48,6 +69,21 @@ export default function AccountEditingScreen() {
         <TextField
           textFieldTitle="رقم الجوال"
           textFieldPlaceHolder="+966 54 264 9369"
+        />
+        <Pressable onPress={visibiltyStatus}>
+          <TextField
+            textFieldTitle="تاريخ الميلاد"
+            textFieldPlaceHolder={
+              dateText === "" ? "لايوجد" : dateText.toString() + " مـ"
+            }
+            icon={<Calendar />}
+          />
+        </Pressable>
+        <DateTimePickerModal
+          isVisible={visiblity}
+          mode="date"
+          onConfirm={handleConfirm}
+          onCancel={visibiltyStatus}
         />
       </SafeAreaView>
     </>
