@@ -22,6 +22,7 @@ import ActivitiesScreen from "./screens/activitiesScreen/ActivitiesScreen";
 import SingleActivityScreen from "./screens/singleActivityScreen/SingleActivityScreen";
 import ProfileScreen from "./screens/profileScreen/ProfileScreen";
 import ProfileEditingScreen from "./screens/profileEditingScreen.jsx/profileEditingScreen";
+import AllClubsScreen from "./screens/allClubsScreen/AllClubsScreen";
 
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
@@ -108,28 +109,6 @@ export default function App() {
             }}
           /> */}
           {/* <Stack.Screen
-            name="ProfileScreen"
-            component={ProfileScreen}
-            options={{
-              headerShown: false,
-              headerShadowVisible: false,
-              headerBackTitleVisible: false,
-              headerTitleStyle: { color: "#6949FF" },
-              headerTitleAlign: Platform.OS === "android" ? "center" : "",
-            }}
-          /> */}
-          <Stack.Screen
-            name="ProfileEditingScreen"
-            component={ProfileEditingScreen}
-            options={{
-              headerShown: false,
-              headerShadowVisible: false,
-              headerBackTitleVisible: false,
-              headerTitleStyle: { color: "#6949FF" },
-              headerTitleAlign: Platform.OS === "android" ? "center" : "",
-            }}
-          />
-          {/* <Stack.Screen
             name="ActivitiesScreen"
             component={ActivitiesScreen}
             options={{
@@ -153,6 +132,18 @@ export default function App() {
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
           /> */}
+          <Stack.Screen
+            name="AllClubsScreen"
+            component={AllClubsScreen}
+            options={{
+              headerTitle: "صفحة جميع الأندية",
+              headerShown: true,
+              headerShadowVisible: false,
+              headerBackTitleVisible: false,
+              headerTitleStyle: { color: "#6949FF" },
+              headerTitleAlign: Platform.OS === "android" ? "center" : "",
+            }}
+          />
         </Stack.Navigator>
         <StatusBar
           animated={true}
