@@ -3,8 +3,8 @@ import React from "react";
 
 const TextField = (props) => {
   return (
-    <View className="pt-6">
-      <Text className="font-[TajawalBold] text-grey900 pb-4">
+    <View className="pt-4">
+      <Text className="font-[TajawalBold] text-lBold text-grey900 pb-3">
         {props.textFieldTitle}
       </Text>
       <View className="flex-row justify-between">
@@ -12,7 +12,6 @@ const TextField = (props) => {
           placeholder={props.textFieldPlaceHolder}
           placeholderTextColor={"black"}
           className="font-[TajawalBold] text-h5 pb-2 flex-1"
-          // style={styles.bottomBorderStyle}
           textAlign="right"
           editable={false}
           selectTextOnFocus={false}
@@ -23,9 +22,5 @@ const TextField = (props) => {
     </View>
   );
 };
-
-// const styles = StyleSheet.create({
-//   bottomBorderStyle: { borderBottomWidth: 1, borderBottomColor: "#6949FF" },
-// });
 
 export default TextField;
