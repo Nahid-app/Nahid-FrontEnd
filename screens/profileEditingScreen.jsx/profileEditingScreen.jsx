@@ -19,12 +19,13 @@ export default function ProfileEditingScreen() {
         {/* Personal Image */}
         <ProfileImage />
         {/* Divider */}
-
         <View className="w-full bg-gray300 h-px mt-6"></View>
-        {/* User Info Form */}
-        <UserInputFields />
-        {/* Dropdown List */}
-        <DropDownLists />
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {/* User Info Form */}
+          <UserInputFields />
+          {/* Dropdown List */}
+          <DropDownLists />
+        </ScrollView>
       </SafeAreaView>
     </>
   );

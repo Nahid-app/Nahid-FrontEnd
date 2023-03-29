@@ -2,6 +2,8 @@ import { View, Text } from "react-native";
 import React from "react";
 import { useState } from "react";
 import DropDownPicker from "react-native-dropdown-picker";
+import ArrowDown from "../assets/svg/ArrowDown";
+import ArrowUp from "../assets/svg/ArrowUp";
 
 const DropDownList = (props) => {
   const [open, setOpen] = useState(false);
@@ -10,19 +12,10 @@ const DropDownList = (props) => {
 
   return (
     <View>
-      <Text className="font-[TajawalBold] text-lBold text-grey900">
+      <Text className="font-[TajawalBold] text-h5 text-grey900">
         {props.title}
       </Text>
       <DropDownPicker
-        placeholder={props.title}
-        dropDownContainerStyle={{ borderColor: "#6949FF" }}
-        activityIndicatorColor="#6949FF"
-        className="border-0 p-0 m-0"
-        textStyle={{
-          fontFamily: "TajawalBold",
-          fontSize: 20,
-        }}
-        // dropDownContainerStyle={{ borderRadius: 16 }}
         rtl={true}
         open={open}
         value={value}
@@ -30,6 +23,49 @@ const DropDownList = (props) => {
         setOpen={setOpen}
         setValue={setValue}
         setItems={setItems}
+        placeholder={props.title}
+        searchable={props.searchability}
+        className="border-0 p-0 m-0"
+        listMode="SCROLLVIEW"
+        dropDownContainerStyle={{
+          borderColor: "#E0E0E0",
+          borderBottomEndRadius: 8,
+          borderBottomStartRadius: 8,
+        }}
+        itemSeparatorStyle={{
+          backgroundColor: "#6949FF",
+          marginHorizontal: 12,
+        }}
+        selectedItemContainerStyle={{
+          backgroundColor: "rgba(105, 73, 255, 0.08)",
+          marginHorizontal: 11,
+          borderTopEndRadius: 6,
+          borderTopStartRadius: 6,
+          borderBottomEndRadius: 6,
+          borderBottomStartRadius: 6,
+        }}
+        textStyle={{
+          fontFamily: "TajawalMedium",
+          fontSize: 18,
+        }}
+        itemSeparator={true}
+        tickIconStyle={{
+          borderRadius: 6,
+        }}
+        searchTextInputStyle={{ borderWidth: 0 }}
+        searchContainerStyle={{
+          borderBottomWidth: 2,
+          padding: 0,
+          marginTop: 8,
+          marginHorizontal: 12,
+          borderBottomColor: "#6949FF",
+        }}
+        dropDownDirection="AUTO"
+        ArrowDownIconComponent={({}) => <ArrowDown />}
+        ArrowUpIconComponent={({}) => <ArrowUp />}
+        customItemContainerStyle
+        language="AR"
+        searchPlaceholder={props.title}
         disableBorderRadius={true}
       />
       <View className="flex-row w-full h-0.5 bg-primary "></View>

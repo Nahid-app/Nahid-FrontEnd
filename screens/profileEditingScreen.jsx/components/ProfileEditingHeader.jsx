@@ -6,7 +6,7 @@ const ProfileEditingHeader = () => {
   return (
     <View className="flex-row items-center">
       <ArrowRight />
-      <Text className="font-[TajawalBold] text-h4 text-grey900 px-4">
+      <Text className="font-[TajawalBold] text-h5 text-grey900 px-4">
         المعلومات الشخصية
       </Text>
     </View>
