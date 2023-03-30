@@ -12,8 +12,8 @@ import UserData from "./components/UserData";
 export default function ProfileScreen() {
   return (
     <>
-      <StatusBar />
-      <SafeAreaView className="pt-4 px-6 flex-1 bg-white">
+      {/* <StatusBar /> */}
+      <SafeAreaView className="pt-5 px-6 flex-1 bg-white">
         {/* Profile Header */}
         <ProfileHeader />
         {/* Banner Image */}
