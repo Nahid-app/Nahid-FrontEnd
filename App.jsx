@@ -154,7 +154,11 @@ export default function App() {
             }}
           /> */}
         </Stack.Navigator>
-        <StatusBar animated={true} barStyle={"dark-content"} />
+        <StatusBar
+          animated={true}
+          backgroundColor="white"
+          barStyle="dark-content"
+        />
       </NavigationContainer>
     </RootSiblingParent>
   );

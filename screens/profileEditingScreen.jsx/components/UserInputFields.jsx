@@ -42,6 +42,7 @@ const UserInputFields = () => {
       />
       <Pressable onPress={visibiltyStatus}>
         <TextField
+          editable={false}
           textFieldTitle="تاريخ الميلاد"
           textFieldPlaceHolder={
             dateText === "" ? "لايوجد" : dateText.toString() + " مـ"
@@ -52,6 +53,7 @@ const UserInputFields = () => {
       <DateTimePickerModal
         isVisible={visiblity}
         mode="date"
+        textColor="black"
         onConfirm={handleConfirm}
         onCancel={visibiltyStatus}
       />

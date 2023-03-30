@@ -12,18 +12,18 @@ const DropDownList = (props) => {
 
   return (
     <View>
-      <Text className="font-[TajawalBold] text-h5 text-grey900">
+      <Text className="font-[TajawalBold] text-h5 text-grey900 text-left">
         {props.title}
       </Text>
       <DropDownPicker
-        rtl={true}
+        rtl={false}
         open={open}
         value={value}
         items={items}
         setOpen={setOpen}
         setValue={setValue}
         setItems={setItems}
-        placeholder={props.title}
+        placeholder={props.searchTitle}
         searchable={props.searchability}
         className="border-0 p-0 m-0"
         listMode="SCROLLVIEW"
@@ -47,6 +47,7 @@ const DropDownList = (props) => {
         textStyle={{
           fontFamily: "TajawalMedium",
           fontSize: 18,
+          textAlign: "left",
         }}
         itemSeparator={true}
         tickIconStyle={{
@@ -65,7 +66,7 @@ const DropDownList = (props) => {
         ArrowUpIconComponent={({}) => <ArrowUp />}
         customItemContainerStyle
         language="AR"
-        searchPlaceholder={props.title}
+        searchPlaceholder={props.searchTitle}
         disableBorderRadius={true}
       />
       <View className="flex-row w-full h-0.5 bg-primary "></View>
