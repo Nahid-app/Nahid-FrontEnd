@@ -12,7 +12,6 @@ import DropDownLists from "./components/DropDownLists";
 export default function ProfileEditingScreen() {
   return (
     <>
-      <StatusBar />
       <SafeAreaView className="bg-white flex-1 px-6 pt-5">
         {/* Profile Editing Header */}
         <ProfileEditingHeader />
