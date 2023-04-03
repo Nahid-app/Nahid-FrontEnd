@@ -3,18 +3,13 @@ import React from "react";
 
 const StudentClubs = () => {
   return (
-    <View className="pb-3.5 pl-6">
+    <View className="pb-6 pl-6">
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{}}
       >
         <View className="h-32 w-44 bg-green mr-5 rounded-2xl relative items-center justify-center">
-          {/* <View className="absolute bg-white w-4 h-4 top-2 z-0"></View>
-          <View className="absolute bg-orange w-4 h-4 z-0"></View>
-          <View></View>
-          <View></View> */}
-
           <Image
             className="absolute h-32 w-44 bg-auto z-10 rounded-2xl"
             source={{
@@ -30,11 +25,6 @@ const StudentClubs = () => {
           </View>
         </View>
         <View className="h-32 w-44 bg-green mr-5 rounded-2xl relative items-center justify-center">
-          {/* <View className="absolute bg-white w-4 h-4 top-2 z-0"></View>
-          <View className="absolute bg-orange w-4 h-4 z-0"></View>
-          <View></View>
-          <View></View> */}
-
           <Image
             className="absolute h-32 w-44 bg-auto z-10 rounded-2xl"
             source={{
@@ -50,11 +40,6 @@ const StudentClubs = () => {
           </View>
         </View>
         <View className="h-32 w-44 bg-green mr-5 rounded-2xl relative items-center justify-center">
-          {/* <View className="absolute bg-white w-4 h-4 top-2 z-0"></View>
-          <View className="absolute bg-orange w-4 h-4 z-0"></View>
-          <View></View>
-          <View></View> */}
-
           <Image
             className="absolute h-32 w-44 bg-auto z-10 rounded-2xl"
             source={{

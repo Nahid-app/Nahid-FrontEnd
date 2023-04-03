@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import ArrowLeft from "../../../assets/svg/ArrowLeft";
 
-const FeaturedClubsActevities = () => {
+const FeaturedClubsEvents = () => {
   return (
     <View className="flex-row justify-between px-6 justify-between pb-2.5">
       <Text className="font-[TajawalBold] text-h4">الأنشطة الطلابية</Text>
@@ -20,4 +20,4 @@ const FeaturedClubsActevities = () => {
   );
 };
 
-export default FeaturedClubsActevities;
+export default FeaturedClubsEvents;

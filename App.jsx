@@ -84,7 +84,7 @@ export default function App() {
                 headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
               }}
             /> */}
-          {/* <Stack.Screen
+          <Stack.Screen
             name="HomeScreen"
             component={HomeScreen}
             options={{
@@ -94,7 +94,7 @@ export default function App() {
               headerBackTitleVisible: false,
               headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
             }}
-          /> */}
+          />
           {/* <Stack.Screen
             name="UniversitiesScreen"
             component={UniversitiesScreen}
@@ -118,7 +118,7 @@ export default function App() {
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
           /> */}
-          <Stack.Screen
+          {/* <Stack.Screen
             name="ProfileEditingScreen"
             component={ProfileEditingScreen}
             options={{
@@ -128,7 +128,7 @@ export default function App() {
               headerTitleStyle: { color: "#6949FF" },
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
-          />
+          /> */}
           {/* <Stack.Screen
             name="ActivitiesScreen"
             component={ActivitiesScreen}
