@@ -4,9 +4,9 @@ import ArrowLeft from "../../../assets/svg/ArrowLeft";
 
 const FeaturedClubsEvents = () => {
   return (
-    <View className="flex-row justify-between px-6 justify-between pb-2.5">
-      <Text className="font-[TajawalBold] text-h4">الأنشطة الطلابية</Text>
-      <View className="justify-center">
+    <View className="flex-row justify-between px-6 items-center pb-2.5">
+      <Text className="font-[TajawalBold] text-h5">آخر الأنشطة</Text>
+      <View className="items-center">
         <View className="flex-row ">
           <Text className="font-[TajawalBold] text-h6 px-4 color-primary">
             عرض الجميع

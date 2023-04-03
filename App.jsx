@@ -93,7 +93,7 @@ export default function App() {
             name="HomeScreen"
             component={HomeScreen}
             options={{
-              headerTitle: (props) => <Header />,
+              header: (props) => <Header />,
               headerShadowVisible: false,
             }}
           />

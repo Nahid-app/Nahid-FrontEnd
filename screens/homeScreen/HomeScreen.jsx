@@ -11,7 +11,7 @@ import CommercialBanner from "./components/CommercialBanner";
 
 export default function HomeScreen() {
   return (
-    <View className="bg-white flex-1 ">
+    <View className="bg-white flex-1">
       <ScrollView>
         {/* Header */}
         {/* <AppHeader /> */}
