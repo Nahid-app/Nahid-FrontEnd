@@ -9,7 +9,7 @@ export default function () {
   return (
     <SafeAreaView className="bg-white">
       <View className="flex-row justify-between px-6 items-center">
-        <View className="flex-row">
+        <View className="flex-row items-center p-px">
           <View className="py-1.5">
             <Logo />
           </View>
