@@ -3,7 +3,7 @@ import React from "react";
 
 const StudentClubs = () => {
   return (
-    <View className="pb-6 pl-6">
+    <View className="pb-4 pl-6">
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -17,8 +17,8 @@ const StudentClubs = () => {
             }}
           />
           <View className="absolute z-20 left-3 bottom-3">
-            <View className="w-24">
-              <Text className="font-[TajawalBold] text-white">
+            <View className="w-26">
+              <Text className="font-[TajawalBold] text-white text-left">
                 نادي الحاسب الآلي
               </Text>
             </View>
@@ -32,8 +32,8 @@ const StudentClubs = () => {
             }}
           />
           <View className="absolute z-20 left-3 bottom-3">
-            <View className="w-24">
-              <Text className="font-[TajawalBold] text-white">
+            <View className="w-26">
+              <Text className="font-[TajawalBold] text-white text-left">
                 نادي الحاسب الآلي
               </Text>
             </View>
@@ -47,8 +47,8 @@ const StudentClubs = () => {
             }}
           />
           <View className="absolute z-20 left-3 bottom-3">
-            <View className="w-24">
-              <Text className="font-[TajawalBold] text-white">
+            <View className="w-26">
+              <Text className="font-[TajawalBold] text-white text-left">
                 نادي الحاسب الآلي
               </Text>
             </View>

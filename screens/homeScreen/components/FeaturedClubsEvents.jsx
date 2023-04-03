@@ -5,7 +5,7 @@ import ArrowLeft from "../../../assets/svg/ArrowLeft";
 const FeaturedClubsEvents = () => {
   return (
     <View className="flex-row justify-between px-6 items-center pb-2.5">
-      <Text className="font-[TajawalBold] text-h5 p-px">آخر الأنشطة</Text>
+      <Text className="font-[TajawalBold] text-h5 pt-2">آخر الأنشطة</Text>
       <View className="items-center">
         <View className="flex-row items-center">
           <Text className="font-[TajawalBold] text-h6 px-4 color-primary">
