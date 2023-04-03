@@ -22,6 +22,11 @@ import ActivitiesScreen from "./screens/activitiesScreen/ActivitiesScreen";
 import SingleActivityScreen from "./screens/singleActivityScreen/SingleActivityScreen";
 import ProfileScreen from "./screens/profileScreen/ProfileScreen";
 import ProfileEditingScreen from "./screens/profileEditingScreen.jsx/profileEditingScreen";
+import { SafeAreaView } from "react-native-safe-area-context";
+import Logo from "./assets/svg/Logo";
+import MagnifyingGlass from "./assets/svg/MagnifyingGlass";
+import Notification from "./assets/svg/Notification";
+import Header from "./components/Header";
 
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
@@ -88,11 +93,8 @@ export default function App() {
             name="HomeScreen"
             component={HomeScreen}
             options={{
-              headerTitle: "",
-              headerTransparent: true,
+              headerTitle: (props) => <Header />,
               headerShadowVisible: false,
-              headerBackTitleVisible: false,
-              headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
             }}
           />
           {/* <Stack.Screen

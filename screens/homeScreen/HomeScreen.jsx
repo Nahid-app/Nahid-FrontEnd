@@ -11,10 +11,10 @@ import CommercialBanner from "./components/CommercialBanner";
 
 export default function HomeScreen() {
   return (
-    <ScrollView className="bg-white">
-      <View className="bg-white flex-1 justify-start">
+    <View className="bg-white flex-1 ">
+      <ScrollView>
         {/* Header */}
-        <AppHeader />
+        {/* <AppHeader /> */}
         {/* Commercial Banner */}
         <CommercialBanner />
         {/* Featured Header */}
@@ -25,8 +25,8 @@ export default function HomeScreen() {
         <FeaturedClubsEvents />
         {/* Clubs Activities | الأنشطة الطلابية*/}
         <ClubsActivities />
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
     // </SafeAreaView>
   );
 }
