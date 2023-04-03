@@ -8,7 +8,7 @@ const CommercialBanner = () => {
   const [index, setIndex] = useState(0);
 
   return (
-    <View className="mx-6 my-3.5 h-44">
+    <View className="mx-6 my-6 h-44">
       <Swiper showsPagination={false} autoplay={true} autoplayTimeout={5}>
         {SlidesData.map((index) => (
           <View className="px-2" key={index.id}>

@@ -7,15 +7,15 @@ import Notification from "../assets/svg/Notification";
 
 export default function () {
   return (
-    <SafeAreaView className="bg-white">
-      <View className="flex-row justify-between px-6 items-center">
-        <View className="flex-row items-center p-px">
-          <View className="py-1.5">
+    <SafeAreaView edges={["top", "left", "right"]} className="bg-white">
+      <View className="flex-row justify-between pt-4 px-6 items-center">
+        <View className="flex-row items-center ">
+          <View>
             <Logo />
           </View>
-          <Text className="font-[TajawalBold] text-h4 px-4">ناهض</Text>
+          <Text className="font-[TajawalBold] text-h5 px-4">ناهض</Text>
         </View>
-        <View className="flex-row justify-bet ween">
+        <View className="flex-row justify-between">
           <View className="pr-4">
             <MagnifyingGlass />
           </View>
