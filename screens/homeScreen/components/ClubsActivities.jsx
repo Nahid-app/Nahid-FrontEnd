@@ -3,12 +3,8 @@ import React from "react";
 
 const ClubsActivities = () => {
   return (
-    <View className="pb-3.5 pl-6">
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{}}
-      >
+    <View className="pb-4 pl-6">
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         <View>
           <View className="h-36 w-52 bg-green mr-5 rounded-t-2xl relative items-center justify-center">
             <Image

@@ -5,30 +5,28 @@ import FeaturedClubs from "./components/FeaturedClubs";
 import StudentClubs from "./components/StudentClubs";
 import FeaturedUniversities from "./components/FeaturedUniversities";
 import Universities from "./components/Universities";
-import FeaturedClubsActevities from "./components/FeaturedClubsActevities";
 import ClubsActivities from "./components/ClubsActivities";
-import { SafeAreaView } from "react-native-safe-area-context";
+import FeaturedClubsEvents from "./components/FeaturedClubsEvents";
+import CommercialBanner from "./components/CommercialBanner";
 
 export default function HomeScreen() {
   return (
-    <ScrollView>
-      <View className="bg-white flex-1 justify-start">
+    <View className="bg-white flex-1">
+      <ScrollView>
         {/* Header */}
-        <AppHeader />
+        {/* <AppHeader /> */}
+        {/* Commercial Banner */}
+        <CommercialBanner />
         {/* Featured Header */}
         <FeaturedClubs />
         {/* Student Clubs | الأندية الطلابية */}
         <StudentClubs />
-        {/* Featured Universities */}
-        <FeaturedUniversities />
-        {/* Featured Universities */}
-        <Universities />
-        {/* Featured Universities */}
-        <FeaturedClubsActevities />
+        {/* Featured Events */}
+        <FeaturedClubsEvents />
         {/* Clubs Activities | الأنشطة الطلابية*/}
         <ClubsActivities />
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
     // </SafeAreaView>
   );
 }
