@@ -20,7 +20,10 @@ import HomeScreen from "./screens/homeScreen/HomeScreen";
 import UniversitiesScreen from "./screens/universitiesScreen/UniversitiesScreen";
 import ActivitiesScreen from "./screens/activitiesScreen/ActivitiesScreen";
 import SingleActivityScreen from "./screens/singleActivityScreen/SingleActivityScreen";
-import AllClubsScreen from "./screens/allClubsScreen/AllClubsScreen";
+import AllClubsScreen from "./screens/AllUniversitiesScreen/AllUniversitiesScreen";
+
+import AppHeader from "./screens/homeScreen/components/AppHeader";
+import AllUniversitiesScreen from "./screens/AllUniversitiesScreen/AllUniversitiesScreen";
 
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
@@ -48,7 +51,11 @@ export default function App() {
   return (
     <RootSiblingParent>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+            header: () => <AppHeader />,
+          }}
+        >
           {/* <Stack.Screen
               name="WalkthroughScreen"
               component={WalkthroughScreen}
@@ -130,15 +137,10 @@ export default function App() {
             }}
           /> */}
           <Stack.Screen
-            name="AllClubsScreen"
-            component={AllClubsScreen}
+            name="AllUniversitiesScreen"
+            component={AllUniversitiesScreen}
             options={{
-              headerTitle: "صفحة جميع الأندية",
-              headerShown: true,
-              headerShadowVisible: false,
-              headerBackTitleVisible: false,
-              headerTitleStyle: { color: "#6949FF" },
-              headerTitleAlign: Platform.OS === "android" ? "center" : "",
+              headerShown: false,
             }}
           />
         </Stack.Navigator>
