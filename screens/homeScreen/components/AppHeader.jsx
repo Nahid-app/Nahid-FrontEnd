@@ -7,10 +7,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const AppHeader = () => {
   return (
-    <SafeAreaView className="bg-white ">
+    <SafeAreaView edges={["top", "left", "right"]} className="bg-white border">
       <View className="flex-row justify-between px-6 items-center">
         <View className="flex-row items-center">
-          <View className="py-1.5">
+          <View className="py-1">
             <Logo />
           </View>
           <Text className="font-[TajawalBold] text-h4 px-4">ناهض</Text>

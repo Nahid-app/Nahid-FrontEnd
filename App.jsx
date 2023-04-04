@@ -17,13 +17,11 @@ import WalkthroughScreen from "./screens/walkThroughScreen/WalkthroughScreen";
 import SignUpScreen from "./screens/signUpScreen/SignUpScreen";
 import LoginScreen from "./screens/loginScreen/LoginScreen";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
-import UniversitiesScreen from "./screens/universitiesScreen/UniversitiesScreen";
 import ActivitiesScreen from "./screens/activitiesScreen/ActivitiesScreen";
 import SingleActivityScreen from "./screens/singleActivityScreen/SingleActivityScreen";
-import AllClubsScreen from "./screens/AllUniversitiesScreen/AllUniversitiesScreen";
-
 import AppHeader from "./screens/homeScreen/components/AppHeader";
-import AllUniversitiesScreen from "./screens/AllUniversitiesScreen/AllUniversitiesScreen";
+import UniversitiesScreen from "./screens/UniversitiesScreen/UniversitiesScreen";
+import Header from "./components/Header";
 
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
@@ -53,7 +51,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
-            header: () => <AppHeader />,
+            header: () => <Header />,
           }}
         >
           {/* <Stack.Screen
@@ -137,6 +135,13 @@ export default function App() {
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
           /> */}
+          <Stack.Screen
+            name="UniversitiesScreen"
+            component={UniversitiesScreen}
+            options={{
+              headerShown: true,
+            }}
+          />
         </Stack.Navigator>
         <StatusBar animated={true} barStyle={"dark-content"} />
       </NavigationContainer>

@@ -19,7 +19,7 @@ const SearchBarComponent = () => {
           value={searchQuery}
           style={{
             backgroundColor: "#F5F5F5",
-            borderRadius: 16,
+            borderRadius: 20,
           }}
           iconColor="#BDBDBD"
           placeholderTextColor={"#BDBDBD"}

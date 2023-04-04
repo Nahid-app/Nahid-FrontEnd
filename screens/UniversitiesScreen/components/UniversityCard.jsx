@@ -1,0 +1,81 @@
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import React from "react";
+
+const UniversityCard = ({
+  universityName,
+  universityAvatar,
+  registeredStudentNumber,
+  clubsNumber,
+  ...props
+}) => {
+  return (
+    <>
+      <TouchableOpacity>
+        <View
+          className="flex-1 flex-row  items-center rounded-2xl px-3 py-4 border"
+          style={{ borderColor: "#EEEEEE", borderWidth: 1 }}
+        >
+          {/* image container */}
+          <View className="mr-5">
+            <Image
+              source={universityAvatar}
+              resizeMode="contain"
+              style={styles.clubAvatar}
+              resizeMethod="resize"
+              className="rounded-full"
+            />
+          </View>
+          <View className="flex-col items-start h-14 justify-center flex-grow flex-shrink">
+            <Text className="text-h6 font-[TajawalBold] pb-1 pt-1 items-start">
+              {universityName}
+            </Text>
+            {/* uni avatar */}
+            <View className="flex-row items-center ">
+              {/* uni name */}
+              <View className="items-center justify-center">
+                <Text className="font-[TajawalRegular] items-center text-gray700 pt-1">
+                  عدد الطلاب: {registeredStudentNumber}
+                </Text>
+              </View>
+              <View className="items-center justify-center">
+                <Text className=" text-xsRegular text-center font-[TajawalRegular] px-2 text-gray700 pt-0.5 justify-center">
+                  {"\u25CF"}
+                </Text>
+              </View>
+              <View className="items-center justify-center pt-1">
+                <Text className="font-[TajawalRegular] items-center justify-center text-gray700">
+                  عدد الأندية: {clubsNumber}
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View className="ml-auto justify-center items-center ">
+            <TouchableOpacity>
+              <View className="bg-primary py-[6px] px-4 flex-col items-center justify-center rounded-[100px]">
+                <Text className="text-white">المزيد</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </TouchableOpacity>
+    </>
+  );
+};
+
+export default UniversityCard;
+const styles = StyleSheet.create({
+  clubAvatar: {
+    height: 60,
+    width: 60,
+    maxHeight: 60,
+    minHeight: 60,
+    minWidth: 60,
+  },
+  universityAvatar: {
+    height: 20,
+    width: 20,
+    maxHeight: 20,
+    minHeight: 20,
+    minWidth: 20,
+  },
+});
