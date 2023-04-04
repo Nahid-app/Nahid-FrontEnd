@@ -137,19 +137,8 @@ export default function App() {
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
           /> */}
-          <Stack.Screen
-            name="AllUniversitiesScreen"
-            component={AllUniversitiesScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
         </Stack.Navigator>
-        <StatusBar
-          animated={true}
-          backgroundColor="white"
-          barStyle="dark-content"
-        />
+        <StatusBar animated={true} barStyle={"dark-content"} />
       </NavigationContainer>
     </RootSiblingParent>
   );
