@@ -7,6 +7,11 @@ module.exports = {
     "./components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    extend: {
+      objectPosition: {
+        "center-bottom": "center bottom",
+      },
+    },
     colors: {
       primary: "#6949FF",
       secondary: "#FFC107",
