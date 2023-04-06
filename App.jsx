@@ -10,7 +10,7 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
-import AppLoading from "expo-app-loading";
+// import AppLoading from "expo-app-loading";
 import { RootSiblingParent } from "react-native-root-siblings";
 
 import WalkthroughScreen from "./screens/walkThroughScreen/WalkthroughScreen";
@@ -45,7 +45,7 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return <View></View>;
   }
 
   return (

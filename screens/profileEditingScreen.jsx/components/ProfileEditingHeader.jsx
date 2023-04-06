@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import React from "react";
-import ArrowRight from "../../../assets/svg/arrowRight";
+import ArrowRight from "../../../assets/svg/ArrowRight";
 
 const ProfileEditingHeader = () => {
   return (

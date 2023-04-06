@@ -1,12 +1,24 @@
-export default [
-  {
-    id: 1,
-    image:
-      "https://images.unsplash.com/photo-1620439097636-bbc0ff9c7d5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2093&q=80",
-  },
-  {
-    id: 2,
-    image:
-      "https://images.unsplash.com/photo-1597234496463-d0a82e73b3a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1979&q=80",
-  },
-];
+import { View, Text, Image } from "react-native";
+import React from "react";
+import Swiper from "react-native-swiper";
+import EventData from "./EventData";
+
+const EventImages = () => {
+  return (
+    <View className=" mt-4 h-60 rounded-2xl overflow-hidden">
+      <Swiper
+        showsPagination={true}
+        activeDotStyle={{ width: 24, backgroundColor: "#FFC107" }}
+        paginationStyle={{ bottom: 15 }}
+      >
+        {EventData.map((index) => (
+          <View className="" key={index.id}>
+            <Image source={{ uri: index.image }} className="h-60 w-full" />
+          </View>
+        ))}
+      </Swiper>
+    </View>
+  );
+};
+
+export default EventImages;

@@ -12,7 +12,7 @@ const PrimaryColorButton = ({ onPress, title, scrollTo }) => {
     <View style={styles.buttonContainer}>
       <TouchableOpacity
         onPress={onPress}
-        className="flex-row justify-center items-center py-5 px-4 bg-primary w-80"
+        className="flex-row justify-center items-center py-5 px-4 bg-primary"
         style={styles.button}
       >
         <Text className="text-white font-[TajawalMedium]">{title}</Text>
