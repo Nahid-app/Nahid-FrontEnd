@@ -19,13 +19,13 @@ const TextWithReadMore = (props) => {
 
   return (
     <View>
-      <Text className="font-[TajawalBold] text-h6 text-gray900 mb-2">
+      <Text className="font-[TajawalBold] text-h6 text-gray900 mb-2 p-px">
         {props.textTitle}
       </Text>
       <ScrollView className="h-[10%]" showsVerticalScrollIndicator={false}>
         <Pressable onPress={toggleShowMore}>
           <Text
-            className="font-[TajawalMedium] text-gray700 text-justify text-lSemiBold"
+            className="font-[TajawalMedium] text-gray700 text-left text-lSemiBold"
             numberOfLines={showMore ? undefined : 3}
           >
             {showMore ? text : text.slice(0, 100)}
