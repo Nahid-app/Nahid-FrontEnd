@@ -22,8 +22,6 @@ import ActivitiesScreen from "./screens/activitiesScreen/ActivitiesScreen";
 import SingleActivityScreen from "./screens/singleActivityScreen/SingleActivityScreen";
 import ProfileScreen from "./screens/profileScreen/ProfileScreen";
 import ProfileEditingScreen from "./screens/profileEditingScreen.jsx/profileEditingScreen";
-import Header from "./components/SubScreenHeader";
-import EventDetailsScreen from "./screens/eventDetailsScreen/EventDetailsScreen";
 
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
@@ -120,7 +118,7 @@ export default function App() {
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
           /> */}
-          {/* <Stack.Screen
+          <Stack.Screen
             name="ProfileEditingScreen"
             component={ProfileEditingScreen}
             options={{
@@ -130,7 +128,7 @@ export default function App() {
               headerTitleStyle: { color: "#6949FF" },
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
-          /> */}
+          />
           {/* <Stack.Screen
             name="ActivitiesScreen"
             component={ActivitiesScreen}
@@ -155,14 +153,6 @@ export default function App() {
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
           /> */}
-          <Stack.Screen
-            name="EventDetailsScreen"
-            component={EventDetailsScreen}
-            options={{
-              header: (props) => <Header />,
-              headerShadowVisible: false,
-            }}
-          />
         </Stack.Navigator>
         <StatusBar
           animated={true}
