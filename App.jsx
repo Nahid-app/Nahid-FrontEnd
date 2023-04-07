@@ -10,7 +10,7 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
-import AppLoading from "expo-app-loading";
+// import AppLoading from "expo-app-loading";
 import { RootSiblingParent } from "react-native-root-siblings";
 
 import WalkthroughScreen from "./screens/walkThroughScreen/WalkthroughScreen";
@@ -22,6 +22,8 @@ import ActivitiesScreen from "./screens/activitiesScreen/ActivitiesScreen";
 import SingleActivityScreen from "./screens/singleActivityScreen/SingleActivityScreen";
 import ProfileScreen from "./screens/profileScreen/ProfileScreen";
 import ProfileEditingScreen from "./screens/profileEditingScreen.jsx/profileEditingScreen";
+import SubScreenHeader from "./components/SubScreenHeader";
+import EventDetailsScreen from "./screens/eventDetailsScreen/EventDetailsScreen";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Logo from "./assets/svg/Logo";
 import MagnifyingGlass from "./assets/svg/MagnifyingGlass";
@@ -48,7 +50,7 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return <View></View>;
   }
 
   return (
@@ -155,6 +157,14 @@ export default function App() {
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
           /> */}
+          <Stack.Screen
+            name="EventDetailsScreen"
+            component={EventDetailsScreen}
+            options={{
+              header: (props) => <Header />,
+              headerShadowVisible: false,
+            }}
+          />
         </Stack.Navigator>
         <StatusBar
           animated={true}
