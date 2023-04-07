@@ -11,10 +11,10 @@ const EntityAccount = (props) => {
           style={{ width: 64, height: 64 }}
         />
         <View className="pl-5 justify-center">
-          <Text className="font-[TajawalBold] text-gray900 text-h6">
+          <Text className="font-[TajawalBold] text-gray900 text-h6 p-px">
             {props.name}
           </Text>
-          <Text className="font-[TajawalMedium] text-gray700 text-left">
+          <Text className="font-[TajawalMedium] text-gray700 text-left p-px">
             {props.accountName}
           </Text>
         </View>

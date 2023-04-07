@@ -1,12 +1,12 @@
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
 import React from "react";
 import PrimaryColorButton from "../../../components/buttons/PrimaryColorButton";
 
 const EventJoinButton = () => {
   return (
-    <View className="bottom-5 absolute w-[100%] px-6 ">
+    <SafeAreaView className="bottom-0 fixed w-[100%]  py-2 bg-white ">
       <PrimaryColorButton title={"إنضم للنشاط"} />
-    </View>
+    </SafeAreaView>
   );
 };
 

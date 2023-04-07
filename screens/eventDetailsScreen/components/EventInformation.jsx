@@ -6,14 +6,14 @@ const EventInformation = () => {
   return (
     <View>
       <FourCellsGridTable
-        topRightTitle={"وقت الحضور"}
+        topRightTitle={"الوقت"}
         topRightInfo={"4:00 PM"}
-        topLeftTitle={"يوم الحضور"}
+        topLeftTitle={"اليوم"}
         topLeftInfo={"2nd of May"}
-        bottomRightTitle={"اموقع"}
+        bottomRightTitle={"المكان"}
         bottomRightInfo={"MIS Room 38"}
-        bottomLeftTitle={"القدرة الإستيعابية"}
-        bottomLeftInfo={"42"}
+        bottomLeftTitle={"نوع النشاط"}
+        bottomLeftInfo={"ندوة"}
       />
     </View>
   );

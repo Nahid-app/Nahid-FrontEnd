@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { ScrollView, View } from "react-native";
 import React from "react";
 import EntityAccount from "../../components/EntityAccount";
 import EventImages from "./components/EventImages";
@@ -12,8 +12,8 @@ import EventInformation from "./components/EventInformation";
 
 const EventDetailsScreen = () => {
   return (
-    <View className="flex-1 bg-white">
-      <View className="px-6">
+    <View className="flex-1 bg-white items-center px-6">
+      <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         {/* Event Images */}
         <EventImages />
         {/* Event Title */}
@@ -25,7 +25,7 @@ const EventDetailsScreen = () => {
         {/* Description */}
         <EventDescription />
         {/* JoinButton */}
-      </View>
+      </ScrollView>
       <EventJoinButton />
     </View>
   );
