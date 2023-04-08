@@ -139,7 +139,7 @@ export default function App() {
             name="UniversitiesScreen"
             component={UniversitiesScreen}
             options={{
-              headerShown: true,
+              headerShown: false,
             }}
           />
         </Stack.Navigator>

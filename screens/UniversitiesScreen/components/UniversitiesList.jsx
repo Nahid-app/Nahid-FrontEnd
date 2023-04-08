@@ -6,7 +6,7 @@ import universities from "./universities";
 
 const RenderItem = ({ item }) => {
   return (
-    <View className="justify-center content-center">
+    <View className="justify-center content-center p-2">
       <UniversityCard
         universityName={item.universitiesName}
         universityAvatar={item.avatar}
@@ -22,7 +22,7 @@ const UniversitiesList = () => (
     data={universities}
     renderItem={({ item }) => <RenderItem item={item} />}
     keyExtractor={(item) => item.id}
-    ItemSeparatorComponent={() => <View className="pt-3" />}
+    ItemSeparatorComponent={() => <View className="pt-5" />}
     showsVerticalScrollIndicator={false}
   />
 );

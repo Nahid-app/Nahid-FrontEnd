@@ -12,7 +12,7 @@ const UniversityCard = ({
     <>
       <TouchableOpacity>
         <View
-          className="flex-1 flex-row  items-center rounded-2xl px-3 py-4 border"
+          className="flex-1 flex-row items-center rounded-2xl px-3 py-4 border"
           style={{ borderColor: "#EEEEEE", borderWidth: 1 }}
         >
           {/* image container */}
@@ -48,13 +48,6 @@ const UniversityCard = ({
                 </Text>
               </View>
             </View>
-          </View>
-          <View className="ml-auto justify-center items-center ">
-            <TouchableOpacity>
-              <View className="bg-primary py-[6px] px-4 flex-col items-center justify-center rounded-[100px]">
-                <Text className="text-white">المزيد</Text>
-              </View>
-            </TouchableOpacity>
           </View>
         </View>
       </TouchableOpacity>
