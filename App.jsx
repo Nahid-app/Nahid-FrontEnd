@@ -17,7 +17,6 @@ import WalkthroughScreen from "./screens/walkThroughScreen/WalkthroughScreen";
 import SignUpScreen from "./screens/signUpScreen/SignUpScreen";
 import LoginScreen from "./screens/loginScreen/LoginScreen";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
-import UniversitiesScreen from "./screens/universitiesScreen/UniversitiesScreen";
 import ActivitiesScreen from "./screens/activitiesScreen/ActivitiesScreen";
 import SingleActivityScreen from "./screens/singleActivityScreen/SingleActivityScreen";
 import ProfileScreen from "./screens/profileScreen/ProfileScreen";
@@ -29,6 +28,7 @@ import Logo from "./assets/svg/Logo";
 import MagnifyingGlass from "./assets/svg/MagnifyingGlass";
 import Notification from "./assets/svg/Notification";
 import Header from "./components/Header";
+import UniversityDetailsScreen from "./screens/univesityDetailsScreen.jsx/UniversityDetailsScreen";
 
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
@@ -91,14 +91,14 @@ export default function App() {
                 headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
               }}
             /> */}
-          <Stack.Screen
+          {/* <Stack.Screen
             name="HomeScreen"
             component={HomeScreen}
             options={{
               header: (props) => <Header />,
               headerShadowVisible: false,
             }}
-          />
+          /> */}
           {/* <Stack.Screen
             name="UniversitiesScreen"
             component={UniversitiesScreen}
@@ -157,11 +157,19 @@ export default function App() {
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
           /> */}
-          <Stack.Screen
+          {/* <Stack.Screen
             name="EventDetailsScreen"
             component={EventDetailsScreen}
             options={{
               header: (props) => <Header />,
+              headerShadowVisible: false,
+            }}
+          /> */}
+          <Stack.Screen
+            name="UniversityDetailsScreen"
+            component={UniversityDetailsScreen}
+            options={{
+              header: (props) => <SubScreenHeader />,
               headerShadowVisible: false,
             }}
           />
