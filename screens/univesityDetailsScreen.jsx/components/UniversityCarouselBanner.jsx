@@ -13,7 +13,7 @@ const UniversityCarouselBanner = () => {
           }}
           className="h-32 w-full rounded-2xl"
         />
-        <View className=" flex-row px-6 pt-5">
+        <View className=" flex-row pt-5">
           <Image
             className="rounded-full"
             source={require("../../../assets/imgs/logos/jic.png")}
