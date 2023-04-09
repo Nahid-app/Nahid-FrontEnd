@@ -11,7 +11,7 @@ const UniversityCarouselBanner = () => {
           source={{
             uri: "http://www.jic.edu.sa/en/about/PublishingImages/campus.png",
           }}
-          className="h-32 w-full "
+          className="h-32 w-full rounded-2xl"
         />
         <View className=" flex-row px-6 pt-5">
           <Image

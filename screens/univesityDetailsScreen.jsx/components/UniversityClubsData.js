@@ -4,7 +4,7 @@ export default [
     ClubId: "0",
     ClubTitle: "نادي الحاسب",
     ClubDate: "قبل 3 أيام",
-    ClubCategory: "عام",
+    ClubEventsNumber: 69,
     ClubAttendance: 53,
   },
   {
@@ -12,7 +12,7 @@ export default [
     ClubId: "1",
     ClubTitle: "النادي الرياضي ",
     ClubDate: "مستمر",
-    ClubCategory: "ذكور",
+    ClubEventsNumber: 69,
     ClubAttendance: 18,
   },
   {
@@ -20,7 +20,7 @@ export default [
     ClubId: "3",
     ClubTitle: "نادي التصميم الداخلي",
     ClubDate: "قبل شهر",
-    ClubCategory: "إناث",
+    ClubEventsNumber: 69,
     ClubAttendance: 23,
   },
   {
@@ -28,7 +28,7 @@ export default [
     ClubId: "4",
     ClubTitle: "نادي التصوير",
     ClubDate: "قبل انفنتي أيام",
-    ClubCategory: "عام",
+    ClubEventsNumber: 69,
     ClubAttendance: 0,
   },
 ];

@@ -10,29 +10,40 @@ const UniversityClubsList = () => {
         data={UniversityClubsData}
         keyExtractor={(item) => item.ClubId.toString()}
         renderItem={({ item }) => (
-          <View>
+          <View className="">
             <View className="border border-gray300 rounded-xl overflow-hidden">
-              <View className="flex-row rounded-xl w-full">
+              <View className="flex-row rounded-xl w-full items-center">
                 <Image
-                  className="rounded-full w-[64] h-[64] m-3"
+                  className="rounded-full w-[60] h-[60] m-3"
                   source={item.ClubImage}
                 />
-                <View className="overflow-hidden justify-center p-px items-start">
+                <View className="overflow-hidden justify-center p-2 items-start justify-around ">
                   <Text className="font-[TajawalBold] text-h6 text-gray900">
                     {item.ClubTitle}
                   </Text>
                   <View className="flex-row items-center pt-2">
-                    <View className="flex-row">
-                      <Group />
-                      <Text className="font-[TajawalMedium] text-sSemiBold text-gray800 px-2">
-                        {item.ClubCategory}
-                      </Text>
-                    </View>
+                    <Text className="font-[TajawalMedium] text-gray700">
+                      الإشتراكات {item.ClubAttendance}
+                    </Text>
                     <Text className=" text-xsRegular text-left font-[TajawalRegular] px-2 text-gray700">
                       {"\u25CF"}
                     </Text>
+                    <View className="flex-row">
+                      <Text>الفعاليات </Text>
+                      <Text className="font-[TajawalMedium] text-sSemiBold text-gray800 p-px">
+                        {item.ClubEventsNumber}
+                      </Text>
+                    </View>
+                  </View>
+                  <View className="flex-row items-center pt-2">
+                    <View className="flex-row">
+                      <Image
+                        className="rounded-full w-[20] h-[20] mr-1"
+                        source={item.ClubImage}
+                      />
+                    </View>
                     <Text className="font-[TajawalMedium] text-gray700">
-                      الإشتراكات {item.ClubAttendance}
+                      كلية الجبيل الصناعية
                     </Text>
                   </View>
                 </View>

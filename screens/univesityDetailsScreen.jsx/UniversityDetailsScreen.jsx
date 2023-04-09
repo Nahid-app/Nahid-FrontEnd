@@ -7,20 +7,16 @@ import UniversityClubListHeader from "./components/UniversityClubListHeader";
 
 const UniversityDetailsScreen = () => {
   return (
-    <>
+    <View className="flex-1 bg-white px-6 ">
       {/* University Banner */}
-      <View className="bg-white ">
-        <UniversityCarouselBanner />
-      </View>
-      <View className="flex-1 bg-white px-6 ">
-        {/* University Details Table */}
-        <UniversityDetailsTable />
-        {/* University Clubs List Header */}
-        <UniversityClubListHeader />
-        {/* University Clubs List */}
-        <UniversityClubsList />
-      </View>
-    </>
+      <UniversityCarouselBanner />
+      {/* University Details Table */}
+      <UniversityDetailsTable />
+      {/* University Clubs List Header */}
+      <UniversityClubListHeader />
+      {/* University Clubs List */}
+      <UniversityClubsList />
+    </View>
   );
 };
 
