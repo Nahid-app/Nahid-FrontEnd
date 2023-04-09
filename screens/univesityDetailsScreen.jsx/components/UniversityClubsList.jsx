@@ -23,16 +23,16 @@ const UniversityClubsList = () => {
                   </Text>
                   <View className="flex-row items-center pt-2">
                     <Text className="font-[TajawalMedium] text-gray700">
-                      الإشتراكات {item.ClubAttendance}
+                      الأعضاء {item.ClubAttendance}
                     </Text>
                     <Text className=" text-xsRegular text-left font-[TajawalRegular] px-2 text-gray700">
                       {"\u25CF"}
                     </Text>
                     <View className="flex-row">
                       <Text className="font-[TajawalMedium] text-gray700">
-                        الفعاليات
+                        عدد الفعاليات
                       </Text>
-                      <Text className="font-[TajawalMedium] text-sSemiBold text-gray800 p-px">
+                      <Text className="font-[TajawalMedium] text-sSemiBold text-gray700 px-1">
                         {item.ClubEventsNumber}
                       </Text>
                     </View>
