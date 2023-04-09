@@ -29,7 +29,9 @@ const UniversityClubsList = () => {
                       {"\u25CF"}
                     </Text>
                     <View className="flex-row">
-                      <Text>الفعاليات </Text>
+                      <Text className="font-[TajawalMedium] text-gray700">
+                        الفعاليات
+                      </Text>
                       <Text className="font-[TajawalMedium] text-sSemiBold text-gray800 p-px">
                         {item.ClubEventsNumber}
                       </Text>
