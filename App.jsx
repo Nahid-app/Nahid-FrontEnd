@@ -91,26 +91,21 @@ export default function App() {
                 headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
               }}
             /> */}
-          <Stack.Screen
+          {/* <Stack.Screen
             name="HomeScreen"
             component={HomeScreen}
             options={{
               header: (props) => <Header />,
               headerShadowVisible: false,
             }}
-          />
-          {/* <Stack.Screen
+          /> */}
+          <Stack.Screen
             name="UniversitiesScreen"
             component={UniversitiesScreen}
             options={{
-              headerTitle: "جميع الجامعات",
-              headerShown: true,
-              headerShadowVisible: false,
-              headerBackTitleVisible: false,
-              headerTitleStyle: { color: "#6949FF" },
-              headerTitleAlign: Platform.OS === "android" ? "center" : "",
+              headerShown: false,
             }}
-          /> */}
+          />
           {/* <Stack.Screen
             name="ProfileScreen"
             component={ProfileScreen}
@@ -157,14 +152,14 @@ export default function App() {
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
           /> */}
-          <Stack.Screen
+          {/* <Stack.Screen
             name="EventDetailsScreen"
             component={EventDetailsScreen}
             options={{
               header: (props) => <Header />,
               headerShadowVisible: false,
             }}
-          />
+          /> */}
         </Stack.Navigator>
         <StatusBar
           animated={true}
