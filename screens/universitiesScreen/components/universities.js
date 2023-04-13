@@ -37,7 +37,7 @@ export default [
   },
   {
     id: 6,
-    universitiesName: "جامعة الملك فيصل",
+    universitiesName: "جامعة الملك فيصل ",
     clubsNumber: 2,
     UniversityLocation: "الأحساء",
     avatar: require("../../../assets/imgs/logos/KFU.png"),

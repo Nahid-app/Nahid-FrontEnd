@@ -11,8 +11,9 @@ import { Searchbar } from "react-native-paper";
 import ArrowRight from "../assets/svg/ArrowRight";
 import MagnifyingGlass from "../assets/svg/MagnifyingGlass";
 import { MotiText, MotiView } from "moti";
+import { placeholder } from "i18n-js";
 
-const SearchBarComponent = ({ title }) => {
+const SearchBarComponent = ({ title, placeholder }) => {
   // Search bar appearance
   const [isShown, setIsShown] = React.useState(false);
 
@@ -25,13 +26,15 @@ const SearchBarComponent = ({ title }) => {
     const onChangeSearch = (query) => setSearchQuery(query);
 
     return (
-      <View className="w-full flex-row items-center">
+      <View className="w-full flex-row items-center ">
         <Pressable onPress={handleClick}>
-          <ArrowRight />
+          <View>
+            <ArrowRight />
+          </View>
         </Pressable>
         <View className="w-full px-9">
           <Searchbar
-            placeholder=" إبحث عن جامعة"
+            placeholder={placeholder}
             onChangeText={onChangeSearch}
             value={searchQuery}
             style={{
@@ -73,7 +76,7 @@ const SearchBarComponent = ({ title }) => {
   };
 
   return (
-    <View className="px-6 w-full flex-row justify-between ">
+    <View className="px-6 w-full flex-row justify-between">
       <MotiView
         from={{
           opacity: 0,
@@ -86,7 +89,7 @@ const SearchBarComponent = ({ title }) => {
         transition={{
           type: "timing",
         }}
-        className="items-center justify-end"
+        className="items-center justify-end "
       >
         {/* this line shows the header title if the searchbar is not Shown otherwise return null title*/}
         {isShown ? null : (

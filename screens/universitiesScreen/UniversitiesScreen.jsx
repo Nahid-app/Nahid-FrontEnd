@@ -8,9 +8,9 @@ export default function UniversitiesScreen() {
   return (
     <SafeAreaView
       edges={["top", "left", "right"]}
-      className="flex-1 bg-white py-4"
+      className="flex-1 bg-white pt-4"
     >
-      <SearchBar title={"كل الجامعات"}/>
+      <SearchBar title={"كل الجامعات"} placeholder={"إبحث عن جامعة"}/>
       <View className="flex-1 w-full px-6 content-center pt-6">
         <UniversitiesList />
       </View>

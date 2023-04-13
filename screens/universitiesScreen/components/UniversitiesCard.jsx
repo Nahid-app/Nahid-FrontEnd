@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 import { MotiView } from "moti";
+import LeftBlackArrow from "../../../assets/svg/LeftBlackArrow";
 
 const UniversityCard = ({
   universityName,
@@ -21,11 +22,9 @@ const UniversityCard = ({
       <TouchableOpacity onPress={() => alert("clicked")}>
         <MotiView
           from={{
-            scale: 1,
             translateY: -10,
           }}
           animate={{
-            scale: 1,
             translateY: 0,
           }}
           className="flex-1 flex-row items-center rounded-2xl px-3 py-4 border"
@@ -53,17 +52,18 @@ const UniversityCard = ({
                   الموقع: {UniversityLocation}
                 </Text>
               </View>
-              <View className="items-center justify-center">
-                <Text className=" text-xsRegular text-center font-[TajawalRegular] px-2 text-gray700 pt-1.5 justify-center">
-                  {"\u25CF"}
-                </Text>
-              </View>
+              <Text className=" text-xsRegular font-[TajawalRegular] mt-0.5 px-2 text-gray700">
+                {"\u25CF"}
+              </Text>
               <View className="items-center justify-center pt-1">
                 <Text className="font-[TajawalRegular] items-center justify-center text-gray700">
                   عدد الأندية: {clubsNumber}
                 </Text>
               </View>
             </View>
+          </View>
+          <View>
+            <LeftBlackArrow />
           </View>
         </MotiView>
       </TouchableOpacity>
