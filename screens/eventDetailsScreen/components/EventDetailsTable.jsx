@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import FourCellsGridTable from "../../../components/FourCellsGridTable";
 
-const EventInformation = () => {
+const EventDetailsTable = () => {
   return (
     <View>
       <FourCellsGridTable
@@ -19,4 +19,4 @@ const EventInformation = () => {
   );
 };
 
-export default EventInformation;
+export default EventDetailsTable;

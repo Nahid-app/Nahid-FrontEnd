@@ -17,7 +17,6 @@ import WalkthroughScreen from "./screens/walkThroughScreen/WalkthroughScreen";
 import SignUpScreen from "./screens/signUpScreen/SignUpScreen";
 import LoginScreen from "./screens/loginScreen/LoginScreen";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
-import UniversitiesScreen from "./screens/universitiesScreen/UniversitiesScreen";
 import ActivitiesScreen from "./screens/activitiesScreen/ActivitiesScreen";
 import SingleActivityScreen from "./screens/singleActivityScreen/SingleActivityScreen";
 import ProfileScreen from "./screens/profileScreen/ProfileScreen";
@@ -29,7 +28,7 @@ import Logo from "./assets/svg/Logo";
 import MagnifyingGlass from "./assets/svg/MagnifyingGlass";
 import Notification from "./assets/svg/Notification";
 import Header from "./components/Header";
-import ClubsScreen from "./screens/clubsScreen/ClubsScreen";
+import UniversityDetailsScreen from "./screens/univesityDetailsScreen/UniversityDetailsScreen";
 
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
@@ -93,14 +92,6 @@ export default function App() {
               }}
             /> */}
           {/* <Stack.Screen
-            name="HomeScreen"
-            component={HomeScreen}
-            options={{
-              header: (props) => <Header />,
-              headerShadowVisible: false,
-            }}
-          /> */}
-          {/* <Stack.Screen
             name="UniversitiesScreen"
             component={UniversitiesScreen}
             options={{
@@ -108,8 +99,8 @@ export default function App() {
             }}
           /> */}
           <Stack.Screen
-            name="ClubsScreen"
-            component={ClubsScreen}
+            name="UniversityDetailsScreen"
+            component={UniversityDetailsScreen}
             options={{
               headerShown: false,
             }}
@@ -158,14 +149,6 @@ export default function App() {
               headerBackTitleVisible: false,
               headerTitleStyle: { color: "#6949FF" },
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
-            }}
-          /> */}
-          {/* <Stack.Screen
-            name="EventDetailsScreen"
-            component={EventDetailsScreen}
-            options={{
-              header: (props) => <Header />,
-              headerShadowVisible: false,
             }}
           /> */}
         </Stack.Navigator>
