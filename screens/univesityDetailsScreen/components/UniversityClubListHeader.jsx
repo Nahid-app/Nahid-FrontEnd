@@ -10,7 +10,7 @@ const UniversityClubListHeader = () => {
       </Text>
       <View className="justify-center items-center">
         <View className="flex-row items-center justify-center ">
-          <Text className="font-[TajawalBold] text-h6 px-4 color-primary">
+          <Text className="font-[TajawalBold] text-h6 px-4 py-px color-primary">
             ترتيب
           </Text>
           <View className="justify-center items-center">

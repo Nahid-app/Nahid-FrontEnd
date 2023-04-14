@@ -7,7 +7,7 @@ export default function SubScreenHeader(props) {
   return (
     <SafeAreaView
       edges={["top", "left", "right"]}
-      className="bg-white px-6 pt-4 flex-row items-center"
+      className="bg-white px-px pt-4 flex-row items-center"
     >
       <BlackRightArrow />
       <View className="px-4">
