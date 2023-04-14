@@ -4,14 +4,13 @@ import {
   Touchable,
   TouchableOpacity,
   Pressable,
+  Platform,
 } from "react-native";
 import React from "react";
-import ArrowLeft from "../assets/svg/ArrowLeft";
 import { Searchbar } from "react-native-paper";
-import ArrowRight from "../assets/svg/ArrowRight";
+import ArrowRight from "../assets/svg/ArrowRightBlack";
 import MagnifyingGlass from "../assets/svg/MagnifyingGlass";
 import { MotiText, MotiView } from "moti";
-import { placeholder } from "i18n-js";
 
 const SearchBarComponent = ({ title, placeholder }) => {
   // Search bar appearance
@@ -26,7 +25,7 @@ const SearchBarComponent = ({ title, placeholder }) => {
     const onChangeSearch = (query) => setSearchQuery(query);
 
     return (
-      <View className="w-full flex-row items-center ">
+      <View className="w-full flex-row items-center justify-center">
         <Pressable onPress={handleClick}>
           <View>
             <ArrowRight />
@@ -76,7 +75,7 @@ const SearchBarComponent = ({ title, placeholder }) => {
   };
 
   return (
-    <View className="px-6 w-full flex-row justify-between">
+    <View className=" w-full flex-row justify-between items-center ">
       <MotiView
         from={{
           opacity: 0,
@@ -89,7 +88,7 @@ const SearchBarComponent = ({ title, placeholder }) => {
         transition={{
           type: "timing",
         }}
-        className="items-center justify-end "
+        className="items-center justify-end"
       >
         {/* this line shows the header title if the searchbar is not Shown otherwise return null title*/}
         {isShown ? null : (
@@ -105,7 +104,8 @@ const SearchBarComponent = ({ title, placeholder }) => {
             transition={{
               type: "timing",
             }}
-            className="font-[TajawalBold] text-h4 justify-center"
+            className="font-[TajawalBold] text-h4 justify-center items-center pt-2 text-center"
+            style={{ paddingTop: Platform.OS === "ios" ? 8 : null }}
           >
             {title}
             {/* title */}

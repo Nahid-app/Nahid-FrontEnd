@@ -28,7 +28,7 @@ const UniversityCard = ({
             translateY: 0,
           }}
           className="flex-1 flex-row items-center rounded-2xl px-3 py-4 border"
-          style={styles.cardBorder}
+          style={styles.cardsBorder}
         >
           {/* image container */}
           <View className="mr-5">
