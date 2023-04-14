@@ -28,7 +28,7 @@ const UniversityCard = ({
             translateY: 0,
           }}
           className="flex-1 flex-row items-center rounded-2xl px-3 py-4 border"
-          style={styles.CardsBorder}
+          style={styles.cardsBorder}
         >
           {/* image container */}
           <View className="mr-5">
@@ -73,7 +73,7 @@ const UniversityCard = ({
 
 export default UniversityCard;
 const styles = StyleSheet.create({
-  CardsBorder: { borderColor: "#EEEEEE", borderWidth: 1 },
+  cardsBorder: { borderColor: "#EEEEEE", borderWidth: 1 },
   clubAvatar: {
     height: 60,
     width: 60,
