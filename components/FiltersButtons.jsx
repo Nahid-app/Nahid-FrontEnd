@@ -13,17 +13,19 @@ const FiltersButtons = ({ whiteButtonTitle, primaryButtonTitle }) => {
       }}
       className="w-full flex-row justify-evenly pb-7"
     >
-      <TouchableOpacity>
-        <View className="rounded-full px-16  " style={styles.whiteButton}>
+      <TouchableOpacity className="flex-1 px-1">
+        <View
+          className="rounded-full justify-center items-center "
+          style={styles.whiteButton}
+        >
           <Text className="text-primary font-[TajawalExtraBold] text-lLarge ">
             {whiteButtonTitle}
           </Text>
         </View>
       </TouchableOpacity>
-      <View className="px-2"></View>
-      <TouchableOpacity>
+      <TouchableOpacity className="flex-1 px-1">
         <View
-          className="border rounded-full px-16 "
+          className="border rounded-full justify-center items-center "
           style={styles.primaryButton}
         >
           <Text className="text-white font-[TajawalExtraBold] text-lLarge">
