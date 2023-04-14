@@ -1,0 +1,73 @@
+export default [
+  {
+    id: 1,
+    universitiesName: "كلية الجبيل الصناعية",
+    clubsNumber: 5,
+    UniversityLocation: "الجبيل",
+    avatar: require("../../../assets/imgs/logos/jic.png"),
+  },
+  {
+    id: 2,
+    clubsNumber: 2,
+    UniversityLocation: "الرياض",
+    universitiesName: "جامعة الملك سعود",
+    avatar: require("../../../assets/imgs/logos/KSU.jpg"),
+  },
+  {
+    id: 3,
+    universitiesName: "جامعة الملك فهد",
+    clubsNumber: 6,
+    UniversityLocation: "الظهران",
+    avatar: require("../../../assets/imgs/logos/KFUPM.png"),
+  },
+  {
+    id: 4,
+    universitiesName: "جامعة الملك فيصل",
+    clubsNumber: 2,
+    UniversityLocation: "الأحساء",
+    avatar: require("../../../assets/imgs/logos/KFU.png"),
+  },
+  
+  {
+    id: 5,
+    universitiesName: "جامعة الملك فيصل",
+    clubsNumber: 2,
+    UniversityLocation: "الأحساء",
+    avatar: require("../../../assets/imgs/logos/KFU.png"),
+  },
+  {
+    id: 6,
+    universitiesName: "جامعة الملك فيصل ",
+    clubsNumber: 2,
+    UniversityLocation: "الأحساء",
+    avatar: require("../../../assets/imgs/logos/KFU.png"),
+  },
+  {
+    id: 7,
+    universitiesName: "جامعة الملك فيصل",
+    clubsNumber: 2,
+    UniversityLocation: "الأحساء",
+    avatar: require("../../../assets/imgs/logos/KFU.png"),
+  },
+  {
+    id: 8,
+    universitiesName: "جامعة الملك فيصل",
+    clubsNumber: 2,
+    UniversityLocation: "الأحساء",
+    avatar: require("../../../assets/imgs/logos/KFU.png"),
+  },
+  {
+    id: 9,
+    universitiesName: "جامعة الملك فيصل",
+    clubsNumber: 2,
+    UniversityLocation: "الأحساء",
+    avatar: require("../../../assets/imgs/logos/KFU.png"),
+  },
+  {
+    id: 10,
+    universitiesName: "جامعة الملك فيصل",
+    clubsNumber: 2,
+    UniversityLocation: "الأحساء",
+    avatar: require("../../../assets/imgs/logos/KFU.png"),
+  },
+];
