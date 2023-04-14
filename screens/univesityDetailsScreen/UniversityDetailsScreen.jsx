@@ -6,10 +6,13 @@ import UniversityClubsList from "./components/UniversityClubsList";
 import UniversityClubListHeader from "./components/UniversityClubListHeader";
 import UniversityName from "./components/UniversityName";
 import { ScrollView } from "react-native";
+import SubScreenHeader from "../../components/SubScreenHeader";
 
 const UniversityDetailsScreen = () => {
   return (
     <View className="flex-1 bg-white px-6 ">
+      {/* App Bar */}
+      <SubScreenHeader />
       <ScrollView>
         {/* University Banner */}
         <UniversityCarouselBanner />

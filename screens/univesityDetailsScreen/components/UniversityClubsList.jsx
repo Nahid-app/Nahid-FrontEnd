@@ -7,8 +7,8 @@ import ClubCard from "./ClubCard";
 const UniversityClubsList = () => {
   return (
     <View>
-      {UniversityClubsData.map((university) => (
-        <ClubCard item={university} />
+      {UniversityClubsData.map((university, index) => (
+        <ClubCard key={index} item={university} />
       ))}
     </View>
   );
