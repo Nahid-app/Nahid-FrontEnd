@@ -32,7 +32,7 @@ const ClubCard = (props) => {
               </Text>
               <View className="flex-row">
                 <Text className="font-[TajawalMedium] text-gray700">
-                  عدد الأعضاء
+                  عدد الأعضاء:
                 </Text>
                 <Text className="font-[TajawalMedium] text-sSemiBold text-gray700 px-1">
                   {props.item.ClubMemberCount}
