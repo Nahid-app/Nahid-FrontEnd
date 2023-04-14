@@ -42,7 +42,7 @@ const ClubCard = (props) => {
             <View className="flex-row items-center w-full flex-wrap">
               {/* uni name */}
               <View className="items-center justify-center flex-row text-center">
-                <View className="justify-center align-middle items-center border">
+                <View className="justify-center align-middle items-center">
                   <View className="items-center justify-center pr-1">
                     <Group />
                   </View>
