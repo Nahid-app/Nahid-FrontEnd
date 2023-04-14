@@ -6,7 +6,7 @@ const FourCellsGridTable = (props) => {
     <View>
       <View>
         <View className="w-full bg-gray300 h-px"></View>
-        <View className="flex-row justify-around items-center py-3 relative">
+        <View className="flex-row justify-around items-center my-4 relative">
           <View className=" w-1/2 left-0">
             <View className="items-center justify-center">
               <Text className="font-[TajawalBold] text-h5 text-gray900 ">
@@ -30,7 +30,7 @@ const FourCellsGridTable = (props) => {
           </View>
         </View>
         <View className="w-full bg-gray300 h-px"></View>
-        <View className="flex-row justify-around items-center py-3 relative">
+        <View className="flex-row justify-around items-center my-4 relative">
           <View className=" w-1/2 left-0">
             <View className="items-center justify-center">
               <Text className="font-[TajawalBold] text-h5 text-gray900 ">
