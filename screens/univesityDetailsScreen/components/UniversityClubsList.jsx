@@ -6,14 +6,10 @@ import ClubCard from "./ClubCard";
 
 const UniversityClubsList = () => {
   return (
-    <View className="flex-1">
-      <FlatList
-        data={UniversityClubsData}
-        keyExtractor={(item) => item.ClubId.toString()}
-        renderItem={({ item }) => <ClubCard item={item} />}
-        ItemSeparatorComponent={<View className="py-2" />}
-        showsVerticalScrollIndicator={false}
-      />
+    <View>
+      {UniversityClubsData.map((university) => (
+        <ClubCard item={university} />
+      ))}
     </View>
   );
 };

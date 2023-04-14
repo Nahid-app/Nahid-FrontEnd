@@ -5,7 +5,7 @@ export default [
     ClubTitle: "نادي الحاسب",
     ClubDate: "قبل 3 أيام",
     ClubMemberCount: 69,
-    ClubMajor: "حاسب",
+    ClubMajor: "حاسب ",
   },
   {
     ClubImage: require("../../../assets/imgs/logos/jic.png"),
