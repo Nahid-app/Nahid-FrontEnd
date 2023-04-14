@@ -45,17 +45,17 @@ const UniversityCard = ({
               {universityName}
             </Text>
             {/* uni avatar */}
-            <View className="flex-row items-center ">
+            <View className="flex-row items-center flex-wrap">
               {/* uni name */}
-              <View className="items-center justify-center">
-                <Text className="font-[TajawalRegular] items-center text-gray700 pt-1 ">
+              <View className="items-center justify-center ">
+                <Text className="font-[TajawalRegular] items-center text-gray700 pt-1 flex-wrap ">
                   الموقع: {UniversityLocation}
                 </Text>
               </View>
               <Text className=" text-xsRegular font-[TajawalRegular] mt-0.5 px-2 text-gray700">
                 {"\u25CF"}
               </Text>
-              <View className="items-center justify-center pt-1">
+              <View className="items-center justify-center pt-1 flex-wrap">
                 <Text className="font-[TajawalRegular] items-center justify-center text-gray700">
                   عدد الأندية: {clubsNumber}
                 </Text>
@@ -73,7 +73,10 @@ const UniversityCard = ({
 
 export default UniversityCard;
 const styles = StyleSheet.create({
-  cardsBorder: { borderColor: "#EEEEEE", borderWidth: 1 },
+  cardBorder: {
+    borderColor: "#EEEEEE",
+    borderWidth: 1,
+  },
   clubAvatar: {
     height: 60,
     width: 60,
