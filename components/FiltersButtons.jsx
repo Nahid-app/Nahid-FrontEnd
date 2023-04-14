@@ -14,8 +14,8 @@ const FiltersButtons = ({ whiteButtonTitle, primaryButtonTitle }) => {
       className="w-full flex-row justify-evenly pb-7"
     >
       <TouchableOpacity>
-        <View className="rounded-full px-16 py-2 " style={styles.whiteButton}>
-          <Text className="text-primary font-[TajawalExtraBold] text-lLarge pt-1">
+        <View className="rounded-full px-16  " style={styles.whiteButton}>
+          <Text className="text-primary font-[TajawalExtraBold] text-lLarge ">
             {whiteButtonTitle}
           </Text>
         </View>
@@ -23,10 +23,10 @@ const FiltersButtons = ({ whiteButtonTitle, primaryButtonTitle }) => {
       <View className="px-2"></View>
       <TouchableOpacity>
         <View
-          className="border rounded-full px-16 py-2 "
+          className="border rounded-full px-16 "
           style={styles.primaryButton}
         >
-          <Text className="text-white font-[TajawalExtraBold] text-lLarge pt-1">
+          <Text className="text-white font-[TajawalExtraBold] text-lLarge">
             {primaryButtonTitle}
           </Text>
         </View>
@@ -42,10 +42,12 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     backgroundColor: "white",
     borderColor: "#6949FF",
+    paddingVertical: Platform.OS === "ios" ? 12 : 8,
   },
   primaryButton: {
     borderWidth: 2,
     backgroundColor: "#6949FF",
     borderColor: "#6949FF",
+    paddingVertical: Platform.OS === "ios" ? 12 : 8,
   },
 });

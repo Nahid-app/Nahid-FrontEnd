@@ -48,16 +48,16 @@ const ClubsCard = ({
             <View className="flex-row items-center ">
               {/* uni name */}
               <View className="items-center justify-center flex-row text-center ">
-                <View className="justify-center align-middle items-end pt-1">
-                  <View className="items-center justify-center">
+                <View className="justify-center align-middle items-end ">
+                  <View className="items-center justify-center ">
                     {ClubTypeIcon}
                   </View>
                 </View>
-                <Text className="font-[TajawalRegular] items-center text-gray700 pt-1 pl-1 ">
+                <Text className="font-[TajawalRegular] items-center text-gray700 pt-1 px-1 ">
                   {ClubTypeTitle}
                 </Text>
               </View>
-              <Text className=" text-xsRegular font-[TajawalRegular] mt-0.5 pl-1 text-gray700">
+              <Text className=" text-xsRegular font-[TajawalRegular] mt-0.5  text-gray700">
                 |
               </Text>
               <View className="items-center justify-center pt-1">
