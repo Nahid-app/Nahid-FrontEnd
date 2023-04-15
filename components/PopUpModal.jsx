@@ -25,9 +25,7 @@ const PopUpModal = ({ ModalTitle, ModalSubTitle, ModalButtonTitle }) => {
       >
         <MotiView
           style={styles.centeredViewModal}
-          // from={{ opacity: 0 }}
-          // animate={{ opacity: 1 }}
-          // exit={{ opacity: 0 }}
+          
         >
           <MotiView
             from={{ opacity: 0 }}
