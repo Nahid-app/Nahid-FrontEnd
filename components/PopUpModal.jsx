@@ -23,7 +23,12 @@ const PopUpModal = ({ ModalTitle, ModalSubTitle, ModalButtonTitle }) => {
           setModalVisible(!modalVisible);
         }}
       >
-        <View style={styles.centeredViewModal}>
+        <MotiView
+          style={styles.centeredViewModal}
+          // from={{ opacity: 0 }}
+          // animate={{ opacity: 1 }}
+          // exit={{ opacity: 0 }}
+        >
           <MotiView
             from={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -33,12 +38,9 @@ const PopUpModal = ({ ModalTitle, ModalSubTitle, ModalButtonTitle }) => {
           >
             {/* The card of the Modal */}
             <MotiView
-              from={{
-                translateX: -10,
-              }}
-              animate={{
-                translateX: 0,
-              }}
+              from={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              delay={200}
               className=""
             >
               <ModalCheck />
@@ -62,7 +64,7 @@ const PopUpModal = ({ ModalTitle, ModalSubTitle, ModalButtonTitle }) => {
               />
             </View>
           </MotiView>
-        </View>
+        </MotiView>
       </Modal>
       <Pressable
         style={[styles.button, styles.buttonOpen]}
