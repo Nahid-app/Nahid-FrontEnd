@@ -23,10 +23,7 @@ const PopUpModal = ({ ModalTitle, ModalSubTitle, ModalButtonTitle }) => {
           setModalVisible(!modalVisible);
         }}
       >
-        <MotiView
-          style={styles.centeredViewModal}
-          
-        >
+        <MotiView style={styles.centeredViewModal}>
           <MotiView
             from={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -63,11 +60,8 @@ const PopUpModal = ({ ModalTitle, ModalSubTitle, ModalButtonTitle }) => {
           </MotiView>
         </MotiView>
       </Modal>
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => Onpress()}
-      >
-        <Text style={styles.textStyle}>Show Modal</Text>
+      <Pressable onPress={() => Onpress()}>
+        <Text>Show Modal</Text>
       </Pressable>
     </View>
   );
