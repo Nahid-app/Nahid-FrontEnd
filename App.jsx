@@ -29,6 +29,7 @@ import MagnifyingGlass from "./assets/svg/MagnifyingGlass";
 import Notification from "./assets/svg/Notification";
 import Header from "./components/Header";
 import UniversityDetailsScreen from "./screens/univesityDetailsScreen/UniversityDetailsScreen";
+import ClubDetailsScreen from "./screens/clubDetailsScreen/ClubDetailsScreen";
 
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
@@ -99,8 +100,8 @@ export default function App() {
             }}
           /> */}
           <Stack.Screen
-            name="UniversityDetailsScreen"
-            component={UniversityDetailsScreen}
+            name="ClubDetailsScreen"
+            component={ClubDetailsScreen}
             options={{
               headerShown: false,
             }}
