@@ -54,7 +54,6 @@ const PopUpModal = ({ ModalTitle, ModalSubTitle, ModalButtonTitle }) => {
               </Text>
               <Text className=" text-black font-[TajawalBold] text-center text-lRegular pt-1">
                 {ModalSubTitle}
-                {/* شكرا لتسجيلك! نحن نتطلع إلى رؤيتك . */}
               </Text>
             </View>
             <View className="w-full px-8">
