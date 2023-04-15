@@ -108,7 +108,13 @@ export default function App() {
           /> */}
           <Stack.Screen
             name="PopUpModal"
-            component={PopUpModal}
+            component={() => (
+              <PopUpModal
+                ModalTitle={"تم تسجيلك بنجاح"}
+                ModalSubTitle={"شكرا لتسجيلك! نحن نتطلع إلى رؤيتك"}
+                ModalButtonTitle={"الذهاب إلى الخلف"}
+              />
+            )}
             options={{
               headerShown: false,
             }}

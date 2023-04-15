@@ -6,7 +6,7 @@ import PrimaryColorButton from "./buttons/PrimaryColorButton";
 import * as Haptics from "expo-haptics";
 import { MotiView } from "moti";
 
-const PopUpModal = () => {
+const PopUpModal = ({ ModalTitle, ModalSubTitle, ModalButtonTitle }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const Onpress = () => {
     setModalVisible(true);
@@ -48,16 +48,17 @@ const PopUpModal = () => {
                 style={styles.modalText}
                 className="text-h4 text-primary font-[TajawalBold]"
               >
-                تم تسجيلك بنجاح
+                {ModalTitle}
               </Text>
               <Text className=" text-black font-[TajawalBold] text-center text-lRegular pt-1">
-                شكرا لتسجيلك! نحن نتطلع إلى رؤيتك .
+                {ModalSubTitle}
+                {/* شكرا لتسجيلك! نحن نتطلع إلى رؤيتك . */}
               </Text>
             </View>
             <View className="w-full px-8">
               <PrimaryColorButton
                 onPress={() => setModalVisible(!modalVisible)}
-                title={"الذهاب الى الخلف"}
+                title={ModalButtonTitle}
               />
             </View>
           </MotiView>
