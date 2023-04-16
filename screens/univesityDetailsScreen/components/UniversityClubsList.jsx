@@ -6,7 +6,7 @@ import ClubCard from "./ClubCard";
 
 const UniversityClubsList = () => {
   return (
-    <View>
+    <View className="flex-1 ">
       {UniversityClubsData.map((university, index) => (
         <ClubCard key={index} item={university} />
       ))}

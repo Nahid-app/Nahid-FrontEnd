@@ -12,7 +12,7 @@ const FourCellsGridTable = (props) => {
               <Text className="font-[TajawalBold] text-h5 text-gray900 ">
                 {props.topRightInfo}
               </Text>
-              <Text className="font-[TajawalMedium] text-lSemiBold">
+              <Text className="font-[TajawalMedium] text-lSemiBold pt-2">
                 {props.topRightTitle}
               </Text>
             </View>
@@ -23,7 +23,7 @@ const FourCellsGridTable = (props) => {
               <Text className="font-[TajawalBold] text-h5 text-gray900 ">
                 {props.topLeftInfo}
               </Text>
-              <Text className="font-[TajawalMedium] text-lSemiBold">
+              <Text className="font-[TajawalMedium] text-lSemiBold pt-2">
                 {props.topLeftTitle}
               </Text>
             </View>
@@ -36,7 +36,7 @@ const FourCellsGridTable = (props) => {
               <Text className="font-[TajawalBold] text-h5 text-gray900 ">
                 {props.bottomRightInfo}
               </Text>
-              <Text className="font-[TajawalMedium] text-lSemiBold">
+              <Text className="font-[TajawalMedium] text-lSemiBold pt-2">
                 {props.bottomRightTitle}
               </Text>
             </View>
@@ -47,7 +47,7 @@ const FourCellsGridTable = (props) => {
               <Text className="font-[TajawalBold] text-h5 text-gray900 ">
                 {props.bottomLeftInfo}
               </Text>
-              <Text className="font-[TajawalMedium] text-lSemiBold">
+              <Text className="font-[TajawalMedium] text-lSemiBold pt-2">
                 {props.bottomLeftTitle}
               </Text>
             </View>
