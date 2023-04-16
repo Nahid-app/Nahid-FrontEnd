@@ -8,7 +8,7 @@ import {
 import React from "react";
 import { useState } from "react";
 import ClubDetailsTab from "./ClubDetailsTab";
-import UniversityClubsList from "./UniversityClubsList";
+import UniversityClubsList from "./ClubEventsList";
 
 const TabBar = () => {
   const [clubTab, setClubTab] = useState();
