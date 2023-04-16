@@ -12,8 +12,8 @@ const UniversityDetailsScreen = () => {
   return (
     <View className="flex-1 bg-white px-6 ">
       {/* App Bar */}
-      <SubScreenHeader />
-      <ScrollView>
+        <SubScreenHeader />
+      <ScrollView showsVerticalScrollIndicator="false">
         {/* University Banner */}
         <UniversityCarouselBanner />
         {/* University Name */}
