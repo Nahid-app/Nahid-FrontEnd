@@ -13,9 +13,9 @@ import { ScrollView } from "moti";
 const ClubDetailsScreen = () => {
   return (
     <View className="flex-1 bg-white justify-center px-6">
-      <ScrollView>
-        {/* Screen Header */}
-        <SubScreenHeader />
+      {/* Screen Header */}
+      <SubScreenHeader />
+      <ScrollView showsVerticalScrollIndicator={false}>
         {/* Club Images */}
         <ClubCarouselBanner />
         {/* Tab Bar */}
