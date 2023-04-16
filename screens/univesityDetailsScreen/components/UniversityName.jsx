@@ -11,7 +11,7 @@ const UniversityName = () => {
           style={{ width: 64, height: 64 }}
         />
         <View className="pl-5 items-start pt-[4] flex-1 justify-center">
-          <Text className="font-[TajawalBold] text-gray900 text-h6 p-px ">
+          <Text className="font-[TajawalBold] text-gray900 text-h6 p-px  ">
             كلية الجبيل الصناعية
           </Text>
           <View className="flex-row p-1">

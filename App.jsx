@@ -30,6 +30,8 @@ import Header from "./components/Header";
 import UniversityDetailsScreen from "./screens/univesityDetailsScreen/UniversityDetailsScreen";
 import EventsScreen from "./screens/EventsScreen/EventsScreen";
 
+import ClubDetailsScreen from "./screens/clubDetailsScreen/ClubDetailsScreen";
+import PopUpModal from "./components/PopUpModal";
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
 
@@ -98,9 +100,28 @@ export default function App() {
               headerShown: false,
             }}
           /> */}
+          {/*
           <Stack.Screen
             name="EventsScreen"
             component={EventsScreen}
+            options={{
+              headerShown: false,
+              }}
+              /> 
+           <Stack.Screen
+            name="UniversityDetailsScreen"
+            component={UniversityDetailsScreen}
+            }}
+          /> */}
+          <Stack.Screen
+            name="PopUpModal"
+            component={() => (
+              <PopUpModal
+                ModalTitle={"تم تسجيلك بنجاح"}
+                ModalSubTitle={"شكرا لتسجيلك! نحن نتطلع إلى رؤيتك"}
+                ModalButtonTitle={"الذهاب إلى الخلف"}
+              />
+            )}
             options={{
               headerShown: false,
             }}

@@ -34,8 +34,9 @@ const ClubCard = (props) => {
               className="rounded-full"
             />
           </View>
-          <View className="items-start justify-center flex-grow flex-shrink">
-            <Text className="text-h6 font-[TajawalBold] py-1 items-start ">
+          <View className="items-start justify-center flex-grow flex-shrink ">
+            <Text className="text-h6 font-[TajawalBold] py-1 items-start  pb-1.5">
+
               {props.item.clubTitle}
             </Text>
             {/* uni avatar */}
@@ -51,10 +52,7 @@ const ClubCard = (props) => {
               <Text className="font-[TajawalRegular] text-gray700 pt-1 ">
                 {props.item.clubMajor}
               </Text>
-              {/* <Text className=" text-sRegular font-[TajawalBold] mt-0.5 pl-1 text-gray700">
-                {"\u007C"}
-              </Text> */}
-              <Text className=" text-lMedium text-left font-[TajawalRegular] px-[3] text-gray700">
+              <Text className=" text-lMedium text-left font-[TajawalRegular] px-1.5 text-gray700 ">
                 {"\u007C"}
               </Text>
               <View className="items-center justify-center pt-1">
