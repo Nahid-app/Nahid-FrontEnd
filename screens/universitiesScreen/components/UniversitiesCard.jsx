@@ -27,8 +27,8 @@ const UniversityCard = ({
           animate={{
             translateY: 0,
           }}
-          className="flex-1 flex-row items-center rounded-2xl px-3 py-4 border"
-          style={styles.cardsBorder}
+          className="flex-1 flex-row items-center rounded-2xl px-3 py-4 "
+          style={styles.cardBorder}
         >
           {/* image container */}
           <View className="mr-5">
@@ -41,7 +41,7 @@ const UniversityCard = ({
             />
           </View>
           <View className="flex-col items-start h-14 justify-center flex-grow flex-shrink">
-            <Text className="text-h6 font-[TajawalBold] pb-1 pt-1 items-start">
+            <Text className="text-h6 font-[TajawalBold] pb-1 pt-1 items-start text-left">
               {universityName}
             </Text>
             {/* uni avatar */}

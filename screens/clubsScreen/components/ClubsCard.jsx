@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import React from "react";
 import { MotiView } from "moti";
 import PrimaryButton from "../../../components/PrimaryButton";
@@ -53,11 +53,11 @@ const ClubsCard = ({
                     {ClubTypeIcon}
                   </View>
                 </View>
-                <Text className="font-[TajawalRegular] items-center text-gray700 pt-1 px-1 ">
+                <Text className="font-[TajawalRegular] items-center text-gray700 pt-1 px-1 text-left ">
                   {ClubTypeTitle}
                 </Text>
               </View>
-              <Text className=" text-xsRegular font-[TajawalRegular] mt-0.5  text-gray700">
+              <Text className=" text-xsRegular font-[TajawalRegular] mt-0.5 text-gray700">
                 |
               </Text>
               <View className="items-center justify-center pt-1">
