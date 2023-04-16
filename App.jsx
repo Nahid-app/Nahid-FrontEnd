@@ -29,8 +29,9 @@ import MagnifyingGlass from "./assets/svg/MagnifyingGlass";
 import Notification from "./assets/svg/Notification";
 import Header from "./components/Header";
 import UniversityDetailsScreen from "./screens/univesityDetailsScreen/UniversityDetailsScreen";
-import PopUpModal from "./components/PopUpModal";
 
+import ClubDetailsScreen from "./screens/clubDetailsScreen/ClubDetailsScreen";
+import PopUpModal from "./components/PopUpModal";
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
 
@@ -99,7 +100,11 @@ export default function App() {
               headerShown: false,
             }}
           /> */}
-          {/* <Stack.Screen
+          {/*
+          <Stack.Screen
+            name="ClubDetailsScreen"
+            component={ClubDetailsScreen}
+           <Stack.Screen
             name="UniversityDetailsScreen"
             component={UniversityDetailsScreen}
             options={{
