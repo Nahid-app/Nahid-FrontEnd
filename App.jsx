@@ -17,7 +17,6 @@ import WalkthroughScreen from "./screens/walkThroughScreen/WalkthroughScreen";
 import SignUpScreen from "./screens/signUpScreen/SignUpScreen";
 import LoginScreen from "./screens/loginScreen/LoginScreen";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
-import ActivitiesScreen from "./screens/activitiesScreen/ActivitiesScreen";
 import SingleActivityScreen from "./screens/singleActivityScreen/SingleActivityScreen";
 import ProfileScreen from "./screens/profileScreen/ProfileScreen";
 import ProfileEditingScreen from "./screens/profileEditingScreen.jsx/profileEditingScreen";
@@ -29,6 +28,7 @@ import MagnifyingGlass from "./assets/svg/MagnifyingGlass";
 import Notification from "./assets/svg/Notification";
 import Header from "./components/Header";
 import UniversityDetailsScreen from "./screens/univesityDetailsScreen/UniversityDetailsScreen";
+import EventsScreen from "./screens/EventsScreen/EventsScreen";
 
 import ClubDetailsScreen from "./screens/clubDetailsScreen/ClubDetailsScreen";
 import PopUpModal from "./components/PopUpModal";
@@ -102,13 +102,15 @@ export default function App() {
           /> */}
           {/*
           <Stack.Screen
-            name="ClubDetailsScreen"
-            component={ClubDetailsScreen}
+            name="EventsScreen"
+            component={EventsScreen}
+            options={{
+              headerShown: false,
+              }}
+              /> 
            <Stack.Screen
             name="UniversityDetailsScreen"
             component={UniversityDetailsScreen}
-            options={{
-              headerShown: false,
             }}
           /> */}
           <Stack.Screen

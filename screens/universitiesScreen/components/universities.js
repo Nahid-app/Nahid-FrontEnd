@@ -10,7 +10,7 @@ export default [
     id: 2,
     clubsNumber: 2,
     UniversityLocation: "الرياض",
-    universitiesName: "جامعة الملك سعود",
+    universitiesName: "جامعة الملك سعود جامعة الملك سعود جامعة الملك سعود",
     avatar: require("../../../assets/imgs/logos/KSU.jpg"),
   },
   {

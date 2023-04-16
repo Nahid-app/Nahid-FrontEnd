@@ -23,7 +23,7 @@ const FiltersButtons = ({ whiteButtonTitle, primaryButtonTitle }) => {
           </Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity className="flex-1 px-1">
+      <TouchableOpacity className="flex-1 px-1" >
         <View
           className="border rounded-full justify-center items-center "
           style={styles.primaryButton}
