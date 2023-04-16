@@ -14,6 +14,7 @@ const UniversityDetailsScreen = () => {
       {/* App Bar */}
         <SubScreenHeader />
       <ScrollView showsVerticalScrollIndicator="false">
+
         {/* University Banner */}
         <UniversityCarouselBanner />
         {/* University Name */}
