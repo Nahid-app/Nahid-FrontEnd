@@ -113,19 +113,6 @@ export default function App() {
             component={UniversityDetailsScreen}
             }}
           /> */}
-          <Stack.Screen
-            name="PopUpModal"
-            component={() => (
-              <PopUpModal
-                ModalTitle={"تم تسجيلك بنجاح"}
-                ModalSubTitle={"شكرا لتسجيلك! نحن نتطلع إلى رؤيتك"}
-                ModalButtonTitle={"الذهاب إلى الخلف"}
-              />
-            )}
-            options={{
-              headerShown: false,
-            }}
-          />
           {/* <Stack.Screen
             name="ProfileScreen"
             component={ProfileScreen}
@@ -159,19 +146,19 @@ export default function App() {
               headerTitleStyle: { color: "#6949FF" },
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
-          />
+          /> */}
           <Stack.Screen
-            name="SingleActivityScreen"
-            component={SingleActivityScreen}
+            name="ClubDetailsScreen"
+            component={ClubDetailsScreen}
             options={{
               headerTitle: "hello",
-              headerShown: true,
+              headerShown: false,
               headerShadowVisible: false,
               headerBackTitleVisible: false,
               headerTitleStyle: { color: "#6949FF" },
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
-          /> */}
+          />
         </Stack.Navigator>
         <StatusBar
           animated={true}

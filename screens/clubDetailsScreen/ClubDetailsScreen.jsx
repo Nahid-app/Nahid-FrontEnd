@@ -5,6 +5,7 @@ import ClubJoinButton from "./components/ClubJoinButton";
 import SubScreenHeader from "../../components/SubScreenHeader";
 import TabBar from "./components/TabBar";
 import { ScrollView } from "moti";
+import EventClubAccount from "../eventDetailsScreen/components/EventClubAccount";
 
 const ClubDetailsScreen = () => {
   return (
@@ -14,11 +15,11 @@ const ClubDetailsScreen = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* Club Images */}
         <ClubCarouselBanner />
+        {/* Club Club */}
+        <EventClubAccount />
         {/* Tab Bar */}
         <TabBar />
       </ScrollView>
-      {/* JoinCard */}
-      <ClubJoinButton />
     </View>
   );
 };

@@ -11,8 +11,8 @@ import ClubDetailsTab from "./ClubDetailsTab";
 import UniversityClubsList from "./ClubEventsList";
 
 const TabBar = () => {
-  const [clubTab, setClubTab] = useState();
-  const [eventsTab, setEventsTab] = useState();
+  const [clubTab, setClubTab] = useState(true);
+  const [eventsTab, setEventsTab] = useState(false);
 
   const clubTabTrue = () => {
     setClubTab(true);
@@ -25,7 +25,7 @@ const TabBar = () => {
 
   return (
     <View>
-      <View className="flex-row pt-5">
+      <View className="flex-row pb-5 ">
         <TouchableOpacity className="flex-1 px-1" onPress={clubTabTrue}>
           <View
             className="rounded-full justify-center items-center"

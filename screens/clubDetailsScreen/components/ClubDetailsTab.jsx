@@ -7,8 +7,6 @@ import ClubDescription from "./ClubDescription";
 const ClubDetailsTab = () => {
   return (
     <View>
-      {/* Club Club */}
-      <EventClubAccount />
       {/* Club Information */}
       <ClubDetailsTable />
       {/* Description */}
