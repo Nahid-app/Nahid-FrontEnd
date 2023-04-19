@@ -9,11 +9,12 @@ import React from "react";
 
 const PrimaryColorButton = ({ onPress, title, scrollTo }) => {
   return (
-    <View style={styles.buttonContainer}>
+    <View style={styles.buttonContainer} className="w-full ">
       <TouchableOpacity
         onPress={onPress}
         className="flex-row justify-center items-center py-5 px-4 bg-primary"
         style={styles.button}
+        activeOpacity={0.7}
       >
         <Text className="text-white font-[TajawalMedium]">{title}</Text>
       </TouchableOpacity>

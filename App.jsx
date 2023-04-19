@@ -32,6 +32,7 @@ import EventsScreen from "./screens/EventsScreen/EventsScreen";
 
 import ClubDetailsScreen from "./screens/clubDetailsScreen/ClubDetailsScreen";
 import PopUpModal from "./components/PopUpModal";
+import WalkThroughRoute from "./routes/WalkThrough/WalkThroughRoute";
 const Stack = createNativeStackNavigator();
 const shouldBeRTL = true;
 
@@ -59,7 +60,25 @@ export default function App() {
     <RootSiblingParent>
       <NavigationContainer>
         <Stack.Navigator>
-          {/* <Stack.Screen
+          <Stack.Screen
+            name="WalkThrough"
+            component={WalkThroughRoute}
+            options={{
+              headerShown: false,
+            }}
+          />
+        </Stack.Navigator>
+        <StatusBar
+          animated={true}
+          backgroundColor="white"
+          barStyle="dark-content"
+        />
+      </NavigationContainer>
+    </RootSiblingParent>
+  );
+}
+{
+  /* <Stack.Screen
               name="WalkthroughScreen"
               component={WalkthroughScreen}
               options={{
@@ -67,8 +86,10 @@ export default function App() {
                 headerTransparent: false,
                 headerShadowVisible: false,
               }}
-            />*/}
-          {/* <Stack.Screen
+            />*/
+}
+{
+  /* <Stack.Screen
             name="signUpScreen"
             component={SignUpScreen}
             options={{
@@ -79,8 +100,10 @@ export default function App() {
               headerBackTitleVisible: false,
               headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
             }}
-          /> */}
-          {/* 
+          /> */
+}
+{
+  /* 
             <Stack.Screen
               name="loginScreen"
               component={LoginScreen}
@@ -92,15 +115,19 @@ export default function App() {
                 headerBackTitleVisible: false,
                 headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
               }}
-            /> */}
-          {/* <Stack.Screen
+            /> */
+}
+{
+  /* <Stack.Screen
             name="UniversitiesScreen"
             component={UniversitiesScreen}
             options={{
               headerShown: false,
             }}
-          /> */}
-          {/*
+          /> */
+}
+{
+  /*
           <Stack.Screen
             name="EventsScreen"
             component={EventsScreen}
@@ -112,21 +139,23 @@ export default function App() {
             name="UniversityDetailsScreen"
             component={UniversityDetailsScreen}
             }}
-          /> */}
-          <Stack.Screen
-            name="PopUpModal"
-            component={() => (
-              <PopUpModal
-                ModalTitle={"تم تسجيلك بنجاح"}
-                ModalSubTitle={"شكرا لتسجيلك! نحن نتطلع إلى رؤيتك"}
-                ModalButtonTitle={"الذهاب إلى الخلف"}
-              />
-            )}
-            options={{
-              headerShown: false,
-            }}
-          />
-          {/* <Stack.Screen
+          /> */
+}
+<Stack.Screen
+  name="PopUpModal"
+  component={() => (
+    <PopUpModal
+      ModalTitle={"تم تسجيلك بنجاح"}
+      ModalSubTitle={"شكرا لتسجيلك! نحن نتطلع إلى رؤيتك"}
+      ModalButtonTitle={"الذهاب إلى الخلف"}
+    />
+  )}
+  options={{
+    headerShown: false,
+  }}
+/>;
+{
+  /* <Stack.Screen
             name="ProfileScreen"
             component={ProfileScreen}
             options={{
@@ -136,8 +165,10 @@ export default function App() {
               headerTitleStyle: { color: "#6949FF" },
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
-          /> */}
-          {/* <Stack.Screen
+          /> */
+}
+{
+  /* <Stack.Screen
             name="ProfileEditingScreen"
             component={ProfileEditingScreen}
             options={{
@@ -147,8 +178,10 @@ export default function App() {
               headerTitleStyle: { color: "#6949FF" },
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
-          /> */}
-          {/* <Stack.Screen
+          /> */
+}
+{
+  /* <Stack.Screen
             name="ActivitiesScreen"
             component={ActivitiesScreen}
             options={{
@@ -171,14 +204,5 @@ export default function App() {
               headerTitleStyle: { color: "#6949FF" },
               headerTitleAlign: Platform.OS === "android" ? "center" : "",
             }}
-          /> */}
-        </Stack.Navigator>
-        <StatusBar
-          animated={true}
-          backgroundColor="white"
-          barStyle="dark-content"
-        />
-      </NavigationContainer>
-    </RootSiblingParent>
-  );
+          /> */
 }

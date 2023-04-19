@@ -1,17 +1,21 @@
+import OnBoarding1 from "../../assets/svg/OnBoarding1";
+import OnBoarding2 from "../../assets/svg/OnBoarding2";
+import OnBoarding3 from "../../assets/svg/OnBoarding3";
+
 export default [
   {
-    id: 1,
+    id: 0,
     title: "أهلا و سهلا بك في تطبيق ناهض",
-    image: require("../../assets/imgs/onboarding/onboarding1.png"),
+    image: <OnBoarding1 />,
+  },
+  {
+    id: 1,
+    title: "ناهض هو تطبيق شامل للأندية الطلابية",
+    image: <OnBoarding2 />,
   },
   {
     id: 2,
-    title: "ناهض هو تطبيق شامل للأندية الطلابية",
-    image: require("../../assets/imgs/onboarding/onboarding2.png"),
-  },
-  {
-    id: 3,
     title: "تعرف على الأندية الطلابية حولك ",
-    image: require("../../assets/imgs/onboarding/onboarding3.png"),
+    image: <OnBoarding3/> ,
   },
 ];
