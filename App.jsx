@@ -31,7 +31,7 @@ import EventsScreen from "./screens/EventsScreen/EventsScreen";
 
 import ClubDetailsScreen from "./screens/clubDetailsScreen/ClubDetailsScreen";
 import PopUpModal from "./components/PopUpModal";
-import HomeScreenNavigation from "./screens/HomeScreenNavigation";
+import Navigation from "./screens/Navigation";
 const shouldBeRTL = true;
 
 if (shouldBeRTL !== I18nManager.isRTL && Platform.OS !== "web") {
@@ -61,7 +61,7 @@ export default function App() {
         backgroundColor="white"
         barStyle="dark-content"
       />
-      <HomeScreenNavigation />
+      <Navigation />
     </>
   );
 }

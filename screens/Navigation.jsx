@@ -6,7 +6,8 @@ import ClubDetailsScreen from "./clubDetailsScreen/ClubDetailsScreen";
 import HomeTabScreen from "./homeScreen/HomeTabScreen";
 
 const Stack = createNativeStackNavigator();
-const HomeScreenNavigation = () => {
+
+const Navigation = () => {
   return (
     <RootSiblingParent>
       <NavigationContainer>
@@ -29,4 +30,4 @@ const HomeScreenNavigation = () => {
   );
 };
 
-export default HomeScreenNavigation;
+export default Navigation;
