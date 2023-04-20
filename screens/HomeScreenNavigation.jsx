@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { RootSiblingParent } from "react-native-root-siblings";
 import ClubDetailsScreen from "./clubDetailsScreen/ClubDetailsScreen";
+import HomeTabScreen from "./homeScreen/HomeTabScreen";
 
 const Stack = createNativeStackNavigator();
 const HomeScreenNavigation = () => {
@@ -11,8 +12,8 @@ const HomeScreenNavigation = () => {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="ClubDetailsScreen"
-            component={ClubDetailsScreen}
+            name="HomeScreen"
+            component={HomeTabScreen}
             options={{
               headerTitle: "hello",
               headerShown: false,
