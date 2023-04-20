@@ -8,7 +8,6 @@ import {
   Platform,
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
 // import AppLoading from "expo-app-loading";
 import { RootSiblingParent } from "react-native-root-siblings";
@@ -32,7 +31,7 @@ import EventsScreen from "./screens/EventsScreen/EventsScreen";
 
 import ClubDetailsScreen from "./screens/clubDetailsScreen/ClubDetailsScreen";
 import PopUpModal from "./components/PopUpModal";
-const Stack = createNativeStackNavigator();
+import HomeScreenNavigation from "./screens/HomeScreenNavigation";
 const shouldBeRTL = true;
 
 if (shouldBeRTL !== I18nManager.isRTL && Platform.OS !== "web") {
@@ -56,116 +55,13 @@ export default function App() {
   }
 
   return (
-    <RootSiblingParent>
-      <NavigationContainer>
-        <Stack.Navigator>
-          {/* <Stack.Screen
-              name="WalkthroughScreen"
-              component={WalkthroughScreen}
-              options={{
-                headerTitle: "",
-                headerTransparent: false,
-                headerShadowVisible: false,
-              }}
-            />*/}
-          {/* <Stack.Screen
-            name="signUpScreen"
-            component={SignUpScreen}
-            options={{
-              headerTitle: "",
-              headerTransparent: false,
-              headerShadowVisible: false,
-              headerTintColor: "black",
-              headerBackTitleVisible: false,
-              headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
-            }}
-          /> */}
-          {/* 
-            <Stack.Screen
-              name="loginScreen"
-              component={LoginScreen}
-              options={{
-                headerTitle: "",
-                headerTransparent: false,
-                headerShadowVisible: false,
-                headerTintColor: "black",
-                headerBackTitleVisible: false,
-                headerBackImageSource: require("./assets/svg/ArrowLeft.svg"),
-              }}
-            /> */}
-          {/* <Stack.Screen
-            name="UniversitiesScreen"
-            component={UniversitiesScreen}
-            options={{
-              headerShown: false,
-            }}
-          /> */}
-          {/*
-          <Stack.Screen
-            name="EventsScreen"
-            component={EventsScreen}
-            options={{
-              headerShown: false,
-              }}
-              /> 
-           <Stack.Screen
-            name="UniversityDetailsScreen"
-            component={UniversityDetailsScreen}
-            }}
-          /> */}
-          {/* <Stack.Screen
-            name="ProfileScreen"
-            component={ProfileScreen}
-            options={{
-              headerShown: false,
-              headerShadowVisible: false,
-              headerBackTitleVisible: false,
-              headerTitleStyle: { color: "#6949FF" },
-              headerTitleAlign: Platform.OS === "android" ? "center" : "",
-            }}
-          /> */}
-          {/* <Stack.Screen
-            name="ProfileEditingScreen"
-            component={ProfileEditingScreen}
-            options={{
-              headerShown: false,
-              headerShadowVisible: false,
-              headerBackTitleVisible: false,
-              headerTitleStyle: { color: "#6949FF" },
-              headerTitleAlign: Platform.OS === "android" ? "center" : "",
-            }}
-          /> */}
-          {/* <Stack.Screen
-            name="ActivitiesScreen"
-            component={ActivitiesScreen}
-            options={{
-              headerTitle: "جميع الأنشطة",
-              headerShown: true,
-              headerShadowVisible: false,
-              headerBackTitleVisible: false,
-              headerTitleStyle: { color: "#6949FF" },
-              headerTitleAlign: Platform.OS === "android" ? "center" : "",
-            }}
-          /> */}
-          <Stack.Screen
-            name="ClubDetailsScreen"
-            component={ClubDetailsScreen}
-            options={{
-              headerTitle: "hello",
-              headerShown: false,
-              headerShadowVisible: false,
-              headerBackTitleVisible: false,
-              headerTitleStyle: { color: "#6949FF" },
-              headerTitleAlign: Platform.OS === "android" ? "center" : "",
-            }}
-          />
-        </Stack.Navigator>
-        <StatusBar
-          animated={true}
-          backgroundColor="white"
-          barStyle="dark-content"
-        />
-      </NavigationContainer>
-    </RootSiblingParent>
+    <>
+      <StatusBar
+        animated={true}
+        backgroundColor="white"
+        barStyle="dark-content"
+      />
+      <HomeScreenNavigation />
+    </>
   );
 }
