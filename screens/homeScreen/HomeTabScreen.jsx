@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator();
 const HomeTabScreen = () => {
   return (
     <Tab.Navigator
-      initialRouteName=" Home"
+      initialRouteName="الرئيسية"
       screenOptions={{ headerShown: false }}
     >
       <Tab.Screen name="الجامعات" component={UniversitiesScreen} />

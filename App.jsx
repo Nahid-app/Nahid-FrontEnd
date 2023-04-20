@@ -7,31 +7,10 @@ import {
   I18nManager,
   Platform,
 } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-// import AppLoading from "expo-app-loading";
 import { RootSiblingParent } from "react-native-root-siblings";
-
-import WalkthroughScreen from "./screens/walkThroughScreen/WalkthroughScreen";
-import SignUpScreen from "./screens/signUpScreen/SignUpScreen";
-import LoginScreen from "./screens/loginScreen/LoginScreen";
-import HomeScreen from "./screens/homeScreen/HomeScreen";
-import SingleActivityScreen from "./screens/singleActivityScreen/SingleActivityScreen";
-import ProfileScreen from "./screens/profileScreen/ProfileScreen";
-import ProfileEditingScreen from "./screens/profileEditingScreen.jsx/profileEditingScreen";
-import SubScreenHeader from "./components/SubScreenHeader";
-import EventDetailsScreen from "./screens/eventDetailsScreen/EventDetailsScreen";
-import { SafeAreaView } from "react-native-safe-area-context";
-import Logo from "./assets/svg/Logo";
-import MagnifyingGlass from "./assets/svg/MagnifyingGlass";
-import Notification from "./assets/svg/Notification";
-import Header from "./components/Header";
-import UniversityDetailsScreen from "./screens/univesityDetailsScreen/UniversityDetailsScreen";
-import EventsScreen from "./screens/EventsScreen/EventsScreen";
-
-import ClubDetailsScreen from "./screens/clubDetailsScreen/ClubDetailsScreen";
-import PopUpModal from "./components/PopUpModal";
 import Navigation from "./screens/Navigation";
+
 const shouldBeRTL = true;
 
 if (shouldBeRTL !== I18nManager.isRTL && Platform.OS !== "web") {

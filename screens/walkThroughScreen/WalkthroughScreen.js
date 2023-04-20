@@ -53,7 +53,7 @@ export default function WalkthroughScreen({ navigation }) {
           title={index === 2 ? "إبدء" : "التالي"}
           onPress={() =>
             index === 2
-              ? navigation.navigate("signUpScreen")
+              ? navigation.navigate("SignUpScreen")
               : setIndex(index + 1)
           }
         />
