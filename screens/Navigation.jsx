@@ -4,6 +4,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { RootSiblingParent } from "react-native-root-siblings";
 import ClubDetailsScreen from "./clubDetailsScreen/ClubDetailsScreen";
 import HomeTabScreen from "./homeScreen/HomeTabScreen";
+import SignUpScreen from "./signUpScreen/SignUpScreen";
+import LoginScreen from "./loginScreen/LoginScreen";
+import WalkthroughScreen from "./walkThroughScreen/WalkthroughScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -12,6 +15,27 @@ const Navigation = () => {
     <RootSiblingParent>
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen
+            name="WalkthroughScreen"
+            component={WalkthroughScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="SignUpScreen"
+            component={SignUpScreen}
+            options={{
+              headerShown: true,
+            }}
+          />
+          <Stack.Screen
+            name="loginScreen"
+            component={LoginScreen}
+            options={{
+              headerShown: true,
+            }}
+          />
           <Stack.Screen
             name="HomeScreen"
             component={HomeTabScreen}
