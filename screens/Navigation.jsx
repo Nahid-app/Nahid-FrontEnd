@@ -7,6 +7,7 @@ import HomeTabScreen from "./homeScreen/HomeTabScreen";
 import WalkthroughScreen from "./walkThroughScreen/WalkthroughScreen";
 import SignUpScreen from "./signUpScreen/SignUpScreen";
 import LoginScreen from "./loginScreen/LoginScreen";
+import Header from "../components/Header";
 
 const Stack = createNativeStackNavigator();
 
@@ -39,7 +40,6 @@ const Navigation = () => {
           name="HomeScreen"
           component={HomeTabScreen}
           options={{
-            headerTitle: "hello",
             headerShown: false,
             headerShadowVisible: false,
             headerBackTitleVisible: false,

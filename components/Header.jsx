@@ -5,7 +5,7 @@ import Logo from "../assets/svg/Logo";
 import MagnifyingGlass from "../assets/svg/MagnifyingGlass";
 import Notification from "../assets/svg/Notification";
 
-export default function () {
+export default function Header() {
   return (
     <SafeAreaView edges={["top", "left", "right"]} className="bg-white">
       <View className="flex-row justify-between pt-4 px-6 items-center">

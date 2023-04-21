@@ -6,6 +6,7 @@ import ClubsScreen from "../clubsScreen/ClubsScreen";
 import ProfileScreen from "../profileScreen/ProfileScreen";
 import EventsScreen from "../EventsScreen/EventsScreen";
 import UniversitiesScreen from "../universitiesScreen/UniversitiesScreen";
+import Header from "../../components/Header";
 
 const Tab = createBottomTabNavigator();
 
@@ -15,7 +16,11 @@ const HomeTabScreen = () => {
       initialRouteName="الرئيسية"
       screenOptions={{ headerShown: false }}
     >
-      <Tab.Screen name="الجامعات" component={UniversitiesScreen} />
+      <Tab.Screen
+        name="الجامعات"
+        component={UniversitiesScreen}
+        options={{ component: () => <Header /> }}
+      />
       <Tab.Screen name="الأنشطة" component={EventsScreen} />
       <Tab.Screen name="الرئيسية" component={HomeScreen} />
       <Tab.Screen name="الأندية" component={ClubsScreen} />

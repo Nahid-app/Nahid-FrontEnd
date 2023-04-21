@@ -43,8 +43,8 @@ const WalkThroughRoute = ({ navigation }) => {
         }}
       />
       <Stack.Screen
-        name="HomeScreen"
-        component={HomeScreen}
+        name="HomeRoute"
+        component={HomeRoute}
         options={{
           headerShown: false,
         }}

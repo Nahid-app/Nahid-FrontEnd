@@ -1,10 +1,20 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+// import { View, Text, TouchableOpacity } from "react-native";
+// import React from "react";
+// import WalkthroughScreen from "../../screens/walkThroughScreen/WalkthroughScreen";
+// import { createNativeStackNavigator } from "@react-navigation/native-stack";
+// import LoginScreen from "../../screens/loginScreen/LoginScreen";
+// import HomeScreen from "../../screens/homeScreen/HomeScreen";
+// import SubScreenHeader from "../../components/SubScreenHeader";
+// import SignUpScreen from "../../screens/signUpScreen/SignUpScreen";
+// import { SafeAreaView } from "react-native-safe-area-context";
+// import ArrowRightBlack from "../../assets/svg/ArrowRightBlack";
+// import { MotiText } from "moti";
+// import Header from "./Header";
 
-export default function HomeRoute() {
-  return (
-    <View>
-      <Text>HomeRoute</Text>
-    </View>
-  )
-}
+// const Stack = createNativeStackNavigator();
+
+// const WalkThroughRoute = ({ navigation }) => {
+//   return <Stack.Navigator screenOptions={{}}></Stack.Navigator>;
+// };
+
+// export default WalkThroughRoute;
