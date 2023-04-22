@@ -1,7 +1,7 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 
-const UserAccount = () => {
+const UserAccount = ({ navigation }) => {
   return (
     <View className="flex-row justify-between items-center pb-3">
       <View className=" flex-row ">
@@ -21,11 +21,15 @@ const UserAccount = () => {
           </Text>
         </View>
       </View>
-      <View className="bg-primary w-24 h-8 rounded-full justify-center ">
-        <Text className="font-[TajawalMedium] text-mSemiBold text-white text-center">
-          عدل حسابي
-        </Text>
-      </View>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("ProfileEditingScreen")}
+      >
+        <View className="bg-primary w-24 h-8 rounded-full justify-center ">
+          <Text className="font-[TajawalMedium] text-mSemiBold text-white text-center">
+            عدل حسابي
+          </Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };

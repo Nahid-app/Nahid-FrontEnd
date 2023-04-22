@@ -1,26 +1,15 @@
-import { View, Text, TouchableOpacity } from "react-native";
-import React from "react";
-import WalkthroughScreen from "../../screens/walkThroughScreen/WalkthroughScreen";
+import { Platform } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import LoginScreen from "../../screens/loginScreen/LoginScreen";
-import HomeScreen from "../../screens/homeScreen/HomeScreen";
-import SubScreenHeader from "../../components/SubScreenHeader";
-import SignUpScreen from "../../screens/signUpScreen/SignUpScreen";
-import { SafeAreaView } from "react-native-safe-area-context";
-import ArrowRightBlack from "../../assets/svg/ArrowRightBlack";
-import { MotiText } from "moti";
-import Header from "./Header";
+import HomeTabScreen from "./homeScreen/HomeTabScreen";
+import SignUpScreen from "./signUpScreen/SignUpScreen";
+import LoginScreen from "./loginScreen/LoginScreen";
+import WalkthroughScreen from "../../screens/walkThroughScreen/WalkthroughScreen";
 
 const Stack = createNativeStackNavigator();
 
-
-const WalkThroughRoute = ({ navigation }) => {
+const WalkthroughRoute = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        header: () => <Header title={"الرجوع"} navigation={navigation} />,
-      }}
-    >
+    <Stack.Navigator>
       <Stack.Screen
         name="WalkthroughScreen"
         component={WalkthroughScreen}
@@ -43,14 +32,18 @@ const WalkThroughRoute = ({ navigation }) => {
         }}
       />
       <Stack.Screen
-        name="HomeRoute"
-        component={HomeRoute}
+        name="HomeScreen"
+        component={HomeTabScreen}
         options={{
           headerShown: false,
+          headerShadowVisible: false,
+          headerBackTitleVisible: false,
+          headerTitleStyle: { color: "#6949FF" },
+          headerTitleAlign: Platform.OS === "android" ? "center" : "",
         }}
       />
     </Stack.Navigator>
   );
 };
 
-export default WalkThroughRoute;
+export default WalkthroughRoute;

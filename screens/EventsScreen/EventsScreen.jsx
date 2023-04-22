@@ -16,7 +16,7 @@ import ArrowRightBlack from "../../assets/svg/ArrowRightBlack";
 import EventListCard from "./components/EventListCard";
 
 // Main All Activities
-const EventsScreen = () => {
+const EventsScreen = ({navigation}) => {
   return (
     <SafeAreaView className="bg-white flex-1 px-6 pt-6">
       <View className="pb-5 justify-center items-center">
@@ -26,7 +26,7 @@ const EventsScreen = () => {
           RightArrow={<ArrowRightBlack />}
         />
       </View>
-      <EventListCard />
+      <EventListCard navigation={navigation}/>
     </SafeAreaView>
   );
 };

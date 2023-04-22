@@ -11,7 +11,7 @@ import data from "../data";
 import { MotiView } from "moti";
 import { useState } from "react";
 
-const RenderItem = ({ item }) => {
+const RenderItem = ({ item, navigation }) => {
   return (
     <EventCard
       avatarUrl={item.avatarUrl}
@@ -20,10 +20,11 @@ const RenderItem = ({ item }) => {
       daysLeft={item.daysLeft}
       location={item.location}
       imageUrl={item.imageUrl}
+      navigation={navigation}
     />
   );
 };
-const RenderItemMyEvents = ({ item }) => {
+const RenderItemMyEvents = ({ item, navigation }) => {
   return item.registered === true ? (
     <EventCard
       avatarUrl={item.avatarUrl}
@@ -33,12 +34,13 @@ const RenderItemMyEvents = ({ item }) => {
       location={item.location}
       imageUrl={item.imageUrl}
       registered={item.registered}
+      navigation={navigation}
     />
   ) : (
     <View className="bg-primary" />
   );
 };
-const EventListCard = () => {
+const EventListCard = ({ navigation }) => {
   const [MyEvents, setMyEvents] = useState();
   return (
     <>
@@ -89,9 +91,9 @@ const EventListCard = () => {
         keyExtractor={(item) => item.clubId}
         renderItem={({ item }) =>
           MyEvents ? (
-            <RenderItemMyEvents item={item} />
+            <RenderItemMyEvents item={item} navigation={navigation} />
           ) : (
-            <RenderItem item={item} />
+            <RenderItem item={item} navigation={navigation} />
           )
         }
       />

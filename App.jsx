@@ -8,8 +8,7 @@ import {
   Platform,
 } from "react-native";
 import { useFonts } from "expo-font";
-import { RootSiblingParent } from "react-native-root-siblings";
-import Navigation from "./screens/Navigation";
+import StartingRoute from "./screens/StartingRoute";
 
 const shouldBeRTL = true;
 
@@ -40,7 +39,7 @@ export default function App() {
         backgroundColor="white"
         barStyle="dark-content"
       />
-      <Navigation />
+      <StartingRoute />
     </>
   );
 }

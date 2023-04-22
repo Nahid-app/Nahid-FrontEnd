@@ -9,7 +9,7 @@ import ProfileHeader from "./components/ProfileHeader";
 import UserAccount from "./components/UserAccount";
 import UserData from "./components/UserData";
 
-export default function ProfileScreen() {
+export default function ProfileScreen({ navigation }) {
   return (
     <>
       {/* <StatusBar /> */}
@@ -19,7 +19,7 @@ export default function ProfileScreen() {
         {/* Banner Image */}
         <BannerImage />
         {/* User Account */}
-        <UserAccount />
+        <UserAccount navigation={navigation} />
         {/* User Data */}
         <UserData />
         {/* List of Activities */}
