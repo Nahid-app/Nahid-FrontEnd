@@ -31,6 +31,7 @@ export default function WalkthroughScreen({ navigation }) {
           {slides.map((i) => {
             return (
               <View
+                key={i.id}
                 style={{
                   justifyContent: "center",
                   alignItems: "center",

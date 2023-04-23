@@ -7,10 +7,12 @@ import EventsScreen from "../EventsScreen/EventsScreen";
 import UniversitiesScreen from "../universitiesScreen/UniversitiesScreen";
 import Header from "../../components/Header";
 import ProfileRoute from "../../routes/profile/ProfileRoute";
+import EventsRoute from "../../routes/events/EventsRoute";
+import ClubsRoute from "../../routes/clubs/ClubsRoute";
 
 const Tab = createBottomTabNavigator();
 
-const HomeTabScreen = () => {
+const HomeTabScreen = ({ navigation }) => {
   return (
     <Tab.Navigator
       initialRouteName="الرئيسية"
@@ -21,9 +23,13 @@ const HomeTabScreen = () => {
         component={UniversitiesScreen}
         options={{ component: () => <Header /> }}
       />
-      <Tab.Screen name="الأنشطة" component={EventsScreen} />
+      <Tab.Screen name="الأنشطة" component={EventsRoute} />
       <Tab.Screen name="الرئيسية" component={HomeScreen} />
-      <Tab.Screen name="الأندية" component={ClubsScreen} />
+      <Tab.Screen
+        name="الأندية"
+        component={ClubsRoute}
+        options={{ tabBarVisible: false }}
+      />
       <Tab.Screen name="حسابي" component={ProfileRoute} />
     </Tab.Navigator>
   );

@@ -9,9 +9,9 @@ const Stack = createNativeStackNavigator();
 
 const EventsRoute = ({ navigation }) => {
   return (
-    <Stack.Navigator screenOptions={{}}>
+    <Stack.Navigator>
       <Stack.Screen
-        name="Events"
+        name="EventsScreen"
         component={EventsScreen}
         options={{
           headerShown: false,
@@ -22,7 +22,6 @@ const EventsRoute = ({ navigation }) => {
         component={EventDetailsScreen}
         options={{
           headerShown: false,
-          header: () => <SubScreenHeader />,
         }}
       />
     </Stack.Navigator>

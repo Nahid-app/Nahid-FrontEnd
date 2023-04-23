@@ -7,7 +7,10 @@ import TabBar from "./components/TabBar";
 import { ScrollView } from "moti";
 import EventClubAccount from "../eventDetailsScreen/components/EventClubAccount";
 
-const ClubDetailsScreen = () => {
+import { useNavigation } from "@react-navigation/native";
+
+const ClubDetailsScreen = ({ navigation }) => {
+  ClubDetailsScreen.navigationOptions = { tabBarVisible: false };
   return (
     <View className="flex-1 bg-white justify-center px-6">
       {/* Screen Header */}

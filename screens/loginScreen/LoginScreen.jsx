@@ -16,6 +16,7 @@ import axios from "axios";
 import { Formik, handleSubmit } from "formik";
 import { postLogin } from "../../api/login";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { CommonActions } from "@react-navigation/native";
 import { MotiSafeAreaView, MotiView, ScrollView } from "moti";
 
 export default function LoginScreen({ navigation }) {
@@ -49,7 +50,6 @@ export default function LoginScreen({ navigation }) {
         translateY: 0,
       }}
       className="flex-1 bg-white"
-      
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <MotiView
@@ -141,7 +141,14 @@ export default function LoginScreen({ navigation }) {
                     <View className="  justify-between content-center items-center w-full    ">
                       <PrimaryColorButton
                         title={"سجل الدخول"}
-                        onPress={() => navigation.navigate("HomeScreen")}
+                        onPress={() =>
+                          navigation.dispatch(
+                            CommonActions.reset({
+                              index: 0,
+                              routes: [{ name: "HomeScreen" }],
+                            })
+                          )
+                        }
                       />
                     </View>
                   </View>

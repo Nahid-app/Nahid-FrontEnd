@@ -16,7 +16,7 @@ import { register } from "../../api/register";
 import PrimaryColorButton from "../../components/buttons/PrimaryColorButton";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { MotiScrollView } from "moti";
-let handleSubmit;
+import { CommonActions } from "@react-navigation/native";
 
 export default function SignUpScreen({ navigation }) {
   const [steps, setStep] = useState(0.5);
@@ -200,7 +200,14 @@ export default function SignUpScreen({ navigation }) {
                     <View className=" justify-between content-center items-center w-full    ">
                       <PrimaryColorButton
                         title={"سجل الدخول"}
-                        onPress={() => navigation.navigate("HomeScreen")}
+                        onPress={() =>
+                          navigation.dispatch(
+                            CommonActions.reset({
+                              index: 0,
+                              routes: [{ name: "HomeScreen" }],
+                            })
+                          )
+                        }
                       />
                     </View>
                   </ScrollView>
