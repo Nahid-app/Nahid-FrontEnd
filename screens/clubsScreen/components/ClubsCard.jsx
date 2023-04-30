@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import React from "react";
 import { MotiView } from "moti";
 import PrimaryButton from "../../../components/PrimaryButton";
+import { CommonActions } from "@react-navigation/native";
 
 const ClubsCard = ({
   UniversityAvatar,
@@ -15,7 +16,9 @@ const ClubsCard = ({
   return (
     <>
       <TouchableOpacity
-        onPress={() => navigation.navigate("ClubDetailsScreen")}
+        onPress={() =>
+          navigation.navigate("DetailsRoute", { screen: "ClubDetailsScreen" })
+        }
       >
         <MotiView
           from={{

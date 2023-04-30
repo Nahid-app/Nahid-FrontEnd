@@ -1,11 +1,15 @@
-import { View, ScrollView, Image, Text } from "react-native";
+import { View, ScrollView, Image, Text, TouchableOpacity } from "react-native";
 import React from "react";
 
-const ClubsActivities = () => {
+const ClubsActivities = ({ navigation }) => {
   return (
     <View className="pb-4 pl-6">
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        <View>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate("DetailsRoute", { screen: "ClubDetailsScreen" })
+          }
+        >
           <View className="h-36 w-52 bg-green mr-5 rounded-t-2xl relative items-center justify-center">
             <Image
               className="absolute h-36 w-52 bg-auto z-10 rounded-t-2xl"
@@ -39,8 +43,12 @@ const ClubsActivities = () => {
               </View>
             </View>
           </View>
-        </View>
-        <View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate("DetailsRoute", { screen: "ClubDetailsScreen" })
+          }
+        >
           <View className="h-36 w-52 bg-green mr-5 rounded-t-2xl relative items-center justify-center">
             <Image
               className="absolute h-36 w-52 bg-auto z-10 rounded-t-2xl"
@@ -74,8 +82,12 @@ const ClubsActivities = () => {
               </View>
             </View>
           </View>
-        </View>
-        <View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate("DetailsRoute", { screen: "ClubDetailsScreen" })
+          }
+        >
           <View className="h-36 w-52 bg-green mr-5 rounded-t-2xl relative items-center justify-center">
             <Image
               className="absolute h-36 w-52 bg-auto z-10 rounded-t-2xl"
@@ -109,7 +121,7 @@ const ClubsActivities = () => {
               </View>
             </View>
           </View>
-        </View>
+        </TouchableOpacity>
       </ScrollView>
     </View>
   );

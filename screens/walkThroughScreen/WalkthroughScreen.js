@@ -14,7 +14,7 @@ export default function WalkthroughScreen({ navigation }) {
 
   return (
     <>
-      <View className="flex-1 justify-center content-center items-center bg-white ">
+      <View className="flex-1 justify-center content-center items-center bg-white">
         <Swiper
           paginationStyle={{
             position: "absolute",
@@ -49,7 +49,7 @@ export default function WalkthroughScreen({ navigation }) {
           })}
         </Swiper>
       </View>
-      <View className="pb-7 justify-center content-center items-center bg-white">
+      <View className="pb-7 justify-center content-center items-center bg-white px-[24]">
         <PrimaryColorButton
           title={index === 2 ? "إبدء" : "التالي"}
           onPress={() =>
@@ -59,7 +59,7 @@ export default function WalkthroughScreen({ navigation }) {
           }
         />
       </View>
-      <View className="pb-7 justify-center content-center items-center bg-white">
+      <View className="pb-7 justify-center content-center items-center bg-white px-[24]">
         <OnBoardingButtonWhite
           title={"سجل دخولك معنا"}
           onPress={() => navigation.navigate("loginScreen")}

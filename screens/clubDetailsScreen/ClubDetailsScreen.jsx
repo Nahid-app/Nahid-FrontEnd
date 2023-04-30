@@ -10,18 +10,18 @@ import EventClubAccount from "../eventDetailsScreen/components/EventClubAccount"
 import { useNavigation } from "@react-navigation/native";
 
 const ClubDetailsScreen = ({ navigation }) => {
-  ClubDetailsScreen.navigationOptions = { tabBarVisible: false };
+  ClubDetailsScreen.navigationOptions = { display: "none" };
   return (
     <View className="flex-1 bg-white justify-center px-6">
       {/* Screen Header */}
-      <SubScreenHeader />
+      <SubScreenHeader navigation={navigation} />
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* Club Images */}
         <ClubCarouselBanner />
         {/* Club Club */}
         <EventClubAccount />
         {/* Tab Bar */}
-        <TabBar />
+        <TabBar navigation={navigation}/>
       </ScrollView>
     </View>
   );

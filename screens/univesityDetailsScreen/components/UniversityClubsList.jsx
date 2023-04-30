@@ -4,11 +4,13 @@ import Group from "../../../assets/svg/Group";
 import UniversityClubsData from "./UniversityClubsData";
 import ClubCard from "./ClubCard";
 
-const UniversityClubsList = () => {
+
+
+const UniversityClubsList = ({ navigation }) => {
   return (
     <View className="flex-1 ">
       {UniversityClubsData.map((university, index) => (
-        <ClubCard key={index} item={university} />
+        <ClubCard key={index} item={university} navigation={navigation} />
       ))}
     </View>
   );

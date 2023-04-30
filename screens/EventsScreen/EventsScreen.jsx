@@ -16,17 +16,17 @@ import ArrowRightBlack from "../../assets/svg/ArrowRightBlack";
 import EventListCard from "./components/EventListCard";
 
 // Main All Activities
-const EventsScreen = ({navigation}) => {
+const EventsScreen = ({ navigation }) => {
   return (
     <SafeAreaView className="bg-white flex-1 px-6 pt-6">
       <View className="pb-5 justify-center items-center">
         <SearchBarComponent
           title={"الانشطة"}
           placeholder={"إبحث عن نشاط"}
-          RightArrow={<ArrowRightBlack />}
+          // RightArrow={<ArrowRightBlack />}
         />
       </View>
-      <EventListCard navigation={navigation}/>
+      <EventListCard navigation={navigation} />
     </SafeAreaView>
   );
 };

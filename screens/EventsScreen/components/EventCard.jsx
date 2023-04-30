@@ -15,7 +15,9 @@ const EventCard = ({
   return (
     <>
       <TouchableOpacity
-        onPress={() => navigation.navigate("EventsDetailsScreen")}
+        onPress={() =>
+          navigation.navigate("DetailsRoute", { screen: "EventDetailsScreen" })
+        }
       >
         <MotiView
           className="flex-row justify-center items-center pb-4"

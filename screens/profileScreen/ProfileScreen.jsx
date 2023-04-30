@@ -25,7 +25,7 @@ export default function ProfileScreen({ navigation }) {
         {/* List of Activities */}
         <EventsListHeader />
         {/* Events List */}
-        <EventsList />
+        <EventsList navigation={navigation} />
       </SafeAreaView>
     </>
   );

@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import EventsScreen from "../../screens/EventsScreen/EventsScreen";
 import EventDetailsScreen from "../../screens/eventDetailsScreen/EventDetailsScreen";
 import SubScreenHeader from "../../components/SubScreenHeader";
+import DetailsRoute from "../DetailsRoute";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,8 +19,9 @@ const EventsRoute = ({ navigation }) => {
         }}
       />
       <Stack.Screen
-        name="EventsDetailsScreen"
-        component={EventDetailsScreen}
+        name="DetailsRoute"
+        component={DetailsRoute}
+        headerShown={false}
         options={{
           headerShown: false,
         }}

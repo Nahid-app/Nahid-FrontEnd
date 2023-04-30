@@ -1,20 +1,37 @@
-// import { View, Text, TouchableOpacity } from "react-native";
-// import React from "react";
-// import WalkthroughScreen from "../../screens/walkThroughScreen/WalkthroughScreen";
-// import { createNativeStackNavigator } from "@react-navigation/native-stack";
-// import LoginScreen from "../../screens/loginScreen/LoginScreen";
-// import HomeScreen from "../../screens/homeScreen/HomeScreen";
-// import SubScreenHeader from "../../components/SubScreenHeader";
-// import SignUpScreen from "../../screens/signUpScreen/SignUpScreen";
-// import { SafeAreaView } from "react-native-safe-area-context";
-// import ArrowRightBlack from "../../assets/svg/ArrowRightBlack";
-// import { MotiText } from "moti";
-// import Header from "./Header";
+import { View, Text } from "react-native";
+import React from "react";
+import HomeScreen from "../../screens/homeScreen/HomeScreen";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import EventDetailsScreen from "../../screens/eventDetailsScreen/EventDetailsScreen";
+import ClubDetailsScreen from "../../screens/clubDetailsScreen/ClubDetailsScreen";
+import EventsScreen from "../../screens/EventsScreen/EventsScreen";
+import ClubsScreen from "../../screens/clubsScreen/ClubsScreen";
+import EventsRoute from "../events/EventsRoute";
+import SearchBarComponent from "../../components/SearchBarComponent";
+import BlackRightArrow from "../../assets/svg/BlackRightArrow";
+import DetailsRoute from "../DetailsRoute";
 
-// const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
-// const WalkThroughRoute = ({ navigation }) => {
-//   return <Stack.Navigator screenOptions={{}}></Stack.Navigator>;
-// };
+const HomeRoute = ({ navigation }) => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="DetailsRoute"
+        component={DetailsRoute}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
 
-// export default WalkThroughRoute;
+export default HomeRoute;

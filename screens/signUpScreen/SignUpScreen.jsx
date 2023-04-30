@@ -18,6 +18,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { MotiScrollView } from "moti";
 import { CommonActions } from "@react-navigation/native";
 
+
 export default function SignUpScreen({ navigation }) {
   const [steps, setStep] = useState(0.5);
   const [error, setErrorEmail, errorPassword] = useState("");

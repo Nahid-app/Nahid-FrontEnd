@@ -51,7 +51,7 @@ const EventListCard = ({ navigation }) => {
         animate={{
           translateY: 0,
         }}
-        className="w-full flex-row justify-evenly pb-7"
+        className="w-full flex-row justify-evenly pb-5"
       >
         <TouchableOpacity
           className="flex-1 px-1"
@@ -102,6 +102,7 @@ const EventListCard = ({ navigation }) => {
 };
 
 export default EventListCard;
+
 const styles = StyleSheet.create({
   whiteButton: {
     borderWidth: 2,

@@ -7,25 +7,22 @@ import FeaturedClubsEvents from "./components/FeaturedClubsEvents";
 import CommercialBanner from "./components/CommercialBanner";
 import Header from "../../components/Header";
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   return (
     <View className="bg-white flex-1">
       <Header />
       <ScrollView>
-        {/* Header */}
-        {/* <AppHeader /> */}
         {/* Commercial Banner */}
         <CommercialBanner />
         {/* Featured Header */}
-        <FeaturedClubs />
+        <FeaturedClubs navigation={navigation} />
         {/* Student Clubs | الأندية الطلابية */}
-        <StudentClubs />
+        <StudentClubs navigation={navigation} />
         {/* Featured Events */}
-        <FeaturedClubsEvents />
+        <FeaturedClubsEvents navigation={navigation} />
         {/* Clubs Activities | الأنشطة الطلابية*/}
-        <ClubsActivities />
+        <ClubsActivities navigation={navigation} />
       </ScrollView>
     </View>
-    // </SafeAreaView>
   );
 }

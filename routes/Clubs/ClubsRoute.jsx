@@ -6,6 +6,7 @@ import EventDetailsScreen from "../../screens/eventDetailsScreen/EventDetailsScr
 import SubScreenHeader from "../../components/SubScreenHeader";
 import ClubsScreen from "../../screens/clubsScreen/ClubsScreen";
 import ClubDetailsScreen from "../../screens/clubDetailsScreen/ClubDetailsScreen";
+import DetailsRoute from "../DetailsRoute";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,14 +18,15 @@ const ClubsRoute = ({ navigation }) => {
         component={ClubsScreen}
         options={{
           headerShown: false,
+          tabBarStyle: { display: "none" },
         }}
       />
       <Stack.Screen
-        name="ClubDetailsScreen"
-        component={ClubDetailsScreen}
+        name="DetailsRoute"
+        component={DetailsRoute}
         options={{
           headerShown: false,
-          tabbarStyle: { display: "none" },
+          tabBarStyle: { display: "none" },
         }}
       />
     </Stack.Navigator>
