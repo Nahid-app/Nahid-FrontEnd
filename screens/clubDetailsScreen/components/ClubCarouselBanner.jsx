@@ -5,7 +5,7 @@ import EventData from "./ClubImages";
 
 const EventCarouselBanner = () => {
   return (
-    <View className=" mt-4 h-60 rounded-2xl overflow-hidden">
+    <View className=" mt-4 h-60 rounded-2xl overflow-hidden ">
       <Swiper
         showsPagination={true}
         activeDotStyle={{ backgroundColor: "#FFC107" }}

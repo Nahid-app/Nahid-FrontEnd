@@ -39,7 +39,7 @@ const ClubCard = ({ item, index, navigation }) => {
             />
           </View>
           <View className="items-start justify-center flex-grow flex-shrink ">
-            <Text className="text-h6 font-[TajawalBold] py-1 items-start  pb-1.5">
+            <Text className="text-h6 font-[TajawalBold] py-1 items-start  pb-1.5 text-left">
               {item.clubTitle}
             </Text>
             {/* uni avatar */}

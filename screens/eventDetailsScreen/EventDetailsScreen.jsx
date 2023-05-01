@@ -10,7 +10,7 @@ import SubScreenHeader from "../../components/SubScreenHeader";
 
 const EventDetailsScreen = ({ navigation }) => {
   return (
-    <View className="flex-1 bg-white px-6">
+    <View className="flex-1 bg-white px-6 ">
       <SubScreenHeader navigation={navigation} />
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         {/* Event Images */}

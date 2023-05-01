@@ -10,10 +10,10 @@ import SubScreenHeader from "../../components/SubScreenHeader";
 
 const UniversityDetailsScreen = ({ navigation }) => {
   return (
-    <View className="flex-1 bg-white px-6 ">
+    <View className=" bg-white px-6 flex-1">
       {/* App Bar */}
       <SubScreenHeader navigation={navigation} />
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
         {/* University Banner */}
         <UniversityCarouselBanner />
         {/* University Name */}

@@ -10,7 +10,6 @@ import EventClubAccount from "../eventDetailsScreen/components/EventClubAccount"
 import { useNavigation } from "@react-navigation/native";
 
 const ClubDetailsScreen = ({ navigation }) => {
-  ClubDetailsScreen.navigationOptions = { display: "none" };
   return (
     <View className="flex-1 bg-white justify-center px-6">
       {/* Screen Header */}
@@ -21,7 +20,7 @@ const ClubDetailsScreen = ({ navigation }) => {
         {/* Club Club */}
         <EventClubAccount />
         {/* Tab Bar */}
-        <TabBar navigation={navigation}/>
+        <TabBar navigation={navigation} />
       </ScrollView>
     </View>
   );

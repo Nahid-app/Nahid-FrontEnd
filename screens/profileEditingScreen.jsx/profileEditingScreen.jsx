@@ -9,12 +9,12 @@ import { useState } from "react";
 
 import DropDownLists from "./components/DropDownLists";
 
-export default function ProfileEditingScreen({navigation}) {
+export default function ProfileEditingScreen({ navigation }) {
   return (
     <>
       <SafeAreaView className="bg-white flex-1 px-6 pt-5">
         {/* Profile Editing Header */}
-        <ProfileEditingHeader navigation={navigation}/>
+        <ProfileEditingHeader navigation={navigation} />
         {/* Personal Image */}
         <ProfileImage />
         {/* Divider */}
