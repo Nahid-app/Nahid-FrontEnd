@@ -12,7 +12,7 @@ import { useState } from "react";
 
 const RenderItem = ({ item, navigation }) => {
   return (
-    <View className="justify-center content-center ">
+    <View className="justify-center content-center pt-4">
       <ClubsCard
         UniversityAvatar={item.UniversityAvatar}
         ClubAvatar={item.ClubAvatar}
@@ -28,15 +28,17 @@ const RenderItem = ({ item, navigation }) => {
 
 const RenderItemMyClubs = ({ item, navigation }) => {
   return item.subscriped === true ? (
-    <ClubsCard
-      UniversityAvatar={item.UniversityAvatar}
-      ClubAvatar={item.ClubAvatar}
-      ClubName={item.ClubName}
-      StudentRegistered={item.StudentRegistered}
-      ClubTypeTitle={item.ClubTypeTitle}
-      ClubTypeIcon={item.ClubTypeIcon}
-      navigation={navigation}
-    />
+    <View className="justify-center content-center pt-4">
+      <ClubsCard
+        UniversityAvatar={item.UniversityAvatar}
+        ClubAvatar={item.ClubAvatar}
+        ClubName={item.ClubName}
+        StudentRegistered={item.StudentRegistered}
+        ClubTypeTitle={item.ClubTypeTitle}
+        ClubTypeIcon={item.ClubTypeIcon}
+        navigation={navigation}
+      />
+    </View>
   ) : (
     <View className="bg-primary " />
   );
@@ -91,7 +93,6 @@ const ClubsList = ({ navigation }) => {
           )
         }
         keyExtractor={(item) => item.id}
-        ItemSeparatorComponent={() => <View className="pt-7" />}
         showsVerticalScrollIndicator={false}
       />
     </View>

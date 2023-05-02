@@ -27,6 +27,11 @@ const EventsScreen = ({ navigation }) => {
         />
       </View>
       <EventListCard navigation={navigation} />
+      <View>
+        <Text onPress={() => navigation.navigate("NewEventScreen")}>
+          New Event
+        </Text>
+      </View>
     </SafeAreaView>
   );
 };

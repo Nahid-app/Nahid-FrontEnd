@@ -13,11 +13,6 @@ export default function ClubsScreen({ navigation }) {
     >
       <SearchBarComponent title={"كل الأندية"} placeholder={"إبحث عن نادي"} />
       <View className="flex-1 w-full content-center pt-4">
-        {/* <FiltersButtons
-          whiteButtonTitle={"أنديتي"}
-          primaryButtonTitle={"الأندية"}
-          className="py-7"
-        /> */}
         <ClubsList navigation={navigation} />
       </View>
     </SafeAreaView>

@@ -31,57 +31,73 @@ const Tab = createBottomTabNavigator();
 const HomeTabScreen = ({ navigation }) => {
   return (
     <Tab.Navigator
-      initialRouteName="الرئيسية"
-      screenOptions={{ headerShown: false }}
+      initialRouteName="Home"
+      screenOptions={{
+        headerShown: false,
+        tabBarLabelStyle: {
+          fontFamily: "TajawalMedium",
+        },
+        tabBarActiveTintColor: "#212121",
+      }}
     >
       <Tab.Screen
-        name="الجامعات"
+        name="universities"
         component={UniversitiesRoute}
         options={({ route }) => ({
-          tabBarLabel: "حسابي",
+          tabBarLabel: "الجامعات",
           tabBarIcon: ({ focused }) =>
             focused ? <UniversitiesIconBold /> : <UniversitiesIconBorder />,
-          tabBarStyle: { display: getRouteName(route) },
+          tabBarStyle: {
+            display: getRouteName(route),
+          },
         })}
       />
       <Tab.Screen
-        name="الأنشطة"
+        name="events"
         component={EventsRoute}
         options={({ route }) => ({
-          tabBarLabel: "حسابي",
+          tabBarLabel: "الأنشطة",
           tabBarIcon: ({ focused }) =>
-            focused ? <UniversitiesIconBold /> : <UniversitiesIconBorder />,
-          tabBarStyle: { display: getRouteName(route) },
+            focused ? <EventsIconBold /> : <EventsIconBorder />,
+          tabBarStyle: {
+            display: getRouteName(route),
+          },
         })}
       />
       <Tab.Screen
-        name="الرئيسية"
+        name="Home"
         component={HomeRoute}
         options={({ route }) => ({
-          tabBarLabel: "حسابي",
+          tabBarLabel: "الرئيسية",
           tabBarIcon: ({ focused }) =>
-            focused ? <UniversitiesIconBold /> : <UniversitiesIconBorder />,
-          tabBarStyle: { display: getRouteName(route) },
+            focused ? <HomeIconBold /> : <HomeIconBorder />,
+          tabBarStyle: {
+            display: getRouteName(route),
+          },
         })}
       />
       <Tab.Screen
-        name="الأندية"
+        name="clubs"
         component={ClubsRoute}
         options={({ route }) => ({
-          tabBarLabel: "حسابي",
+          tabBarLabel: "الأندية",
           tabBarIcon: ({ focused }) =>
-            focused ? <UniversitiesIconBold /> : <UniversitiesIconBorder />,
-          tabBarStyle: { display: getRouteName(route) },
+            focused ? <ClubsIconBold /> : <ClubsIconBorder />,
+          tabBarStyle: {
+            display: getRouteName(route),
+          },
         })}
       />
       <Tab.Screen
-        name="حسابي"
+        name="profile"
         component={ProfileRoute}
         options={({ route }) => ({
           tabBarLabel: "حسابي",
           tabBarIcon: ({ focused }) =>
-            focused ? <UniversitiesIconBold /> : <UniversitiesIconBorder />,
-          tabBarStyle: { display: getRouteName(route) },
+            focused ? <ProfileIconBold /> : <ProfileIconBorder />,
+          tabBarStyle: {
+            display: getRouteName(route),
+          },
         })}
       />
     </Tab.Navigator>
@@ -92,8 +108,7 @@ const getRouteName = (route) => {
   // console.log(routeName);
   if (
     routeName?.includes("DetailsRoute") ||
-    routeName?.includes("ProfileEditingScreen") ||
-    routeName?.includes("ProfileScreen")
+    routeName?.includes("ProfileEditingScreen")
   ) {
     return "none";
   } else {

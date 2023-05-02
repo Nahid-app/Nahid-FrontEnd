@@ -5,6 +5,7 @@ import EventsScreen from "../../screens/EventsScreen/EventsScreen";
 import EventDetailsScreen from "../../screens/eventDetailsScreen/EventDetailsScreen";
 import SubScreenHeader from "../../components/SubScreenHeader";
 import DetailsRoute from "../DetailsRoute";
+import NewEventScreen from "../../screens/newEventScreen/NewEventScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +26,11 @@ const EventsRoute = ({ navigation }) => {
         options={{
           headerShown: false,
         }}
+      />
+      <Stack.Screen
+        name="NewEventScreen"
+        component={NewEventScreen}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );
