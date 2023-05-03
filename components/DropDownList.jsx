@@ -12,7 +12,7 @@ const DropDownList = (props) => {
 
   return (
     <View>
-      <Text className="font-[TajawalBold] text-h5 text-grey900 text-left">
+      <Text className="font-[TajawalBold] text-h5 text-grey900 text-left overflow-hidden">
         {props.title}
       </Text>
       <DropDownPicker
@@ -61,7 +61,7 @@ const DropDownList = (props) => {
           marginHorizontal: 12,
           borderBottomColor: "#6949FF",
         }}
-        dropDownDirection="AUTO"
+        dropDownDirection="TOP"
         ArrowDownIconComponent={({}) => <ArrowDown />}
         ArrowUpIconComponent={({}) => <ArrowUp />}
         customItemContainerStyle

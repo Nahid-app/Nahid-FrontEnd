@@ -26,13 +26,19 @@ const DropDownLists = () => {
   return (
     <View className="pb-6">
       <DropDownList
+        itemsList={genders}
+        title="الفئة المستهدفة"
+        searchTitle="حدد الفئة المستهدفة"
+      />
+      <View className="pb-5" />
+      <DropDownList itemsList={type} title="النوع" searchTitle="حدد النوع" />
+      <View className="pb-5" />
+      <DropDownList
         itemsList={universitiesList}
-        title="الجامعة"
-        searchTitle="إخترالجامعة"
+        title="النادي"
+        searchTitle="إختر النادي"
         searchability={true}
       />
-      <View className="py-3"></View>
-      <DropDownList itemsList={genders} title="الجنس" searchTitle="حدد الجنس" />
     </View>
   );
 };

@@ -9,6 +9,7 @@ import { useState } from "react";
 
 import DropDownLists from "./components/DropDownLists";
 import SubScreenHeader from "../../components/SubScreenHeader";
+import PrimaryColorButton from "../../components/buttons/PrimaryColorButton";
 
 export default function ProfileEditingScreen({ navigation }) {
   return (
@@ -25,6 +26,9 @@ export default function ProfileEditingScreen({ navigation }) {
           <UserInputFields />
           {/* Dropdown List */}
           <DropDownLists />
+          <View className="pb-2">
+            <PrimaryColorButton title={"تحديث البيانات"} />
+          </View>
         </ScrollView>
       </SafeAreaView>
     </>

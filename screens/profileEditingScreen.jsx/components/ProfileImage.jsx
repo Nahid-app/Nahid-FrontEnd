@@ -6,14 +6,16 @@ import { Button, Platform } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 
 const ProfileImage = () => {
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState(
+    "https://media.licdn.com/dms/image/C4E03AQFsr05tUGaLeQ/profile-displayphoto-shrink_200_200/0/1653581028839?e=1684972800&v=beta&t=BYiIYD5Q2PHylqQlYniN3MfmxJlzQgETs9gHogaIRD4"
+  );
 
   const pickImage = async () => {
     // No permissions request is necessary for launching the image library
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
-      aspect: [4, 3],
+      aspect: [1, 1],
       quality: 1,
     });
 
@@ -30,9 +32,7 @@ const ProfileImage = () => {
         {image && (
           <Image
             source={{
-              uri:
-                image ||
-                "https://media.licdn.com/dms/image/C4E03AQFsr05tUGaLeQ/profile-displayphoto-shrink_200_200/0/1653581028839?e=1684972800&v=beta&t=BYiIYD5Q2PHylqQlYniN3MfmxJlzQgETs9gHogaIRD4",
+              uri: image,
             }}
             className="rounded-full"
             style={{ width: 128, height: 128 }}

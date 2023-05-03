@@ -50,7 +50,7 @@ const EventInputFields = () => {
       <Pressable onPress={visibiltyStatus}>
         <TextField
           editable={false}
-          textFieldTitle="تاريخ الفعالية"
+          textFieldTitle="تاريخ و وقت الفعالية"
           textFieldPlaceHolder={dateText === "" ? "لايوجد" : timeAndDate()}
           icon={<Calendar />}
         />

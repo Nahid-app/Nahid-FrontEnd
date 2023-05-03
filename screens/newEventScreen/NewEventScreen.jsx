@@ -17,12 +17,12 @@ export default function NewEventScreen({ navigation }) {
     <View className="bg-white flex-1 px-6 pt-5">
       <SubScreenHeader navigation={navigation} />
       <ScrollView showsVerticalScrollIndicator={false}>
-        {/* Profile Editing Header */}
-        {/* Personal Image */}
+        {/* Event Editing Header */}
+        {/* Event Image */}
         <EventCarouselBanner />
         {/* Divider */}
         <View className="w-full bg-gray300 h-px mt-6"></View>
-        {/* User Info Form */}
+        {/* Event Info Form */}
         <EventInputFields />
         {/* Dropdown List */}
         <DropDownLists />
