@@ -10,25 +10,27 @@ import DropDownLists from "./components/DropDownLists";
 import BannerImage from "../profileScreen/components/BannerImage";
 import EventCarouselBanner from "./components/EventCarouselBanner";
 import PrimaryColorButton from "../../components/buttons/PrimaryColorButton";
+import SubScreenHeader from "../../components/SubScreenHeader";
 
 export default function NewEventScreen({ navigation }) {
   return (
-    <>
+    <View className="bg-white flex-1 px-6 pt-5">
+      <SubScreenHeader navigation={navigation} />
       <ScrollView showsVerticalScrollIndicator={false}>
-        <SafeAreaView className="bg-white flex-1 px-6 pt-5">
-          {/* Profile Editing Header */}
-          <ProfileEditingHeader navigation={navigation} />
-          {/* Personal Image */}
-          <EventCarouselBanner />
-          {/* Divider */}
-          <View className="w-full bg-gray300 h-px mt-6"></View>
-          {/* User Info Form */}
-          <EventInputFields />
-          {/* Dropdown List */}
-          <DropDownLists />
+        {/* Profile Editing Header */}
+        {/* Personal Image */}
+        <EventCarouselBanner />
+        {/* Divider */}
+        <View className="w-full bg-gray300 h-px mt-6"></View>
+        {/* User Info Form */}
+        <EventInputFields />
+        {/* Dropdown List */}
+        <DropDownLists />
+        {/* Event Creation Button */}
+        <View className="pb-2">
           <PrimaryColorButton title={"فعالية جديدة"} />
-        </SafeAreaView>
+        </View>
       </ScrollView>
-    </>
+    </View>
   );
 }

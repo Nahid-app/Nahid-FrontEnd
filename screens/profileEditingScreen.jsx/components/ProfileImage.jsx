@@ -38,11 +38,11 @@ const ProfileImage = () => {
             style={{ width: 128, height: 128 }}
           />
         )}
-        <Pressable onPress={pickImage}>
-          <View className="w-6 h-6 bg-white z-10 absolute bottom-1 left-1 justify-center">
+        <View className="w-6 h-6 bg-white z-10 absolute bottom-1 left-1 justify-center">
+          <Pressable onPress={pickImage}>
             <OnImageEditIcon />
-          </View>
-        </Pressable>
+          </Pressable>
+        </View>
       </View>
     </View>
   );

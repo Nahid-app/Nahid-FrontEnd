@@ -1,13 +1,13 @@
 import { Platform } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeTabScreen from "./homeScreen/HomeTabScreen";
-import SignUpScreen from "./signUpScreen/SignUpScreen";
-import LoginScreen from "./loginScreen/LoginScreen";
 import WalkthroughScreen from "../../screens/walkThroughScreen/WalkthroughScreen";
+import SignUpScreen from "../../screens/signUpScreen/SignUpScreen";
+import LoginScreen from "../../screens/loginScreen/LoginScreen";
+import HomeTabScreen from "../../screens/homeScreen/HomeTabScreen";
 
 const Stack = createNativeStackNavigator();
 
-const WalkthroughRoute = () => {
+const WalkthroughRoute = ({ navigation }) => {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -20,16 +20,13 @@ const WalkthroughRoute = () => {
       <Stack.Screen
         name="SignUpScreen"
         component={SignUpScreen}
-        options={{
-          headerShown: true,
-        }}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="loginScreen"
         component={LoginScreen}
-        options={{
-          headerShown: true,
-        }}
+        headerShown={false}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="HomeScreen"

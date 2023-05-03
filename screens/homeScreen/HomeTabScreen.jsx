@@ -1,19 +1,11 @@
 import { View, Text } from "react-native";
 import React, { useContext, useEffect } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "./HomeScreen";
-import ClubsScreen from "../clubsScreen/ClubsScreen";
-import EventsScreen from "../EventsScreen/EventsScreen";
-import UniversitiesScreen from "../universitiesScreen/UniversitiesScreen";
-import Header from "../../components/Header";
 import ProfileRoute from "../../routes/profile/ProfileRoute";
 import EventsRoute from "../../routes/events/EventsRoute";
-import ClubsRoute from "../../routes/Clubs/ClubsRoute";
-import UniversitiesRoute from "../../routes/Universities/UniversitiesRoute";
-import HomeRoute from "../../routes/Home/HomeRoute";
-import Group from "../../assets/svg/Group";
-import ArrowRightBlack from "../../assets/svg/ArrowRightBlack";
-import Calendar from "../../assets/svg/Calendar";
+import ClubsRoute from "../../routes/clubs/ClubsRoute";
+import UniversitiesRoute from "../../routes/universities/UniversitiesRoute";
+import HomeRoute from "../../routes/home/HomeRoute";
 import ProfileIconBold from "../../assets/homeIcons/ProfileIconBold";
 import ProfileIconBorder from "../../assets/homeIcons/ProfileIconBorder";
 import UniversitiesIconBorder from "../../assets/homeIcons/UniversitiesIconBorder";
@@ -103,11 +95,13 @@ const HomeTabScreen = ({ navigation }) => {
     </Tab.Navigator>
   );
 };
+
 const getRouteName = (route) => {
   const routeName = getFocusedRouteNameFromRoute(route);
   // console.log(routeName);
   if (
     routeName?.includes("DetailsRoute") ||
+    routeName?.includes("NewEventScreen") ||
     routeName?.includes("ProfileEditingScreen")
   ) {
     return "none";
@@ -115,4 +109,5 @@ const getRouteName = (route) => {
     return "flex";
   }
 };
+
 export default HomeTabScreen;

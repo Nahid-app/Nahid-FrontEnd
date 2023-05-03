@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ProfileScreen from "../../screens/profileScreen/ProfileScreen";
 import ProfileEditingScreen from "../../screens/profileEditingScreen.jsx/profileEditingScreen";
 import Header from "../../components/Header";
-import DetailsRoute from "../DetailsRoute";
+import DetailsRoute from "../detailsRoute/DetailsRoute";
 
 const Stack = createNativeStackNavigator();
 

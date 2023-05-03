@@ -9,7 +9,7 @@ import ClubsScreen from "../../screens/clubsScreen/ClubsScreen";
 import EventsRoute from "../events/EventsRoute";
 import SearchBarComponent from "../../components/SearchBarComponent";
 import BlackRightArrow from "../../assets/svg/BlackRightArrow";
-import DetailsRoute from "../DetailsRoute";
+import DetailsRoute from "../detailsRoute/DetailsRoute";
 
 const Stack = createNativeStackNavigator();
 

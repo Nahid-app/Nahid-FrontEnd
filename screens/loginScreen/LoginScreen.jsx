@@ -18,6 +18,7 @@ import { postLogin } from "../../api/login";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { CommonActions } from "@react-navigation/native";
 import { MotiSafeAreaView, MotiView, ScrollView } from "moti";
+import SubScreenHeader from "../../components/SubScreenHeader";
 
 export default function LoginScreen({ navigation }) {
   const [isChecked, setChecked] = useState(false);
@@ -59,8 +60,9 @@ export default function LoginScreen({ navigation }) {
           animate={{
             translateY: 0,
           }}
-          className=" flex-1 w-full flex-col p-6 bg-white"
+          className=" flex-1 w-full flex-col px-6 bg-white"
         >
+          <SubScreenHeader navigation={navigation} />
           <View className="items-start w-full justify-center ">
             <Text className="font-[TajawalBold] text-h3 items-start pt-6 ">
               أهلا بك 👋

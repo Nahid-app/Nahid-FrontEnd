@@ -49,9 +49,9 @@ const ClubsList = ({ navigation }) => {
 
   return (
     <View>
-      <View className="flex-row pb-5">
+      <View className="flex-row pb-4">
         <TouchableOpacity
-          className="flex-1 px-1"
+          className="flex-1 px-1 pt-1"
           onPress={() => setMyClubs(true)}
         >
           <View
@@ -67,7 +67,7 @@ const ClubsList = ({ navigation }) => {
           </View>
         </TouchableOpacity>
         <TouchableOpacity
-          className="flex-1 px-1"
+          className="flex-1 px-1 pt-1"
           onPress={() => setMyClubs(false)}
         >
           <View

@@ -1,12 +1,13 @@
 import { View, Text, Pressable } from "react-native";
 import React from "react";
 import ArrowRight from "../../../assets/svg/ArrowRight";
+import ArrowRightBlack from "../../../assets/svg/ArrowRightBlack";
 
 const ProfileEditingHeader = ({ navigation }) => {
   return (
     <View className="flex-row justify-between items-center">
       <Pressable onPress={() => navigation.goBack()}>
-        <ArrowRight />
+        <ArrowRightBlack />
       </Pressable>
       <Text className="font-[TajawalBold] text-h5 align-center  text-grey900 px-4">
         فعالية جديدة

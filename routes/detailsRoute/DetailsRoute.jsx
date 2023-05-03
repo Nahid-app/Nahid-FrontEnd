@@ -1,10 +1,10 @@
 import { View, Text } from "react-native";
 import React from "react";
-import UniversityDetailsScreen from "../screens/univesityDetailsScreen/UniversityDetailsScreen";
-import EventDetailsScreen from "../screens/eventDetailsScreen/EventDetailsScreen";
-import ClubDetailsScreen from "../screens/clubDetailsScreen/ClubDetailsScreen";
+import UniversityDetailsScreen from "../../screens/univesityDetailsScreen/UniversityDetailsScreen";
+import EventDetailsScreen from "../../screens/eventDetailsScreen/EventDetailsScreen";
+import ClubDetailsScreen from "../../screens/clubDetailsScreen/ClubDetailsScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import NewEventScreen from "../screens/newEventScreen/NewEventScreen";
+import NewEventScreen from "../../screens/newEventScreen/NewEventScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,7 +26,6 @@ const DetailsRoute = ({ navigation }) => {
         component={EventDetailsScreen}
         options={{ headerShown: false }}
       />
-      
     </Stack.Navigator>
   );
 };

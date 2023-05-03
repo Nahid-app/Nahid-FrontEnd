@@ -51,10 +51,10 @@ const EventListCard = ({ navigation }) => {
         animate={{
           translateY: 0,
         }}
-        className="w-full flex-row justify-evenly pb-5"
+        className="w-full flex-row justify-evenly pb-4"
       >
         <TouchableOpacity
-          className="flex-1 px-1"
+          className="flex-1 px-1 pb-4"
           onPress={() => setMyEvents(true)}
         >
           <View

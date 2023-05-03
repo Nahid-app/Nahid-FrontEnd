@@ -7,9 +7,7 @@ const ProfileHeader = () => {
   return (
     <View className="flex-row justify-between">
       <View className="flex-row items-center">
-        <View className="py-1.5">
-          <Logo />
-        </View>
+        <View className="py-1.5">{/* <Logo /> */}</View>
         <Text className="font-[TajawalBold] text-h4 px-4">حسابي</Text>
       </View>
       <Settings />

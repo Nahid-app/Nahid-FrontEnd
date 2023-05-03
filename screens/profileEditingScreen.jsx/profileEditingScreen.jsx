@@ -8,13 +8,14 @@ import UserInputFields from "./components/UserInputFields";
 import { useState } from "react";
 
 import DropDownLists from "./components/DropDownLists";
+import SubScreenHeader from "../../components/SubScreenHeader";
 
 export default function ProfileEditingScreen({ navigation }) {
   return (
     <>
       <SafeAreaView className="bg-white flex-1 px-6 pt-5">
         {/* Profile Editing Header */}
-        <ProfileEditingHeader navigation={navigation} />
+        <SubScreenHeader navigation={navigation} />
         {/* Personal Image */}
         <ProfileImage />
         {/* Divider */}

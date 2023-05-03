@@ -5,7 +5,7 @@ import UniversityDetailsScreen from "../../screens/univesityDetailsScreen/Univer
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ClubDetailsScreen from "../../screens/clubDetailsScreen/ClubDetailsScreen";
 import EventDetailsScreen from "../../screens/eventDetailsScreen/EventDetailsScreen";
-import DetailsRoute from "../DetailsRoute";
+import DetailsRoute from "../detailsRoute/DetailsRoute";
 
 const Stack = createNativeStackNavigator();
 

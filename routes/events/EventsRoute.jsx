@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import EventsScreen from "../../screens/EventsScreen/EventsScreen";
 import EventDetailsScreen from "../../screens/eventDetailsScreen/EventDetailsScreen";
 import SubScreenHeader from "../../components/SubScreenHeader";
-import DetailsRoute from "../DetailsRoute";
+import DetailsRoute from "../detailsRoute/DetailsRoute";
 import NewEventScreen from "../../screens/newEventScreen/NewEventScreen";
 
 const Stack = createNativeStackNavigator();

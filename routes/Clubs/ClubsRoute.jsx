@@ -6,7 +6,7 @@ import EventDetailsScreen from "../../screens/eventDetailsScreen/EventDetailsScr
 import SubScreenHeader from "../../components/SubScreenHeader";
 import ClubsScreen from "../../screens/clubsScreen/ClubsScreen";
 import ClubDetailsScreen from "../../screens/clubDetailsScreen/ClubDetailsScreen";
-import DetailsRoute from "../DetailsRoute";
+import DetailsRoute from "../detailsRoute/DetailsRoute";
 
 const Stack = createNativeStackNavigator();
 
