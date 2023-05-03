@@ -40,6 +40,7 @@ const UserInputFields = () => {
         textFieldTitle="رقم الجوال"
         textFieldPlaceHolder="+966 54 264 9369"
       />
+      
       <Pressable onPress={visibiltyStatus}>
         <TextField
           editable={false}

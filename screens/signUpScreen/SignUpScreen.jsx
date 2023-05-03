@@ -8,6 +8,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   StyleSheet,
+  Pressable,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { ProgressBar, TextInput } from "react-native-paper";
@@ -18,15 +19,32 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { MotiScrollView } from "moti";
 import { CommonActions } from "@react-navigation/native";
 import SubScreenHeader from "../../components/SubScreenHeader";
+import TextField from "../../components/TextField";
+import Calendar from "../../assets/svg/Calendar";
+import DateTimePickerModal from "react-native-modal-datetime-picker";
+import DropDownLists from "./DropDownLists";
 
 export default function SignUpScreen({ navigation }) {
   const [steps, setStep] = useState(0.5);
   const [error, setErrorEmail, errorPassword] = useState("");
+  const [visiblity, setVisibility] = useState(false);
+  const [dateText, setDateText] = useState("");
 
-  const handleClick = () => {
-    if (steps === 1 || steps > 1) {
-      setStep(0.5); // Reset count to its default value of 0
-    } else setStep(steps + 0.5);
+  const visibiltyStatus = () => {
+    setVisibility(!visiblity);
+  };
+
+  const handleConfirm = (currentDate) => {
+    let tempDate = new Date(currentDate);
+
+    let formattedDate =
+      tempDate.getDate() +
+      "/" +
+      (tempDate.getMonth() + 1) +
+      "/" +
+      tempDate.getFullYear();
+    setDateText(formattedDate);
+    visibiltyStatus();
   };
 
   const form = {
@@ -56,11 +74,6 @@ export default function SignUpScreen({ navigation }) {
     className: "border-b-2 border-primary text-gray900 h-8 w-full bg-white",
   };
   return (
-    // <KeyboardAvoidingView
-    //   behavior={Platform.OS === "ios" ? "padding" : "height"}
-    //   style={styles.container}
-    //   className="flex-1 bg-white px-6"
-    // >
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <SafeAreaView
         className="flex-1 bg-white"
@@ -89,134 +102,66 @@ export default function SignUpScreen({ navigation }) {
               وأنت فقط من يمكنه رؤيتها.
             </Text>
           </View>
-          <View style={styles.header} className="w-full">
-            <Formik
-              initialValues={{
-                name: "",
-                email: "",
-                password: "",
-                conFPassword: "",
-              }}
-              onSubmit={(values) =>
-                register(
-                  values,
-                  { navigation },
-                  error,
-                  setErrorEmail,
-                  errorPassword
+          <View className="pb-6">
+            <TextField
+              textFieldTitle="الاسم الكامل"
+              textFieldPlaceHolder="أدخل اسمك الكامل"
+              autoComplete={"name"}
+            />
+            <TextField
+              textFieldTitle="الإيميل"
+              textFieldPlaceHolder="user@user.com"
+              textContentType="emailAddress"
+              autoComplete={"email"}
+            />
+            <TextField
+              textFieldTitle="الرقم السري"
+              textFieldPlaceHolder="أدخل الرقم السري"
+              // autoComplete={"new-password"}
+              secureTextEntry={true}
+            />
+            <TextField
+              textFieldTitle="إعادة الرقم السري"
+              textFieldPlaceHolder="أدخل الرقم السري"
+              // autoComplete={"new-password"}
+              secureTextEntry={true}
+            />
+            <TextField
+              textFieldTitle="رقم الجوال"
+              textFieldPlaceHolder="+966 50 000 0000"
+              autoComplete={"tel"}
+            />
+            <DropDownLists />
+            <Pressable onPress={visibiltyStatus}>
+              <TextField
+                editable={false}
+                textFieldTitle="تاريخ الميلاد"
+                textFieldPlaceHolder={
+                  dateText === "" ? "لايوجد" : dateText.toString() + " مـ"
+                }
+                icon={<Calendar />}
+              />
+            </Pressable>
+            <DateTimePickerModal
+              isVisible={visiblity}
+              mode="date"
+              textColor="black"
+              onConfirm={handleConfirm}
+              onCancel={visibiltyStatus}
+            />
+          </View>
+          <View className=" justify-between content-center items-center w-full    ">
+            <PrimaryColorButton
+              title={"سجل الدخول"}
+              onPress={() =>
+                navigation.dispatch(
+                  CommonActions.reset({
+                    index: 0,
+                    routes: [{ name: "HomeScreen" }],
+                  })
                 )
               }
-            >
-              {({ handleChange, handleBlur, handleSubmit, values }) => (
-                <ScrollView
-                  className="pt-6 w-full flex-1"
-                  contentContainerStyle={{
-                    alignContent: "center",
-                    justifyContent: "center",
-                  }}
-                  showsVerticalScrollIndicator={false}
-                >
-                  <View className="  w-full content-start items-start">
-                    <Text className="text-h6 font-[TajawalMedium] pb-5  content-end items-end">
-                      {form.titleName}
-                    </Text>
-                  </View>
-                  <View className="w-full">
-                    <TextInput
-                      title={form.titleName}
-                      placeholder={form.titleName}
-                      textContentType={form.textContentType.name}
-                      textAlign={"right"}
-                      className={form.className}
-                      onChangeText={handleChange("name")}
-                      onBlur={handleBlur("name")}
-                      value={values.fullName}
-                      returnKeyType="next"
-                      returnKeyLabel="التالي"
-                      placeholderTextColor={"gray"}
-                    />
-                  </View>
-                  <View className=" pt-8 w-full content-start items-start">
-                    <Text className="text-h6 font-[TajawalMedium] pb-5  content-end items-end">
-                      {form.titleEmail}
-                    </Text>
-                  </View>
-                  <View className="w-full ">
-                    <TextInput
-                      title={form.titleEmail}
-                      placeholder={"أدخل بريدك الإلكتروني ✉️"}
-                      textContentType={"emailAddress"}
-                      keyboardType={"email-address"}
-                      textAlign={"right"}
-                      className={form.className}
-                      onChangeText={handleChange("email")}
-                      onBlur={handleBlur("email")}
-                      value={values.email}
-                      returnKeyType="next"
-                      returnKeyLabel="التالي"
-                      placeholderTextColor={"gray"}
-                    />
-                    <Text>{error}</Text>
-                    <View className=" pt-8 w-full content-start items-start">
-                      <Text className="text-h6 font-[TajawalMedium] pb-5  content-end items-end">
-                        {form.tilePassword}
-                      </Text>
-                    </View>
-                    <View className="w-full">
-                      <TextInput
-                        title={"الرقم السري"}
-                        placeholder={"أدخل الرقم السري👀"}
-                        textContentType={form.textContentType.password}
-                        textAlign={"right"}
-                        className={form.className}
-                        onChangeText={handleChange("password")}
-                        onBlur={handleBlur("password")}
-                        value={values.password}
-                        returnKeyType="next"
-                        returnKeyLabel="التالي"
-                        placeholderTextColor={"gray"}
-                      />
-                      <Text>{error}</Text>
-                    </View>
-                    <View className=" pt-8 w-full content-start items-start">
-                      <Text className="text-h6 font-[TajawalMedium] pb-5  content-end items-end">
-                        {form.tileConPassword}
-                      </Text>
-                    </View>
-                    <View className="w-full pb-8">
-                      <TextInput
-                        title={form.tileConPassword}
-                        placeholder={"أكد الرقم السري🔒"}
-                        textContentType={
-                          form.textContentType["current-password"]
-                        }
-                        textAlign={"right"}
-                        className={form.className}
-                        onChangeText={handleChange("password_confirmation")}
-                        onBlur={handleBlur("password_confirmation")}
-                        value={values.password_confirmation}
-                        returnKeyType="done"
-                        returnKeyLabel="التالي"
-                        placeholderTextColor={"gray"}
-                      />
-                    </View>
-                  </View>
-                  <View className=" justify-between content-center items-center w-full    ">
-                    <PrimaryColorButton
-                      title={"سجل الدخول"}
-                      onPress={() =>
-                        navigation.dispatch(
-                          CommonActions.reset({
-                            index: 0,
-                            routes: [{ name: "HomeScreen" }],
-                          })
-                        )
-                      }
-                    />
-                  </View>
-                </ScrollView>
-              )}
-            </Formik>
+            />
           </View>
         </MotiScrollView>
       </SafeAreaView>

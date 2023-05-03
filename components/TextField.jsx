@@ -15,8 +15,9 @@ const TextField = (props) => {
           selectTextOnFocus={false}
           placeholderTextColor="#212121"
           editable={props.editable}
-          textContentType={props.textContentType}
+          autoComplete={props.autoComplete}
           multiline={props.multiline}
+          secureTextEntry={props.secureTextEntry}
         />
         {props.icon}
       </View>
