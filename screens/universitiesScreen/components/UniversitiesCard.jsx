@@ -11,6 +11,7 @@ import { MotiView } from "moti";
 import LeftBlackArrow from "../../../assets/svg/LeftBlackArrow";
 
 const UniversityCard = ({
+  navigation,
   universityName,
   universityAvatar,
   UniversityLocation,
@@ -19,7 +20,13 @@ const UniversityCard = ({
 }) => {
   return (
     <>
-      <TouchableOpacity onPress={() => alert("clicked")}>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("DetailsRoute", {
+            screen: "UniversityDetailsScreen",
+          })
+        }
+      >
         <MotiView
           from={{
             translateY: -10,

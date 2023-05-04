@@ -10,6 +10,7 @@ export default [
     StudentRegistered: 300,
     ClubTypeTitle: "تقني",
     ClubTypeIcon: <HeadSet />,
+    subscriped: true,
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ export default [
     StudentRegistered: 200,
     ClubTypeTitle: "تقني",
     ClubTypeIcon: <HeadSet />,
+    subscriped: false,
   },
   {
     id: 3,
@@ -30,5 +32,6 @@ export default [
     StudentRegistered: 500,
     ClubTypeTitle: "تقني",
     ClubTypeIcon: <HeadSet />,
+    subscriped: true,
   },
 ];

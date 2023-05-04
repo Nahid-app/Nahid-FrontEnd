@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  Image,
-  FlatList,
-  TouchableOpacity,
-  StyleSheet,
-} from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import data from "./data";
 import { SafeAreaView } from "react-native-safe-area-context";
 import GrayCalender from "../../assets/svg/GrayCalender";
@@ -14,19 +7,26 @@ import SearchBarComponent from "../../components/SearchBarComponent";
 import FiltersButtons from "../../components/FiltersButtons";
 import ArrowRightBlack from "../../assets/svg/ArrowRightBlack";
 import EventListCard from "./components/EventListCard";
+import CrossIcon from "../../assets/svg/CrossIcon";
 
 // Main All Activities
-const EventsScreen = () => {
+const EventsScreen = ({ navigation }) => {
   return (
-    <SafeAreaView className="bg-white flex-1 px-6 pt-6">
-      <View className="pb-5 justify-center items-center">
+    <SafeAreaView className="bg-white flex-1 px-6 pt-4">
+      <View className="pb-5 justify-center items-center relative">
         <SearchBarComponent
           title={"الانشطة"}
           placeholder={"إبحث عن نشاط"}
-          RightArrow={<ArrowRightBlack />}
+          // RightArrow={<ArrowRightBlack />}
         />
       </View>
-      <EventListCard />
+      <EventListCard navigation={navigation} />
+      <TouchableOpacity
+        className="bg-primary w-[48] h-[48] rounded-full items-center justify-center absolute bottom-[15] left-[20] z-20"
+        onPress={() => navigation.navigate("NewEventScreen")}
+      >
+        <CrossIcon />
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };

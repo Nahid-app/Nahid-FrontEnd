@@ -9,23 +9,26 @@ import ProfileHeader from "./components/ProfileHeader";
 import UserAccount from "./components/UserAccount";
 import UserData from "./components/UserData";
 
-export default function ProfileScreen() {
+export default function ProfileScreen({ navigation }) {
   return (
     <>
       {/* <StatusBar /> */}
-      <SafeAreaView className="pt-5 px-6 flex-1 bg-white">
+      <SafeAreaView
+        className="pt-5 px-6 flex-1 bg-white"
+        edges={["right", "left", "bottom"]}
+      >
         {/* Profile Header */}
         <ProfileHeader />
         {/* Banner Image */}
         <BannerImage />
         {/* User Account */}
-        <UserAccount />
+        <UserAccount navigation={navigation} />
         {/* User Data */}
         <UserData />
         {/* List of Activities */}
         <EventsListHeader />
         {/* Events List */}
-        <EventsList />
+        <EventsList navigation={navigation} />
       </SafeAreaView>
     </>
   );

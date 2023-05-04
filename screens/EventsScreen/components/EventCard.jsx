@@ -10,10 +10,15 @@ const EventCard = ({
   location,
   imageUrl,
   clubName,
+  navigation,
 }) => {
   return (
     <>
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("DetailsRoute", { screen: "EventDetailsScreen" })
+        }
+      >
         <MotiView
           className="flex-row justify-center items-center pb-4"
           from={{

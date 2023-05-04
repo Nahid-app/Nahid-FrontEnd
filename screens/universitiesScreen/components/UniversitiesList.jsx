@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import UniversitiesCard from "./UniversitiesCard";
 import universities from "./universities";
 
-const RenderItem = ({ item }) => {
+const RenderItem = ({ item, navigation }) => {
   return (
     <View className="justify-center content-center p-2">
       <UniversitiesCard
@@ -12,15 +12,18 @@ const RenderItem = ({ item }) => {
         universityAvatar={item.avatar}
         clubsNumber={item.clubsNumber}
         UniversityLocation={item.UniversityLocation}
+        navigation={navigation}
       />
     </View>
   );
 };
 
-const UniversitiesList = () => (
+const UniversitiesList = ({ navigation }) => (
   <FlatList
     data={universities}
-    renderItem={({ item }) => <RenderItem item={item} />}
+    renderItem={({ item }) => (
+      <RenderItem item={item} navigation={navigation} />
+    )}
     keyExtractor={(item) => item.id}
     ItemSeparatorComponent={() => <View className="" />}
     showsVerticalScrollIndicator={false}

@@ -9,10 +9,10 @@ import React from "react";
 
 export default function OnBoardingButtonWhite({ onPress, title }) {
   return (
-    <Animated.View style={styles.buttonContainer}>
+    <Animated.View style={styles.buttonContainer} className="w-full">
       <TouchableOpacity
         onPress={onPress}
-        className="flex-row justify-center items-center py-5 px-4 w-80 bg-[#F0EDFF]"
+        className="flex-row justify-center items-center py-5 px-4 w-full bg-[#F0EDFF]"
         style={styles.button}
         activeOpacity={0.7}
       >

@@ -11,10 +11,11 @@ import { Searchbar } from "react-native-paper";
 import ArrowRightBlack from "../assets/svg/ArrowRightBlack";
 import MagnifyingGlass from "../assets/svg/MagnifyingGlass";
 import { MotiText, MotiView } from "moti";
+import { CommonActions } from "@react-navigation/native";
 
 // ! RightArrow props is the arrow that appears on the right side of the header if given it will be shown
 
-const SearchBarComponent = ({ title, placeholder, RightArrow }) => {
+const SearchBarComponent = ({ title, placeholder, RightArrow, navigation }) => {
   // Search bar appearance
   const [isShown, setIsShown] = React.useState(false);
 
@@ -27,13 +28,13 @@ const SearchBarComponent = ({ title, placeholder, RightArrow }) => {
     const onChangeSearch = (query) => setSearchQuery(query);
 
     return (
-      <View className="w-full flex-row items-center justify-center">
+      <View className="w-full flex-row items-center justify-center ">
         <Pressable onPress={handleClick}>
           <View>
             <ArrowRightBlack />
           </View>
         </Pressable>
-        <View className="w-full px-4">
+        <View className="w-full px-4 ">
           <Searchbar
             placeholder={placeholder}
             onChangeText={onChangeSearch}
@@ -67,7 +68,7 @@ const SearchBarComponent = ({ title, placeholder, RightArrow }) => {
         transition={{
           type: "timing",
         }}
-        className="w-full"
+        className="w-full "
       >
         <SearchBar />
       </MotiView>
@@ -77,7 +78,7 @@ const SearchBarComponent = ({ title, placeholder, RightArrow }) => {
   };
 
   return (
-    <View className=" w-full flex-row justify-between items-center ">
+    <View className=" w-full flex-row justify-between items-center bg-white pt-2">
       <MotiView
         from={{
           opacity: 0,
@@ -95,7 +96,16 @@ const SearchBarComponent = ({ title, placeholder, RightArrow }) => {
         {/* this line shows the header title if the searchbar is not Shown otherwise return null title*/}
         {isShown ? null : (
           <View className="flex-row justify-center items-center">
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() =>
+                navigation.dispatch(
+                  CommonActions.reset({
+                    index: 0,
+                    routes: [{ name: "HomeScreen" }],
+                  })
+                )
+              }
+            >
               <View className="pr-4">{RightArrow}</View>
             </TouchableOpacity>
             <MotiText

@@ -1,7 +1,8 @@
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import React from "react";
 import { MotiView } from "moti";
 import PrimaryButton from "../../../components/PrimaryButton";
+import { CommonActions } from "@react-navigation/native";
 
 const ClubsCard = ({
   UniversityAvatar,
@@ -10,10 +11,15 @@ const ClubsCard = ({
   StudentRegistered,
   ClubTypeTitle,
   ClubTypeIcon,
+  navigation,
 }) => {
   return (
     <>
-      <TouchableOpacity onPress={() => alert("clicked")}>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("DetailsRoute", { screen: "ClubDetailsScreen" })
+        }
+      >
         <MotiView
           from={{
             translateY: -10,
@@ -99,8 +105,8 @@ const styles = StyleSheet.create({
     maxHeight: 20,
     minHeight: 20,
     minWidth: 20,
-    borderWidth:1,
-    borderColor:"white",
+    borderWidth: 1,
+    borderColor: "white",
     backgroundColor: "white",
   },
 });

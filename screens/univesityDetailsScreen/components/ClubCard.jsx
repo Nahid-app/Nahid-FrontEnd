@@ -4,10 +4,14 @@ import { MotiView } from "moti";
 import Group from "../../../assets/svg/Group";
 import PrimaryButton from "../../../components/PrimaryButton";
 
-const ClubCard = (props) => {
+const ClubCard = ({ item, index, navigation }) => {
   return (
     <View className="pb-4">
-      <TouchableOpacity onPress={() => alert("clicked")}>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("DetailsRoute", { screen: "ClubDetailsScreen" })
+        }
+      >
         <MotiView
           from={{
             translateY: -10,
@@ -20,14 +24,14 @@ const ClubCard = (props) => {
         >
           <View className="mr-5">
             <Image
-              source={props.item.clubImage}
+              source={item.clubImage}
               resizeMode="contain"
               style={styles.clubAvatar}
               resizeMethod="resize"
               className="rounded-full"
             />
             <Image
-              source={props.item.clubImage}
+              source={item.clubImage}
               resizeMode="contain"
               style={styles.universityAvatar}
               resizeMethod="resize"
@@ -35,9 +39,8 @@ const ClubCard = (props) => {
             />
           </View>
           <View className="items-start justify-center flex-grow flex-shrink ">
-            <Text className="text-h6 font-[TajawalBold] py-1 items-start  pb-1.5">
-
-              {props.item.clubTitle}
+            <Text className="text-h6 font-[TajawalBold] py-1 items-start  pb-1.5 text-left">
+              {item.clubTitle}
             </Text>
             {/* uni avatar */}
             <View className="flex-row items-center w-full flex-wrap">
@@ -50,14 +53,14 @@ const ClubCard = (props) => {
                 </View>
               </View>
               <Text className="font-[TajawalRegular] text-gray700 pt-1 ">
-                {props.item.clubMajor}
+                {item.clubMajor}
               </Text>
               <Text className=" text-lMedium text-left font-[TajawalRegular] px-1.5 text-gray700 ">
                 {"\u007C"}
               </Text>
               <View className="items-center justify-center pt-1">
                 <Text className="font-[TajawalRegular] items-center justify-center text-gray700">
-                  عدد الطلاب: {props.item.clubMemberCount}
+                  عدد الطلاب: {item.clubMemberCount}
                 </Text>
               </View>
             </View>

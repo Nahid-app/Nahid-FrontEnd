@@ -8,187 +8,174 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   StyleSheet,
+  Pressable,
 } from "react-native";
-import React, { useEffect, useState } from "react";
-import { ProgressBar, TextInput } from "react-native-paper";
-import { Formik } from "formik";
-import { register } from "../../api/register";
+import React, { useState, useContext } from "react";
 import PrimaryColorButton from "../../components/buttons/PrimaryColorButton";
-let handleSubmit;
+import { SafeAreaView } from "react-native-safe-area-context";
+import { CommonActions } from "@react-navigation/native";
+import SubScreenHeader from "../../components/SubScreenHeader";
+import TextField from "../../components/TextField";
+import Calendar from "../../assets/svg/Calendar";
+import DateTimePickerModal from "react-native-modal-datetime-picker";
+import DropDownLists from "./DropDownLists";
+import { AuthContext } from "../../context/AuthProvider";
+import { ActivityIndicator } from "react-native-paper";
+import { format, compareAsc } from "date-fns";
+import DropDownList from "../../components/DropDownList";
 
 export default function SignUpScreen({ navigation }) {
-  const [steps, setStep] = useState(0.5);
-  const [error, setErrorEmail, errorPassword] = useState("");
+  const [visiblity, setVisibility] = useState(false);
+  const [date_birth, setDate_birth] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [password_confirmation, setPassword_confirmation] = useState("");
+  const [phone, setPhone] = useState("");
+  const [university, setUniversity] = useState("");
+  const [gender, setGender] = useState("");
 
-  const handleClick = () => {
-    if (steps === 1 || steps > 1) {
-      setStep(0.5); // Reset count to its default value of 0
-    } else setStep(steps + 0.5);
+  const { error, isLoading, register } = useContext(AuthContext);
+  const visibiltyStatus = () => {
+    setVisibility(!visiblity);
   };
 
-  const form = {
-    titleName: "الاسم الكامل",
-    titleEmail: "البريد الإلكتروني",
-    tilePassword: "الرقم السري",
-    tileConPassword: "تأكيد الرقم السري",
-    textContentType: {
-      name: "text",
-      email: "emailAddress",
-      password: "password",
-      password_confirmation: "password_confirmation",
-    },
-    autoComplete: {
-      name: "name",
-      email: "emailAddress",
-      password: "password",
-      password_confirmation: "password_confirmation",
-    },
-    keyboardType: {
-      name: "text",
-      email: "email-address",
-      password: "password",
-      password_confirmation: "password",
-    },
-    textAlign: "right",
-    className: "border-b-2 border-primary text-gray900 h-8 w-full bg-white",
+  const handleConfirm = (currentDate) => {
+    let tempDate = format(new Date(currentDate), "Y-mm-dd");
+
+    // let formattedDate =
+    //   tempDate.getUTCDay() +
+    //   "-" +
+    //   (tempDate.getUTCMonth() + 1) +
+    //   "-" +
+    //   tempDate.getUTCFullYear();
+    console.log(tempDate);
+    setDate_birth(tempDate);
+    visibiltyStatus();
   };
+
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-      style={styles.container}
+    <SafeAreaView
+      className="flex-1 bg-white"
+      edges={["right", "left", "bottom"]}
     >
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <View style={styles.inner}>
-          <View style={styles.header}>
-            <ProgressBar
-              style={{ height: 15, borderRadius: 10 }}
-              progress={steps}
-              color="#6949FF"
-            />
-            <Text className="text-h3 font-[TajawalBold]">إنشاء حساب ✏️</Text>
-            <Text className="text-xlRegular font-[TajawalRegular] pt-3">
+      <ScrollView
+        className="flex-1"
+        contentContainerStyle={{
+          justifyContent: "center",
+        }}
+        showsVerticalScrollIndicator={false}
+      >
+        <View className="px-6">
+          <SubScreenHeader navigation={navigation} />
+          <View style={styles.header} className="w-full justify-center">
+            <Text className="text-h3 font-[TajawalBold] text-center">
+              إنشاء حساب ✏️
+            </Text>
+            <Text className="text-xlRegular font-[TajawalRegular] pt-3 text-left">
               يرجى استكمال ملف التعريف الخاص بك. لا تقلق ، ستظل بياناتك خاصة
               وأنت فقط من يمكنه رؤيتها.
             </Text>
           </View>
-          <View style={styles.header}>
-            <Formik
-              initialValues={{
-                name: "",
-                email: "",
-                password: "",
-                conFPassword: "",
-              }}
-              onSubmit={(values) =>
+          <View className="pb-6">
+            <TextField
+              textFieldTitle="الاسم الكامل"
+              textFieldPlaceHolder="أدخل اسمك الكامل"
+              autoComplete={"name"}
+              onChangeText={(text) => setName(text)}
+              value={name}
+              // keyboardType={"name"}
+            />
+            <TextField
+              textFieldTitle="الإيميل"
+              textFieldPlaceHolder="user@user.com"
+              textContentType="emailAddress"
+              autoComplete={"email"}
+              onChangeText={(text) => setEmail(text)}
+              value={email}
+              keyboardType={"email-address"}
+            />
+            <TextField
+              textFieldTitle="الرقم السري"
+              textFieldPlaceHolder="أدخل الرقم السري"
+              onChangeText={(text) => setPassword(text)}
+              value={password}
+              // autoComplete={"new-password"}
+              secureTextEntry={true}
+            />
+            <TextField
+              textFieldTitle="إعادة الرقم السري"
+              textFieldPlaceHolder="أدخل الرقم السري"
+              // autoComplete={"new-password"}
+              secureTextEntry={true}
+              onChangeText={(text) => setPassword_confirmation(text)}
+              value={password_confirmation}
+            />
+            <TextField
+              textFieldTitle="رقم الجوال"
+              textFieldPlaceHolder="+966 50 000 0000"
+              autoComplete={"tel"}
+              onChangeText={(text) => setPhone(text)}
+              value={phone}
+            />
+            <View className="pt-4">
+              <DropDownList
+                itemsList={universitiesList}
+                title="الجامعة"
+                searchTitle="إختر الجامعة"
+                searchability={true}
+                value={university}
+                setValue={setUniversity}
+              />
+              <View className="py-3"></View>
+              <DropDownList
+                itemsList={genders}
+                title="الجنس"
+                searchTitle="حدد الجنس"
+                value={gender}
+                setValue={(text) => setGender(text)}
+              />
+            </View>
+            <Pressable onPress={visibiltyStatus}>
+              <TextField
+                editable={false}
+                textFieldTitle="تاريخ الميلاد"
+                textFieldPlaceHolder={
+                  date_birth === "" ? "لايوجد" : date_birth.toString() + " مـ"
+                }
+                icon={<Calendar />}
+              />
+            </Pressable>
+            <DateTimePickerModal
+              isVisible={visiblity}
+              mode="date"
+              textColor="black"
+              onConfirm={handleConfirm}
+              onCancel={visibiltyStatus}
+            />
+          </View>
+          <View className=" justify-between content-center items-center w-full    ">
+            <PrimaryColorButton
+              title={"سجل الدخول"}
+              onPress={() =>
                 register(
-                  values,
-                  { navigation },
-                  error,
-                  setErrorEmail,
-                  errorPassword
+                  name,
+                  email,
+                  password,
+                  password_confirmation,
+                  phone,
+                  university,
+                  gender,
+                  date_birth
                 )
               }
-            >
-              {({ handleChange, handleBlur, handleSubmit, values }) => (
-                <View className="py-1 w-full content-start items-start ">
-                  <View className="  w-full content-start items-start">
-                    <Text className="text-h6 font-[TajawalMedium] pb-5  content-end items-end">
-                      {form.titleName}
-                    </Text>
-                  </View>
-                  <View className="w-full">
-                    <TextInput
-                      title={form.titleName}
-                      placeholder={form.titleName}
-                      textContentType={form.textContentType.name}
-                      textAlign={"right"}
-                      className={form.className}
-                      onChangeText={handleChange("name")}
-                      onBlur={handleBlur("name")}
-                      value={values.fullName}
-                      returnKeyType="next"
-                      returnKeyLabel="التالي"
-                      placeholderTextColor={"gray"}
-                    />
-                  </View>
-                  <View className=" pt-8 w-full content-start items-start">
-                    <Text className="text-h6 font-[TajawalMedium] pb-5  content-end items-end">
-                      {form.titleEmail}
-                    </Text>
-                  </View>
-                  <View className="w-full ">
-                    <TextInput
-                      title={form.titleEmail}
-                      placeholder={"أدخل بريدك الإلكتروني ✉️"}
-                      textContentType={"emailAddress"}
-                      keyboardType={"email-address"}
-                      textAlign={"right"}
-                      className={form.className}
-                      onChangeText={handleChange("email")}
-                      onBlur={handleBlur("email")}
-                      value={values.email}
-                      returnKeyType="next"
-                      returnKeyLabel="التالي"
-                      placeholderTextColor={"gray"}
-                    />
-                    <Text>{error}</Text>
-                    <View className=" pt-8 w-full content-start items-start">
-                      <Text className="text-h6 font-[TajawalMedium] pb-5  content-end items-end">
-                        {form.tilePassword}
-                      </Text>
-                    </View>
-                    <View className="w-full">
-                      <TextInput
-                        title={"الرقم السري"}
-                        placeholder={"أدخل الرقم السري👀"}
-                        textContentType={form.textContentType.password}
-                        textAlign={"right"}
-                        className={form.className}
-                        onChangeText={handleChange("password")}
-                        onBlur={handleBlur("password")}
-                        value={values.password}
-                        returnKeyType="next"
-                        returnKeyLabel="التالي"
-                        placeholderTextColor={"gray"}
-                      />
-                      <Text>{error}</Text>
-                    </View>
-                    <View className=" pt-8 w-full content-start items-start">
-                      <Text className="text-h6 font-[TajawalMedium] pb-5  content-end items-end">
-                        {form.tileConPassword}
-                      </Text>
-                    </View>
-                    <View className="w-full pb-8">
-                      <TextInput
-                        title={form.tileConPassword}
-                        placeholder={"أكد الرقم السري🔒"}
-                        textContentType={
-                          form.textContentType["current-password"]
-                        }
-                        textAlign={"right"}
-                        className={form.className}
-                        onChangeText={handleChange("password_confirmation")}
-                        onBlur={handleBlur("password_confirmation")}
-                        value={values.password_confirmation}
-                        returnKeyType="done"
-                        returnKeyLabel="التالي"
-                        placeholderTextColor={"gray"}
-                      />
-                    </View>
-                  </View>
-                  <View className=" justify-between content-center items-center w-full    ">
-                    <PrimaryColorButton
-                      title={"سجل الدخول"}
-                      onPress={handleSubmit}
-                    />
-                  </View>
-                </View>
-              )}
-            </Formik>
+            />
+            {error && <Text>{error}</Text>}
+            {isLoading && <ActivityIndicator size="small" color="#6949FF" />}
           </View>
         </View>
-      </TouchableWithoutFeedback>
-    </KeyboardAvoidingView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -196,19 +183,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
+    paddingTop: 20,
   },
-  inner: {
-    justifyContent: "space-around",
-    flex: 1,
-    padding: 20,
-  },
+
   header: {
     alignItems: "center",
     alignContent: "center",
-
     backgroundColor: "white",
-
-    padding: 10,
   },
   body: {
     alignItems: "center",
@@ -228,3 +209,16 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
 });
+const universitiesList = [
+  { label: "كليات ومعاهد الجبيل", value: 1,},
+  { label: "جامعة الملك سعود", value: "2", key: "2" },
+  { label: "جامعة الملك عبدالعزيز", value: "3", key: "3" },
+  { label: "جامعة الملك فهد للبترول والمعادن", value: "4", key: "4" },
+  { label: "جامعة أم القرى", value: "5", key: "5" },
+  { label: "جامعة الملك خالد", value: "6", key: "6" },
+  { label: "جامعة الملك فيصل", value: "7", key: "7" },
+];
+const genders = [
+  { label: "ذكر", value: 1, key: 1 },
+  { label: "أنثى", value: "2", key: "2" },
+];

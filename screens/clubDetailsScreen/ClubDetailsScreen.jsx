@@ -7,18 +7,20 @@ import TabBar from "./components/TabBar";
 import { ScrollView } from "moti";
 import EventClubAccount from "../eventDetailsScreen/components/EventClubAccount";
 
-const ClubDetailsScreen = () => {
+import { useNavigation } from "@react-navigation/native";
+
+const ClubDetailsScreen = ({ navigation }) => {
   return (
     <View className="flex-1 bg-white justify-center px-6">
       {/* Screen Header */}
-      <SubScreenHeader />
+      <SubScreenHeader navigation={navigation} />
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* Club Images */}
         <ClubCarouselBanner />
         {/* Club Club */}
         <EventClubAccount />
         {/* Tab Bar */}
-        <TabBar />
+        <TabBar navigation={navigation} />
       </ScrollView>
     </View>
   );

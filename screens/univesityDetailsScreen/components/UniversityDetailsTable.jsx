@@ -4,7 +4,7 @@ import FourCellsGridTable from "../../../components/FourCellsGridTable";
 
 const UniversityDetailsTable = () => {
   return (
-    <View className="pt-5">
+    <View className="pt-5 flex-1 bg-white">
       <FourCellsGridTable
         topRightTitle={"عدد الأندية"}
         topRightInfo={"12"}

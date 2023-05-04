@@ -8,13 +8,18 @@ import UserInputFields from "./components/UserInputFields";
 import { useState } from "react";
 
 import DropDownLists from "./components/DropDownLists";
+import SubScreenHeader from "../../components/SubScreenHeader";
+import PrimaryColorButton from "../../components/buttons/PrimaryColorButton";
 
-export default function ProfileEditingScreen() {
+export default function ProfileEditingScreen({ navigation }) {
   return (
     <>
-      <SafeAreaView className="bg-white flex-1 px-6 pt-5">
+      <SafeAreaView
+        className="bg-white flex-1 px-6 pt-5"
+        edges={["right", "left", "bottom"]}
+      >
         {/* Profile Editing Header */}
-        <ProfileEditingHeader />
+        <SubScreenHeader navigation={navigation} />
         {/* Personal Image */}
         <ProfileImage />
         {/* Divider */}
@@ -24,6 +29,9 @@ export default function ProfileEditingScreen() {
           <UserInputFields />
           {/* Dropdown List */}
           <DropDownLists />
+          <View className="pb-2">
+            <PrimaryColorButton title={"تحديث البيانات"} />
+          </View>
         </ScrollView>
       </SafeAreaView>
     </>

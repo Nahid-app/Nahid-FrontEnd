@@ -7,17 +7,18 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import React, { useEffect, useState } from "react";
-import { I18nManager } from "react-native";
+import React, { useEffect, useState, useContext } from "react";
 import PrimaryColorButton from "../../components/buttons/PrimaryColorButton";
-import InputText from "../../components/buttons/inputs/InputText";
 import Checkbox from "expo-checkbox";
-import axios from "axios";
-import { Formik, handleSubmit } from "formik";
-import { postLogin } from "../../api/login";
+import { AuthContext } from "../../context/AuthProvider";
+import { ActivityIndicator } from "react-native-paper";
 
 export default function LoginScreen({ navigation }) {
   const [isChecked, setChecked] = useState(false);
+  const { login, error, isLoading } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const form = {
     titleEmail: "البريد الإلكتروني",
     tilePassword: "الرقم السري",
@@ -47,84 +48,77 @@ export default function LoginScreen({ navigation }) {
           </Text>
         </View>
         <View className="items-start w-full ">
-          <Formik
-            initialValues={{ email: "", password: "" }}
-            onSubmit={(values) => postLogin(values, { navigation })}
-          >
-            {({ handleChange, handleBlur, handleSubmit, values }) => (
-              <View className="py-8 w-full content-start items-start ">
-                <Text className="text-h6 font-[TajawalMedium] pb-8 ">
-                  {form.titleEmail}
+          <View className="py-8 w-full content-start items-start ">
+            <Text className="text-h6 font-[TajawalMedium] pb-8 ">
+              {form.titleEmail}
+            </Text>
+            <View className="w-full justify-evenly">
+              <TextInput
+                title={form.titleEmail}
+                placeholder={"أدخل بريدك الإلكتروني ✉️"}
+                textContentType={"emailAddress"}
+                keyboardType={"email-address"}
+                textAlign={"right"}
+                className={form.className}
+                value={email}
+                returnKeyType="next"
+                returnKeyLabel="التالي"
+                onChangeText={setEmail}
+              />
+              <View className=" pt-8 w-full content-start items-start">
+                <Text className="text-h6 font-[TajawalMedium] pb-5  content-end items-end">
+                  {form.tilePassword}
                 </Text>
-                <View className="w-full justify-evenly">
-                  <TextInput
-                    title={form.titleEmail}
-                    placeholder={"أدخل بريدك الإلكتروني ✉️"}
-                    textContentType={"emailAddress"}
-                    keyboardType={"email-address"}
-                    textAlign={"right"}
-                    className={form.className}
-                    onChangeText={handleChange("email")}
-                    onBlur={handleBlur("email")}
-                    value={values.email}
-                    returnKeyType="next"
-                    returnKeyLabel="التالي"
+              </View>
+              <View className="w-full pb-8">
+                <TextInput
+                  title={"الرقم السري"}
+                  placeholder={"أدخل الرقم السري👀"}
+                  textContentType={form.textContentType.password}
+                  secureTextEntry={true}
+                  textAlign={"right"}
+                  className={form.className}
+                  value={password}
+                  returnKeyType="next"
+                  returnKeyLabel="التالي"
+                  onChangeText={setPassword}
+                />
+              </View>
+              <View className=" align-text-bottom flex-row border-b-2  border-gray200 w-full pb-8">
+                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                  <Checkbox
+                    style={{ borderRadius: 6, textAlignVertical: "center" }}
+                    value={isChecked}
+                    onValueChange={setChecked}
+                    color={isChecked ? "#6949FF" : undefined}
                   />
-                  <View className=" pt-8 w-full content-start items-start">
-                    <Text className="text-h6 font-[TajawalMedium] pb-5  content-end items-end">
-                      {form.tilePassword}
-                    </Text>
-                  </View>
-                  <View className="w-full pb-8">
-                    <TextInput
-                      title={"الرقم السري"}
-                      placeholder={"أدخل الرقم السري👀"}
-                      textContentType={form.textContentType.password}
-                      secureTextEntry={true}
-                      textAlign={"right"}
-                      className={form.className}
-                      onChangeText={handleChange("password")}
-                      onBlur={handleBlur("password")}
-                      value={values.password}
-                      returnKeyType="next"
-                      returnKeyLabel="التالي"
-                    />
-                  </View>
-                  <View className=" align-text-bottom flex-row border-b-2  border-gray200 w-full pb-8">
-                    <View
-                      style={{ flexDirection: "row", alignItems: "center" }}
-                    >
-                      <Checkbox
-                        style={{ borderRadius: 6, textAlignVertical: "center" }}
-                        value={isChecked}
-                        onValueChange={setChecked}
-                        color={isChecked ? "#6949FF" : undefined}
-                      />
-                      <Text
-                        className="pl-4 font-[TajawalMedium] text-xlSemiBold"
-                        style={{ textAlignVertical: "center" }}
-                      >
-                        تذكرني
-                      </Text>
-                    </View>
-                  </View>
-                  <View className=" justify-between content-center items-center w-full py-8">
-                    <TouchableOpacity>
-                      <Text className="text-primary text-h5 font-[TajawalBold]">
-                        نسيت الرقم السري؟
-                      </Text>
-                    </TouchableOpacity>
-                  </View>
-                  <View className="  justify-between content-center items-center w-full    ">
-                    <PrimaryColorButton
-                      title={"سجل الدخول"}
-                      onPress={handleSubmit}
-                    />
-                  </View>
+                  <Text
+                    className="pl-4 font-[TajawalMedium] text-xlSemiBold"
+                    style={{ textAlignVertical: "center" }}
+                  >
+                    تذكرني
+                  </Text>
                 </View>
               </View>
-            )}
-          </Formik>
+              <View className=" justify-between content-center items-center w-full py-8">
+                <TouchableOpacity>
+                  <Text className="text-primary text-h5 font-[TajawalBold]">
+                    نسيت الرقم السري؟
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View className="  justify-between content-center items-center w-full    ">
+                <PrimaryColorButton
+                  title={"سجل الدخول"}
+                  onPress={() => login(email, password)}
+                />
+                {error && <Text>{error}</Text>}
+                {isLoading && (
+                  <ActivityIndicator size="small" color="#6949FF" />
+                )}
+              </View>
+            </View>
+          </View>
         </View>
       </View>
     </TouchableWithoutFeedback>

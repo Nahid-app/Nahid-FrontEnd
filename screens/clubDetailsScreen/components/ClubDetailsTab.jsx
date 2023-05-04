@@ -9,8 +9,10 @@ const ClubDetailsTab = () => {
     <View>
       {/* Club Information */}
       <ClubDetailsTable />
-      {/* Description */}
-      <ClubDescription />
+      <View className="pt-4">
+        {/* Description */}
+        <ClubDescription />
+      </View>
     </View>
   );
 };

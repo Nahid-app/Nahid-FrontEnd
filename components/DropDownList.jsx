@@ -7,21 +7,20 @@ import ArrowUp from "../assets/svg/ArrowUp";
 
 const DropDownList = (props) => {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(null);
   const [items, setItems] = useState(props.itemsList);
 
   return (
     <View>
-      <Text className="font-[TajawalBold] text-h5 text-grey900 text-left">
+      <Text className="font-[TajawalBold] text-h5 text-grey900 text-left overflow-hidden">
         {props.title}
       </Text>
       <DropDownPicker
         rtl={false}
         open={open}
-        value={value}
+        value={props.value}
         items={items}
         setOpen={setOpen}
-        setValue={setValue}
+        setValue={props.setValue}
         setItems={setItems}
         placeholder={props.searchTitle}
         searchable={props.searchability}
@@ -61,7 +60,7 @@ const DropDownList = (props) => {
           marginHorizontal: 12,
           borderBottomColor: "#6949FF",
         }}
-        dropDownDirection="AUTO"
+        dropDownDirection="TOP"
         ArrowDownIconComponent={({}) => <ArrowDown />}
         ArrowUpIconComponent={({}) => <ArrowUp />}
         customItemContainerStyle

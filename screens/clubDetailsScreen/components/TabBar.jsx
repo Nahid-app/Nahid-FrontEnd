@@ -10,7 +10,7 @@ import { useState } from "react";
 import ClubDetailsTab from "./ClubDetailsTab";
 import UniversityClubsList from "./ClubEventsList";
 
-const TabBar = () => {
+const TabBar = ({ navigation }) => {
   const [clubTab, setClubTab] = useState(true);
   const [eventsTab, setEventsTab] = useState(false);
 
@@ -53,7 +53,11 @@ const TabBar = () => {
           </View>
         </TouchableOpacity>
       </View>
-      {clubTab ? <ClubDetailsTab /> : <UniversityClubsList />}
+      {clubTab ? (
+        <ClubDetailsTab />
+      ) : (
+        <UniversityClubsList navigation={navigation} />
+      )}
     </View>
   );
 };
