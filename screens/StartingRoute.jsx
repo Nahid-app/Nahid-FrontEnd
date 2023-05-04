@@ -9,6 +9,7 @@ import WalkthroughScreen from "./walkThroughScreen/WalkthroughScreen";
 import SignUpScreen from "./signUpScreen/SignUpScreen";
 import LoginScreen from "./loginScreen/LoginScreen";
 import HomeTabScreen from "./homeScreen/HomeTabScreen";
+import { AuthProvider } from "../context/AuthProvider";
 
 const Stack = createNativeStackNavigator();
 

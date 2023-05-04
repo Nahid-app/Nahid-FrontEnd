@@ -7,7 +7,6 @@ import ArrowUp from "../assets/svg/ArrowUp";
 
 const DropDownList = (props) => {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(null);
   const [items, setItems] = useState(props.itemsList);
 
   return (
@@ -18,10 +17,10 @@ const DropDownList = (props) => {
       <DropDownPicker
         rtl={false}
         open={open}
-        value={value}
+        value={props.value}
         items={items}
         setOpen={setOpen}
-        setValue={setValue}
+        setValue={props.setValue}
         setItems={setItems}
         placeholder={props.searchTitle}
         searchable={props.searchability}

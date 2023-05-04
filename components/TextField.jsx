@@ -18,6 +18,8 @@ const TextField = (props) => {
           autoComplete={props.autoComplete}
           multiline={props.multiline}
           secureTextEntry={props.secureTextEntry}
+          value={props.value}
+          onChangeText={props.onChangeText}
         />
         {props.icon}
       </View>
