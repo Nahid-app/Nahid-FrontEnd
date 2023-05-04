@@ -14,7 +14,10 @@ import PrimaryColorButton from "../../components/buttons/PrimaryColorButton";
 export default function ProfileEditingScreen({ navigation }) {
   return (
     <>
-      <SafeAreaView className="bg-white flex-1 px-6 pt-5">
+      <SafeAreaView
+        className="bg-white flex-1 px-6 pt-5"
+        edges={["right", "left", "bottom"]}
+      >
         {/* Profile Editing Header */}
         <SubScreenHeader navigation={navigation} />
         {/* Personal Image */}

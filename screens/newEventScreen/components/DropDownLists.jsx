@@ -21,6 +21,8 @@ const DropDownLists = () => {
     { label: "فعالية", value: 1 },
     { label: "مسابقة", value: 2 },
     { label: "ندوة", value: 3 },
+    { label: "دورة", value: 4 },
+    { label: "أخرى", value: 5 },
   ];
 
   return (
