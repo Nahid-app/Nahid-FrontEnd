@@ -10,41 +10,50 @@ import { AuthContext } from "./AuthProvider";
 export const UniContext = createContext();
 
 export const UniProvider = ({ children }) => {
-  const [name, setName] = useState(null);
-  const [id, setId] = useState(null);
-  const [description, setDescription] = useState(null);
-  const [location, setLocation] = useState(null);
-  const [logo, setLogo] = useState(null);
-  const [clubsCount, setClubsCount] = useState(null);
-  const [studentCount, setStudentCount] = useState(null);
+  // const [error, setError] = useState(null);
+  const [universities, setUniversities] = useState([]);
+  const [clubs, setClubs] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const { user } = useContext(AuthContext);
 
   return (
     <UniContext.Provider
       value={{
-        name,
-        id,
-        description,
-        location,
-        logo,
-        clubsCount,
-        studentCount,
-
-        // userInfos,
-        GETUniversities: (user) => {
+        universities,
+        clubs,
+        GETUniversities: () => {
+          setIsLoading(true);
           // communicate with backend and store token in SecureStore
           axiosConfig
-            .get("/universities", {
+            .get("http://47.254.73.147/api/universities", {
               headers: {
                 Authorization: "Bearer " + user.userToken,
               },
             })
             .then((response) => {
-              console.log(response.data);
+              setUniversities(response.data.data);
             })
             .catch((error) => {
-              // console.log(error.response.data.message);
-              // const key = Object.keys(error.response.data.errors)[0];
-              throw setError(error.response.data.message);
+              console.log(error);
+            });
+        },
+        GETClubs: () => {
+          setIsLoading(true);
+          // communicate with backend and store token in SecureStore
+          axiosConfig
+            .get("http://47.254.73.147/api/clubs", {
+              headers: {
+                Authorization: "Bearer " + user.userToken,
+              },
+            })
+            .then((response) => {
+              // setClubs(response.data.data["name"]);
+              response.data.data.forEach((item) => {
+                setClubs([item.name, item.university_id]);
+              });
+            })
+            .catch((error) => {
+              console.log(error);
             });
         },
       }}

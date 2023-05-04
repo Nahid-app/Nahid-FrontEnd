@@ -8,7 +8,7 @@ import UniversityName from "./components/UniversityName";
 import { ScrollView } from "react-native";
 import SubScreenHeader from "../../components/SubScreenHeader";
 
-const UniversityDetailsScreen = ({ navigation }) => {
+const UniversityDetailsScreen = ({ navigation, route }) => {
   return (
     <View className=" bg-white px-6 flex-1">
       {/* App Bar */}
@@ -17,13 +17,13 @@ const UniversityDetailsScreen = ({ navigation }) => {
         {/* University Banner */}
         <UniversityCarouselBanner />
         {/* University Name */}
-        <UniversityName />
+        <UniversityName route={route} />
         {/* University Details Table */}
         <UniversityDetailsTable />
         {/* University Clubs List Header */}
         <UniversityClubListHeader />
         {/* University Clubs List */}
-        <UniversityClubsList navigation={navigation} />
+        <UniversityClubsList route={route} navigation={navigation} />
       </ScrollView>
     </View>
   );

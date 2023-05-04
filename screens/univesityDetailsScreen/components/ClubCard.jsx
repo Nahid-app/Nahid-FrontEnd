@@ -4,7 +4,7 @@ import { MotiView } from "moti";
 import Group from "../../../assets/svg/Group";
 import PrimaryButton from "../../../components/PrimaryButton";
 
-const ClubCard = ({ item, index, navigation }) => {
+const ClubCard = ({ item, index, navigation, clubs }) => {
   return (
     <View className="pb-4">
       <TouchableOpacity
@@ -40,7 +40,7 @@ const ClubCard = ({ item, index, navigation }) => {
           </View>
           <View className="items-start justify-center flex-grow flex-shrink ">
             <Text className="text-h6 font-[TajawalBold] py-1 items-start  pb-1.5 text-left">
-              {item.clubTitle}
+              {clubs}
             </Text>
             {/* uni avatar */}
             <View className="flex-row items-center w-full flex-wrap">

@@ -6,9 +6,10 @@ import {
   TouchableOpacity,
   Pressable,
 } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import { MotiView } from "moti";
 import LeftBlackArrow from "../../../assets/svg/LeftBlackArrow";
+import { UniContext } from "../../../context/UniProvider";
 
 const UniversityCard = ({
   navigation,
@@ -16,14 +17,18 @@ const UniversityCard = ({
   universityAvatar,
   UniversityLocation,
   clubsNumber,
-  ...props
 }) => {
+  const { club } = useContext(UniContext);
   return (
     <>
       <TouchableOpacity
         onPress={() =>
           navigation.navigate("DetailsRoute", {
             screen: "UniversityDetailsScreen",
+            params: {
+              universityName: universityName,
+              club: club,
+            },
           })
         }
       >
