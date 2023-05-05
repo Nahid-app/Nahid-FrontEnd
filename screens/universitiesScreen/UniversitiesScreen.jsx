@@ -12,29 +12,16 @@ import axios from "axios";
 import { ActivityIndicator } from "react-native-paper";
 
 export default function UniversitiesScreen({ navigation }) {
-  const [data, setData] = useState([]);
   const { error, isLoading, universities, GETUniversities } =
-    useContext(UniContext);
-  const [filteredData, setFilteredData] = useState(data);
-
-  useEffect(() => {
-    getUserData();
-  }, []);
-  function getUserData() {
-    GETUniversities();
+  useContext(UniContext);
+    // this function calls the function in Context to send a request
+    //  to backend to get universities data
+    function getUniversitiesData() {
+      GETUniversities();
   }
-
-  // const handleSearch = (query) => {
-  //   const newData = data.filter((item) => {
-  //     const itemData = item.name;
-  //     const queryData = query;
-  //     return itemData.indexOf(queryData) > -1;
-  //   });
-  //   setFilteredData(newData);
-  // };
-  // useEffect(() => {
-  //   setFilteredData(data);
-  // }, [data]);
+  useEffect(() => {
+    getUniversitiesData();
+  }, []);
 
   return (
     <SafeAreaView
@@ -50,3 +37,5 @@ export default function UniversitiesScreen({ navigation }) {
     </SafeAreaView>
   );
 }
+  // const [filteredData, setFilteredData] = useState(data);
+      // const [data, setData] = useState([]);

@@ -2,12 +2,12 @@ import react, { createContext } from "react";
 import { useState } from "react";
 import * as SecureStore from "expo-secure-store";
 import axiosConfig from "../helpers/axiosConfig";
-import Toast from "react-native-root-toast";
-import { PopUpModal } from "../components/PopUpModal";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  // This code defines an AuthProvider component which provides authentication-related functionality to its child components.
+  // The component uses the useState hook to define and manage states for user data, error messages, loading status, and visibility.
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -42,8 +42,6 @@ export const AuthProvider = ({ children }) => {
               setIsLoading(false);
             })
             .catch((error) => {
-              // console.log(error.response.data.message);
-              // const key = Object.keys(error.response.data.errors)[0];
               setIsLoading(false);
               throw setError(error.response.data.message);
             });
@@ -89,9 +87,9 @@ export const AuthProvider = ({ children }) => {
                 password,
                 password_confirmation,
                 phone,
-                university: 1,
-                gender: 1,
-                date_birth: "2000-12-16",
+                university,
+                gender,
+                date_birth,
                 device_name: "mobile",
               },
               {

@@ -14,6 +14,8 @@ export const UniProvider = ({ children }) => {
   const [universities, setUniversities] = useState([]);
   const [clubs, setClubs] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   const { user } = useContext(AuthContext);
 
   return (
@@ -23,7 +25,7 @@ export const UniProvider = ({ children }) => {
         clubs,
         GETUniversities: () => {
           setIsLoading(true);
-          // communicate with backend and store token in SecureStore
+          // communicate with backend to store all S JSON file into Universities Variable
           axiosConfig
             .get("http://47.254.73.147/api/universities", {
               headers: {
@@ -34,12 +36,13 @@ export const UniProvider = ({ children }) => {
               setUniversities(response.data.data);
             })
             .catch((error) => {
-              console.log(error);
+              setIsLoading(false);
+              throw setError(error.response.data.message);
             });
         },
         GETClubs: () => {
           setIsLoading(true);
-          // communicate with backend and store token in SecureStore
+          // communicate with backend to store all clubs JSON file into Clubs
           axiosConfig
             .get("http://47.254.73.147/api/clubs", {
               headers: {
@@ -47,13 +50,13 @@ export const UniProvider = ({ children }) => {
               },
             })
             .then((response) => {
-              // setClubs(response.data.data["name"]);
               response.data.data.forEach((item) => {
                 setClubs([item.name, item.university_id]);
               });
             })
             .catch((error) => {
-              console.log(error);
+              setIsLoading(false);
+              throw setError(error.response.data.message);
             });
         },
       }}
