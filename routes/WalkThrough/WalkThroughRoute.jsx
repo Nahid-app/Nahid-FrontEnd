@@ -17,8 +17,8 @@ const WalkthroughRoute = ({ navigation }) => {
   const { user, setUser } = useContext(AuthContext);
 
   useEffect(() => {
-    // Check if user is logged in or not
-    // Check secure store for user token
+    // Checks if user is logged in or not
+    // Checks SecureStore for user token
     SecureStore.getItemAsync("userToken")
       .then((userToken) => {
         if (userToken) {
