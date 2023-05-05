@@ -10,7 +10,7 @@ import {
 import Group from "../../../assets/svg/Group";
 import eventsData from "./ClubEventsData";
 
-const EventsList = ({ navigation }) => {
+const EventsList = ({ navigation, route }) => {
   return (
     <>
       <FlatList
@@ -40,7 +40,7 @@ const EventsList = ({ navigation }) => {
                     </Text>
                   </View>
                 </View>
-                <View className="overflow-hidden justify-around px-4 items-start overflow-hidden">
+                <View className="overflow-hidden justify-around px-4 items-start">
                   <Text className="font-[TajawalBold] text-h6 text-gray900 text-left break words">
                     {item.eventTitle}
                   </Text>

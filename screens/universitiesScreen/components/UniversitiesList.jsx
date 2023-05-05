@@ -14,6 +14,7 @@ const RenderItem = ({ item, navigation }) => {
         clubsNumber={item.clubsNumber}
         UniversityLocation={item.location}
         navigation={navigation}
+        universityID={item.id}
       />
     </View>
   );

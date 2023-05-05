@@ -17,6 +17,7 @@ const UniversityCard = ({
   universityAvatar,
   UniversityLocation,
   clubsNumber,
+  universityID,
 }) => {
   const { club } = useContext(UniContext);
   return (
@@ -27,7 +28,7 @@ const UniversityCard = ({
             screen: "UniversityDetailsScreen",
             params: {
               universityName: universityName,
-              club: club,
+              universityID: universityID,
             },
           })
         }

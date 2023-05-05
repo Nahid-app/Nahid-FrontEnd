@@ -18,9 +18,9 @@ export default function UniversitiesScreen({ navigation }) {
   const [filteredData, setFilteredData] = useState(data);
 
   useEffect(() => {
-    getUserData();
+    getUniversitiesData();
   }, []);
-  function getUserData() {
+  function getUniversitiesData() {
     GETUniversities();
   }
 

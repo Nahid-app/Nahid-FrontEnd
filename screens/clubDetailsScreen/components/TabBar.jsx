@@ -10,7 +10,7 @@ import { useState } from "react";
 import ClubDetailsTab from "./ClubDetailsTab";
 import UniversityClubsList from "./ClubEventsList";
 
-const TabBar = ({ navigation }) => {
+const TabBar = ({ navigation, route }) => {
   const [clubTab, setClubTab] = useState(true);
   const [eventsTab, setEventsTab] = useState(false);
 
@@ -54,9 +54,9 @@ const TabBar = ({ navigation }) => {
         </TouchableOpacity>
       </View>
       {clubTab ? (
-        <ClubDetailsTab />
+        <ClubDetailsTab route={route} />
       ) : (
-        <UniversityClubsList navigation={navigation} />
+        <UniversityClubsList route={route} navigation={navigation} />
       )}
     </View>
   );

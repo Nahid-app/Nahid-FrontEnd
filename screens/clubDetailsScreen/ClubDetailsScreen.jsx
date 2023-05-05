@@ -9,7 +9,7 @@ import EventClubAccount from "../eventDetailsScreen/components/EventClubAccount"
 
 import { useNavigation } from "@react-navigation/native";
 
-const ClubDetailsScreen = ({ navigation }) => {
+const ClubDetailsScreen = ({ navigation, route }) => {
   return (
     <View className="flex-1 bg-white justify-center px-6">
       {/* Screen Header */}
@@ -18,9 +18,9 @@ const ClubDetailsScreen = ({ navigation }) => {
         {/* Club Images */}
         <ClubCarouselBanner />
         {/* Club Club */}
-        <EventClubAccount />
+        <EventClubAccount route={route} />
         {/* Tab Bar */}
-        <TabBar navigation={navigation} />
+        <TabBar route={route} navigation={navigation} />
       </ScrollView>
     </View>
   );

@@ -4,12 +4,17 @@ import { MotiView } from "moti";
 import Group from "../../../assets/svg/Group";
 import PrimaryButton from "../../../components/PrimaryButton";
 
-const ClubCard = ({ item, index, navigation, clubs }) => {
+const ClubCard = ({ item, navigation, index }) => {
   return (
-    <View className="pb-4">
+    <View className="pt-5">
       <TouchableOpacity
         onPress={() =>
-          navigation.navigate("DetailsRoute", { screen: "ClubDetailsScreen" })
+          navigation.navigate("DetailsRoute", {
+            screen: "ClubDetailsScreen",
+            params: {
+              clubName: item.name,
+            },
+          })
         }
       >
         <MotiView
@@ -40,7 +45,7 @@ const ClubCard = ({ item, index, navigation, clubs }) => {
           </View>
           <View className="items-start justify-center flex-grow flex-shrink ">
             <Text className="text-h6 font-[TajawalBold] py-1 items-start  pb-1.5 text-left">
-              {clubs}
+              {item.name}
             </Text>
             {/* uni avatar */}
             <View className="flex-row items-center w-full flex-wrap">
@@ -53,7 +58,7 @@ const ClubCard = ({ item, index, navigation, clubs }) => {
                 </View>
               </View>
               <Text className="font-[TajawalRegular] text-gray700 pt-1 ">
-                {item.clubMajor}
+                {item.id}
               </Text>
               <Text className=" text-lMedium text-left font-[TajawalRegular] px-1.5 text-gray700 ">
                 {"\u007C"}

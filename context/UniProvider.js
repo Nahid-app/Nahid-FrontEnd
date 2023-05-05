@@ -37,20 +37,17 @@ export const UniProvider = ({ children }) => {
               console.log(error);
             });
         },
-        GETClubs: () => {
+        GETClubs: (id) => {
           setIsLoading(true);
           // communicate with backend and store token in SecureStore
           axiosConfig
-            .get("http://47.254.73.147/api/clubs", {
+            .get("http://47.254.73.147/api/universities/" + id, {
               headers: {
                 Authorization: "Bearer " + user.userToken,
               },
             })
             .then((response) => {
-              // setClubs(response.data.data["name"]);
-              response.data.data.forEach((item) => {
-                setClubs([item.name, item.university_id]);
-              });
+              setClubs(response.data.data.clubs);
             })
             .catch((error) => {
               console.log(error);
