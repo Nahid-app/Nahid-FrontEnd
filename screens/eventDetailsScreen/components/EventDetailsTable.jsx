@@ -13,7 +13,7 @@ const EventDetailsTable = () => {
         bottomRightTitle={"المكان"}
         bottomRightInfo={"MIS Room 38"}
         bottomLeftTitle={"نوع النشاط"}
-        bottomLeftInfo={"ندوة"}
+        bottomLeftInfo={"مسابقة"}
       />
     </View>
   );

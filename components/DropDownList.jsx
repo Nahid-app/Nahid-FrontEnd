@@ -7,6 +7,7 @@ import ArrowUp from "../assets/svg/ArrowUp";
 
 const DropDownList = (props) => {
   const [open, setOpen] = useState(false);
+  const [value, setValue] = useState(false);
   const [items, setItems] = useState(props.itemsList);
 
   return (
@@ -17,15 +18,23 @@ const DropDownList = (props) => {
       <DropDownPicker
         rtl={false}
         open={open}
-        value={props.value}
+        value={value}
         setItems={setItems}
         items={items}
         setOpen={setOpen}
-        setValue={props.setValue}
+        setValue={setValue}
         placeholder={props.searchTitle}
-        // searchable={props.searchability}
+        searchable={props.searchability}
         className="border-0 p-0 m-0"
         listMode="SCROLLVIEW"
+        dropDownDirection="TOP"
+        ArrowDownIconComponent={({}) => <ArrowDown />}
+        ArrowUpIconComponent={({}) => <ArrowUp />}
+        customItemContainerStyle
+        language="AR"
+        searchPlaceholder={props.searchTitle}
+        disableBorderRadius={true}
+        onChangeValue={props.handleValue(value)}
         dropDownContainerStyle={{
           borderColor: "#E0E0E0",
           borderBottomEndRadius: 8,
@@ -60,13 +69,6 @@ const DropDownList = (props) => {
           marginHorizontal: 12,
           borderBottomColor: "#6949FF",
         }}
-        dropDownDirection="TOP"
-        ArrowDownIconComponent={({}) => <ArrowDown />}
-        ArrowUpIconComponent={({}) => <ArrowUp />}
-        customItemContainerStyle
-        language="AR"
-        searchPlaceholder={props.searchTitle}
-        disableBorderRadius={true}
       />
       <View className="flex-row w-full h-0.5 bg-primary "></View>
     </View>

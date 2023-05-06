@@ -2,16 +2,36 @@ import { View, Text } from "react-native";
 import React from "react";
 
 import DropDownList from "../../../components/DropDownList";
+import { useState } from "react";
 
-const DropDownLists = ({ clubs }) => {
-  const universitiesList = [
-    { label: "كلية الجبيل الصناعية", value: "JIC" },
-    { label: "المعهد التقني بالجبيل", value: "JTI" },
-    { label: "جامعة محمد بن فهد", value: "PMU" },
-    { label: "جامعة الإمام عبدالرحمن", value: "IAU" },
-    { label: "جامعة الملك فيصل", value: "KFU" },
-    { label: "جامعة الملك فهد", value: "KFUPM" },
-  ];
+const DropDownLists = ({
+  clubs,
+  genderTargetHandler,
+  eventTypeeHandler,
+  clubIdHandler,
+}) => {
+  const [gender, setGender] = useState();
+  const [eventType, setEventType] = useState();
+  const [club, setClub] = useState();
+
+  const ascendingData = () => {};
+
+  const GenderHandler = (data) => {
+    setGender(data);
+    // console.log(data);
+    genderTargetHandler(gender);
+  };
+  const eventTypeHandler = (data) => {
+    setEventType(data);
+    // console.log(data);
+    eventTypeeHandler(eventType);
+  };
+  const clubHandler = (data) => {
+    setClub(data);
+    // console.log(data);
+    clubIdHandler(club);
+  };
+
   const genders = [
     { label: "ذكور", value: 1 },
     { label: "إناث", value: 2 },
@@ -31,15 +51,22 @@ const DropDownLists = ({ clubs }) => {
         itemsList={genders}
         title="الفئة المستهدفة"
         searchTitle="حدد الفئة المستهدفة"
+        handleValue={GenderHandler}
       />
       <View className="pb-5" />
-      <DropDownList itemsList={type} title="النوع" searchTitle="حدد النوع" />
+      <DropDownList
+        itemsList={type}
+        title="نوع الفعالية"
+        searchTitle="حدد نوع الفعالية"
+        handleValue={eventTypeHandler}
+      />
       <View className="pb-5" />
       <DropDownList
         itemsList={clubs}
         title="النادي"
         searchTitle="إختر النادي"
         searchability={true}
+        handleValue={clubHandler}
       />
     </View>
   );

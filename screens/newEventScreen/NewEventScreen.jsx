@@ -1,6 +1,13 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { View, StyleSheet, ScrollView, Pressable, Text } from "react-native";
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  Pressable,
+  Text,
+  TouchableOpacity,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import ProfileEditingHeader from "./components/ProfileEditingHeader";
 import EventInputFields from "./components/EventInputFields";
@@ -14,37 +21,195 @@ import SubScreenHeader from "../../components/SubScreenHeader";
 import { useContext } from "react";
 import { ClubsContext } from "../../context/ClubsProvider";
 import { useEffect } from "react";
+import { EventsContext } from "../../context/EventsProvider";
+import { AuthContext } from "../../context/AuthProvider";
 
 export default function NewEventScreen({ navigation }) {
   const { isLoading, clubs, GETClubs } = useContext(ClubsContext);
+  const { user } = useContext(AuthContext);
+
+  const [image, setImage] = useState();
+  const [clubId, setClubId] = useState();
+  const [title, setTitle] = useState();
+  const [description, setDescription] = useState();
+  const [eventType, setEventType] = useState();
+  const [genderTarget, setGenderTarget] = useState();
+  const [registrationDeadline, setRegistrationDeadline] = useState();
+  const [startTime, setStartTime] = useState();
+  const [endTime, setEndTime] = useState();
+
+  const imageHandler = (data) => {
+    setimage(data);
+    console.log(data);
+  };
+
+  const clubIdHandler = (data) => {
+    setClubId(data);
+    console.log(data);
+  };
+
+  const titleHandler = (data) => {
+    setTitle(data);
+    console.log(data);
+  };
+
+  const descriptionHandler = (data) => {
+    setDescription(data);
+    console.log(data);
+  };
+
+  const eventTypeHandler = (data) => {
+    setEventType(data);
+    console.log(data);
+  };
+
+  const genderTargetHandler = (data) => {
+    setGenderTarget(data);
+    console.log(data);
+  };
+
+  const registrationDeadlineHandler = (data) => {
+    setRegistrationDeadline(data);
+    console.log(data);
+  };
+
+  const startTimeHandler = (data) => {
+    setStartTime(data);
+    console.log(data);
+  };
+
+  const endTimeHandler = (data) => {
+    setEndTime(data);
+    console.log(data);
+  };
 
   useEffect(() => {
     getUserData();
-    console.log(clubs);
+    // console.log(clubs);
   }, []);
 
   function getUserData() {
     GETClubs();
   }
 
+  function handleSubmitEvent(
+    clubId,
+    title,
+    description,
+    eventType,
+    genderTarget,
+    registrationDeadline,
+    startTime,
+    endTime
+  ) {
+    // const newEvent = {
+    //   clubId,
+    //   title,
+    //   description,
+    //   eventType,
+    //   genderTarget,
+    //   registrationDeadline,
+    //   startTime,
+    //   endTime,
+    // };
+
+    POSTEvents: ({
+      clubId,
+      title,
+      description,
+      type,
+      genderTarget,
+      registrationDeadline,
+      startTime,
+      endTime,
+    }) => {
+      // communicate with backend and store token in SecureStore
+      axiosConfig
+        .post("http://47.254.73.147/api/events", {
+          headers: {
+            Authorization: "Bearer " + user.userToken,
+            "Content-Type": "multipart/form-data",
+          },
+          clubId: clubId,
+          title: title,
+          description: description,
+          type: type,
+          gender_target: genderTarget,
+          registration_deadline: registrationDeadline,
+          start_time: startTime,
+          end_time: endTime,
+        })
+        .then((response) => {
+          // setSubmissionMessage(response.data.data);
+          console.log(response.data.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    // POSTEvents(newEvent);
+  }
   return (
     <View className="bg-white flex-1 px-6 pt-5">
       {/* Event Editing Header */}
       <SubScreenHeader navigation={navigation} />
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* Event Image */}
-        <EventCarouselBanner />
+        <EventCarouselBanner imageHandler={imageHandler} />
         {/* Divider */}
         <View className="w-full bg-gray300 h-px mt-6"></View>
         {/* Event Info Form */}
-        <EventInputFields />
+        <EventInputFields
+          titleHandler={titleHandler}
+          descriptionHandler={descriptionHandler}
+          registrationDeadlineHandler={registrationDeadlineHandler}
+          startTimeHandler={startTimeHandler}
+          endTimeHandler={endTimeHandler}
+        />
         {/* Dropdown List */}
-        <DropDownLists clubs={clubs} />
+        <DropDownLists
+          clubs={clubs}
+          genderTargetHandler={genderTargetHandler}
+          eventTypeeHandler={eventTypeHandler}
+          clubIdHandler={clubIdHandler}
+        />
         {/* Event Creation Button */}
         <View className="pb-2">
-          <PrimaryColorButton title={"فعالية جديدة"} />
+          <View style={styles.buttonContainer} className="w-full">
+            <TouchableOpacity
+              onPress={handleSubmitEvent(
+                clubId,
+                title,
+                description,
+                eventType,
+                genderTarget,
+                registrationDeadline,
+                startTime,
+                endTime
+              )}
+              className="flex-row justify-center items-center py-5 px-4 bg-primary"
+              style={styles.button}
+            >
+              <Text className="text-white font-[TajawalMedium]">
+                أضف فعالية جديدة
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </ScrollView>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  button: {
+    borderWidth: 1,
+    borderBottomLeftRadius: 35,
+    borderBottomEndRadius: 35,
+    borderBottomWidth: 6,
+    borderTopStartRadius: 35,
+    borderTopEndRadius: 35,
+    borderColor: "#543ACC",
+    borderRadius: 100,
+  },
+});

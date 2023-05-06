@@ -4,73 +4,79 @@ import TextField from "../../../components/TextField";
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 import { useState } from "react";
 import Calendar from "../../../assets/svg/Calendar";
-import DateTimePickerModal from "react-native-modal-datetime-picker";
+import NewEventTF from "../../../components/NewEventTF";
+import DateTimePicker from "../../../components/DateTimePicker";
 
-const EventInputFields = () => {
-  const [visiblity, setVisibility] = useState(false);
-  let dateTimeText;
-  const [dateText, setDateText] = useState("");
-  const [timeText, setTimeText] = useState("");
+const EventInputFields = (props) => {
+  const [eventTitle, setEventTitle] = useState();
+  const [eventDescription, setEventDescription] = useState();
+  const [startTime, setStartTime] = useState();
+  const [endTime, setEndTime] = useState();
+  const [registrationDeadline, setRegistrationDeadline] = useState();
+  // const [dateTime, setDateTime] = useState();
 
-  const visibiltyStatus = () => {
-    setVisibility(!visiblity);
+  const eventTitleHandler = (data) => {
+    props.titleHandler(data);
+    setEventTitle(data);
+    // console.log(eventTitle);
   };
-  function timeAndDate() {
-    return (
-      "التاريخ: " +
-      dateText.toString() +
-      " مـ " +
-      " الساعة: " +
-      timeText.toString()
-    );
-  }
-
-  const handleConfirm = (currentDate) => {
-    let tempDate = new Date(currentDate);
-    let formattedDate =
-      tempDate.getDate() +
-      "/" +
-      (tempDate.getMonth() + 1) +
-      "/" +
-      tempDate.getFullYear();
-    let min =
-      tempDate.getMinutes().toString() == "0" ? "00" : tempDate.getMinutes();
-    let formattedTime =
-      tempDate.getHours() + ":" + min + ":" + tempDate.getSeconds();
-    setDateText(formattedDate);
-    setTimeText(formattedTime);
-    let dateTimeText = formattedDate + " " + formattedTime;
-
-    visibiltyStatus();
+  const eventDescriptionHandler = (data) => {
+    props.descriptionHandler(data);
+    setEventDescription(data);
+    // console.log(eventDescription);
   };
+
+  const startTimeHandler = (data) => {
+    props.startTimeHandler(data);
+    setStartTime(data);
+    // console.log(startTime);
+  };
+
+  const endTimeHandler = (data) => {
+    props.endTimeHandler(data);
+    setEndTime(endTime);
+    // console.log(endTime);
+  };
+
+  const endRegistrationHandler = (data) => {
+    props.registrationDeadlineHandler(data);
+    setRegistrationDeadline(data);
+    // console.log(registrationDeadline);
+  };
+
+  // const DateTimeHandler = (data) => {
+  //   setDateTime(data);
+  //   console.log(data);
+  // };
+
   return (
     <View className="pb-6">
-      <TextField
+      <NewEventTF
         textFieldTitle="عنوان الفعالية"
         textFieldPlaceHolder="أدخل العنوان هنا"
         textContentType={"name"}
+        inputValue={eventTitleHandler}
       />
-      <TextField
+      <NewEventTF
         textFieldTitle="وصف الفعالية"
         textFieldPlaceHolder="أدخل وصف الفعالية هنا"
         multiline={true}
+        inputValue={eventTitleHandler}
       />
-      <Pressable onPress={visibiltyStatus}>
-        <TextField
-          editable={false}
-          textFieldTitle="تاريخ و وقت الفعالية"
-          textFieldPlaceHolder={
-            dateText === "" ? "أنقر لاختيار تاريخ والوقت" : timeAndDate()
-          }
-          icon={<Calendar />}
-        />
-      </Pressable>
-      <DateTimePickerModal
-        isVisible={visiblity}
-        mode="datetime"
-        textColor="black"
-        onConfirm={handleConfirm}
-        onCancel={visibiltyStatus}
+      <DateTimePicker
+        title={"توقيت بداية الفعالية"}
+        placeHolder={"إختر تاريخ ووقت بداية الفعالية"}
+        timeHandler={startTimeHandler}
+      />
+      <DateTimePicker
+        title={"توقيت نهاية الفعالية"}
+        placeHolder={"إختر تاريخ ووقت نهاية الفعالية"}
+        timeHandler={startTimeHandler}
+      />
+      <DateTimePicker
+        title={"توقيت آخر موعد للتسجيل"}
+        placeHolder={"إختر تاريخ ووقت آخر موعد تسجيل"}
+        timeHandler={startTimeHandler}
       />
     </View>
   );

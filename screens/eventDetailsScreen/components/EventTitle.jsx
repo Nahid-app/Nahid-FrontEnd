@@ -4,7 +4,7 @@ import React from "react";
 const EventTitle = () => {
   return (
     <Text className="font-[TajawalBold] text-h5 text-left text-gray900 my-5">
-      مقدمة في تطوير التطبيقات
+      مسابقة إلتقط العمل
     </Text>
   );
 };

@@ -40,36 +40,6 @@ export const EventsProvider = ({ children }) => {
               setIsLoading(false);
             });
         },
-        POSTEvents: ({
-          clubId,
-          title,
-          description,
-          type,
-          gender_target,
-          start_time,
-          end_time,
-        }) => {
-          // communicate with backend and store token in SecureStore
-          axiosConfig
-            .post("http://47.254.73.147/api/events", {
-              headers: {
-                Authorization: "Bearer " + user.userToken,
-                clubId: clubId,
-                title: title,
-                description: description,
-                type: type,
-                gender_target: gender_target,
-                start_time: start_time,
-                end_time: end_time,
-              },
-            })
-            .then((response) => {
-              setSubmissionMessage(response.data.data);
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-        },
       }}
     >
       {children}
