@@ -7,7 +7,6 @@ import {
 } from "react-native";
 import React from "react";
 import EventCard from "./EventCard";
-import data from "../data";
 import { MotiView } from "moti";
 import { useState } from "react";
 
@@ -15,10 +14,10 @@ const RenderItem = ({ item, navigation }) => {
   return (
     <EventCard
       avatarUrl={item.avatarUrl}
-      clubName={item.clubName}
+      clubName={item.club.name}
       title={item.title}
-      daysLeft={item.daysLeft}
-      location={item.location}
+      daysLeft={item.start_time.slice(0, 10)}
+      location={"الجبيل"}
       imageUrl={item.imageUrl}
       navigation={navigation}
     />
@@ -28,10 +27,10 @@ const RenderItemMyEvents = ({ item, navigation }) => {
   return item.registered === true ? (
     <EventCard
       avatarUrl={item.avatarUrl}
-      clubName={item.clubName}
+      clubName={item.club.name}
       title={item.title}
-      daysLeft={item.daysLeft}
-      location={item.location}
+      daysLeft={item.start_time.slice(0, 10)}
+      location={"الجبيل"}
       imageUrl={item.imageUrl}
       registered={item.registered}
       navigation={navigation}
@@ -40,7 +39,7 @@ const RenderItemMyEvents = ({ item, navigation }) => {
     <View className="bg-primary" />
   );
 };
-const EventListCard = ({ navigation }) => {
+const EventListCard = ({ navigation, events }) => {
   const [MyEvents, setMyEvents] = useState();
   return (
     <>
@@ -87,8 +86,8 @@ const EventListCard = ({ navigation }) => {
         </TouchableOpacity>
       </MotiView>
       <FlatList
-        data={data}
-        keyExtractor={(item) => item.clubId}
+        data={events}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) =>
           MyEvents ? (
             <RenderItemMyEvents item={item} navigation={navigation} />

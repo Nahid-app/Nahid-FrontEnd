@@ -1,10 +1,9 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { useState } from "react";
 
 import DropDownList from "../../../components/DropDownList";
 
-const DropDownLists = () => {
+const DropDownLists = ({ clubs }) => {
   const universitiesList = [
     { label: "كلية الجبيل الصناعية", value: "JIC" },
     { label: "المعهد التقني بالجبيل", value: "JTI" },
@@ -14,8 +13,9 @@ const DropDownLists = () => {
     { label: "جامعة الملك فهد", value: "KFUPM" },
   ];
   const genders = [
-    { label: "ذكر", value: 1 },
-    { label: "أنثى", value: 2 },
+    { label: "ذكور", value: 1 },
+    { label: "إناث", value: 2 },
+    { label: "الكل", value: 3 },
   ];
   const type = [
     { label: "فعالية", value: 1 },
@@ -36,7 +36,7 @@ const DropDownLists = () => {
       <DropDownList itemsList={type} title="النوع" searchTitle="حدد النوع" />
       <View className="pb-5" />
       <DropDownList
-        itemsList={universitiesList}
+        itemsList={clubs}
         title="النادي"
         searchTitle="إختر النادي"
         searchability={true}

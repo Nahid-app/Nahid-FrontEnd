@@ -11,13 +11,27 @@ import BannerImage from "../profileScreen/components/BannerImage";
 import EventCarouselBanner from "./components/EventCarouselBanner";
 import PrimaryColorButton from "../../components/buttons/PrimaryColorButton";
 import SubScreenHeader from "../../components/SubScreenHeader";
+import { useContext } from "react";
+import { ClubsContext } from "../../context/ClubsProvider";
+import { useEffect } from "react";
 
 export default function NewEventScreen({ navigation }) {
+  const { isLoading, clubs, GETClubs } = useContext(ClubsContext);
+
+  useEffect(() => {
+    getUserData();
+    console.log(clubs);
+  }, []);
+
+  function getUserData() {
+    GETClubs();
+  }
+
   return (
     <View className="bg-white flex-1 px-6 pt-5">
+      {/* Event Editing Header */}
       <SubScreenHeader navigation={navigation} />
       <ScrollView showsVerticalScrollIndicator={false}>
-        {/* Event Editing Header */}
         {/* Event Image */}
         <EventCarouselBanner />
         {/* Divider */}
@@ -25,7 +39,7 @@ export default function NewEventScreen({ navigation }) {
         {/* Event Info Form */}
         <EventInputFields />
         {/* Dropdown List */}
-        <DropDownLists />
+        <DropDownLists clubs={clubs} />
         {/* Event Creation Button */}
         <View className="pb-2">
           <PrimaryColorButton title={"فعالية جديدة"} />

@@ -18,12 +18,12 @@ const DropDownList = (props) => {
         rtl={false}
         open={open}
         value={props.value}
+        setItems={setItems}
         items={items}
         setOpen={setOpen}
         setValue={props.setValue}
-        setItems={setItems}
         placeholder={props.searchTitle}
-        searchable={props.searchability}
+        // searchable={props.searchability}
         className="border-0 p-0 m-0"
         listMode="SCROLLVIEW"
         dropDownContainerStyle={{
