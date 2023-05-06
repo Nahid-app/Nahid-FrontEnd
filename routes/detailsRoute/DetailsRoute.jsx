@@ -5,6 +5,7 @@ import EventDetailsScreen from "../../screens/eventDetailsScreen/EventDetailsScr
 import ClubDetailsScreen from "../../screens/clubDetailsScreen/ClubDetailsScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import NewEventScreen from "../../screens/newEventScreen/NewEventScreen";
+import PopUpModal from "../../components/PopUpModal";
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,11 @@ const DetailsRoute = ({ navigation }) => {
       <Stack.Screen
         name="EventDetailsScreen"
         component={EventDetailsScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="PopUpModal"
+        component={PopUpModal}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

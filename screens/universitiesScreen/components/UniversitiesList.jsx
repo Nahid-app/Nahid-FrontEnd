@@ -10,11 +10,13 @@ const RenderItem = ({ item, navigation }) => {
     <View className="justify-center content-center p-2">
       <UniversitiesCard
         universityName={item.name}
-        universityAvatar={item.logo}
-        clubsNumber={item.clubsNumber}
-        UniversityLocation={item.location}
+        universityLogo={item.logo_url}
+        clubs_count={item.clubs_count}
+        universityLocation={item.location}
         navigation={navigation}
+        students_count={item.students_count}
         universityID={item.id}
+        universityDescription={item.description}
       />
     </View>
   );

@@ -14,10 +14,12 @@ import { UniContext } from "../../../context/UniProvider";
 const UniversityCard = ({
   navigation,
   universityName,
-  universityAvatar,
-  UniversityLocation,
-  clubsNumber,
+  universityLogo,
+  universityLocation,
   universityID,
+  clubs_count,
+  students_count,
+  universityDescription,
 }) => {
   const { club } = useContext(UniContext);
   return (
@@ -29,6 +31,12 @@ const UniversityCard = ({
             params: {
               universityName: universityName,
               universityID: universityID,
+              club: club,
+              location: universityLocation,
+              clubs_count: clubs_count,
+              students_count: students_count,
+              universityLogo: universityLogo,
+              universityDescription: universityDescription,
             },
           })
         }
@@ -46,7 +54,9 @@ const UniversityCard = ({
           {/* image container */}
           <View className="mr-5">
             <Image
-              source={universityAvatar}
+              source={{
+                uri: universityLogo,
+              }}
               resizeMode="contain"
               style={styles.clubAvatar}
               resizeMethod="resize"
@@ -54,7 +64,7 @@ const UniversityCard = ({
             />
           </View>
           <View className="flex-col items-start h-14 justify-center flex-grow flex-shrink">
-            <Text className="text-h6 font-[TajawalBold] pb-1 pt-1 items-start text-left">
+            <Text className="text-h6 font-[TajawalBold] py-1 items-start text-left">
               {universityName}
             </Text>
             {/* uni avatar */}
@@ -62,15 +72,15 @@ const UniversityCard = ({
               {/* uni name */}
               <View className="items-center justify-center ">
                 <Text className="font-[TajawalRegular] items-center text-gray700 pt-1 flex-wrap ">
-                  الموقع: {UniversityLocation}
+                  الموقع: {universityLocation}
                 </Text>
               </View>
               <Text className=" text-xsRegular font-[TajawalRegular] mt-0.5 px-2 text-gray700">
                 {"\u25CF"}
               </Text>
-              <View className="items-center justify-center pt-1 flex-wrap">
+              <View className="items-center justify-center pt-1 flex-wrap pr-2">
                 <Text className="font-[TajawalRegular] items-center justify-center text-gray700">
-                  عدد الأندية: {clubsNumber}
+                  عدد الأندية: {clubs_count}
                 </Text>
               </View>
             </View>

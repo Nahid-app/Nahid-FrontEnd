@@ -10,7 +10,6 @@ const UniversityClubsList = ({ navigation, route }) => {
   const { clubs, GETClubs } = useContext(UniContext);
   // const [clubsData, setClubsData] = useState(clubs);
   const { universityID } = route.params;
-  console.log(clubs);
 
   function clubName(universityID) {
     GETClubs(universityID);
@@ -18,12 +17,18 @@ const UniversityClubsList = ({ navigation, route }) => {
   useEffect(() => {
     clubName(universityID);
   }, []);
+  const { universityLogo } = route.params;
 
   return (
-    <View className="flex-1 ">
+    <View className="flex-1 pb-6">
       {clubs.map((university, index) =>
         university ? (
-          <ClubCard key={index} item={university} navigation={navigation} />
+          <ClubCard
+            key={university.id}
+            item={university}
+            navigation={navigation}
+            route={route}
+          />
         ) : (
           <View />
         )

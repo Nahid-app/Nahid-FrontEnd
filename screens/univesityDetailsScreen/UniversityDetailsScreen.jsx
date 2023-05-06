@@ -19,7 +19,7 @@ const UniversityDetailsScreen = ({ navigation, route }) => {
         {/* University Name */}
         <UniversityName route={route} />
         {/* University Details Table */}
-        <UniversityDetailsTable />
+        <UniversityDetailsTable route={route} />
         {/* University Clubs List Header */}
         <UniversityClubListHeader />
         {/* University Clubs List */}

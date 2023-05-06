@@ -50,9 +50,7 @@ export const UniProvider = ({ children }) => {
               },
             })
             .then((response) => {
-              response.data.data.forEach((item) => {
-                setClubs([item.name, item.university_id]);
-              });
+              setClubs(response.data.data.clubs);
             })
             .catch((error) => {
               setIsLoading(false);

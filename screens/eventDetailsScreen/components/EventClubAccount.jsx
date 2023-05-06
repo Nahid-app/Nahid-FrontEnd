@@ -1,7 +1,7 @@
 import React from "react";
 import EntityAccount from "../../../components/EntityAccount";
 
-const EventClubAccount = ({ route }) => {
+const EventClubAccount = ({ route, clubId }) => {
   const { clubName } = route.params;
   return (
     <EntityAccount
@@ -9,6 +9,7 @@ const EventClubAccount = ({ route }) => {
       name={clubName}
       accountName={"كلية الجبيل الصناعية"}
       buttonTitle={"تابع"}
+      clubId={clubId}
     />
   );
 };

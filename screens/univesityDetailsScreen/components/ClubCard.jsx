@@ -3,8 +3,30 @@ import React from "react";
 import { MotiView } from "moti";
 import Group from "../../../assets/svg/Group";
 import PrimaryButton from "../../../components/PrimaryButton";
+import { useContext } from "react";
+import { MembershipContext } from "../../../context/MembershipProvider";
+import { ActivityIndicator } from "react-native-paper";
 
-const ClubCard = ({ item, navigation, index }) => {
+const ClubCard = ({ item, navigation, index, route }) => {
+  switch (item.category) {
+    case 1:
+      item.category = "أكاديمي";
+      break;
+    case 2:
+      item.category = "رياضي";
+      break;
+    case 3:
+      item.category = "ثقافي";
+      break;
+    case 4:
+      item.category = "تقني";
+      break;
+    case 5:
+      item.category = "غير ذلك";
+      break;
+  }
+  const { universityLogo } = route.params;
+
   return (
     <View className="pt-5">
       <TouchableOpacity
@@ -13,6 +35,7 @@ const ClubCard = ({ item, navigation, index }) => {
             screen: "ClubDetailsScreen",
             params: {
               clubName: item.name,
+              clubId: item.id,
             },
           })
         }
@@ -29,14 +52,14 @@ const ClubCard = ({ item, navigation, index }) => {
         >
           <View className="mr-5">
             <Image
-              source={item.clubImage}
+              source={{ uri: universityLogo }}
               resizeMode="contain"
               style={styles.clubAvatar}
               resizeMethod="resize"
               className="rounded-full"
             />
             <Image
-              source={item.clubImage}
+              source={{ uri: universityLogo }}
               resizeMode="contain"
               style={styles.universityAvatar}
               resizeMethod="resize"
@@ -58,16 +81,16 @@ const ClubCard = ({ item, navigation, index }) => {
                 </View>
               </View>
               <Text className="font-[TajawalRegular] text-gray700 pt-1 ">
-                {item.id}
+                نادي : {item.category}
               </Text>
-              <Text className=" text-lMedium text-left font-[TajawalRegular] px-1.5 text-gray700 ">
+              {/*<Text className=" text-lMedium text-left font-[TajawalRegular] px-1.5 text-gray700 ">
                 {"\u007C"}
               </Text>
               <View className="items-center justify-center pt-1">
                 <Text className="font-[TajawalRegular] items-center justify-center text-gray700">
-                  عدد الطلاب: {item.clubMemberCount}
+                  {index}
                 </Text>
-              </View>
+              </View>  */}
             </View>
           </View>
           <TouchableOpacity>
@@ -75,6 +98,9 @@ const ClubCard = ({ item, navigation, index }) => {
               <PrimaryButton />
             </View>
           </TouchableOpacity>
+          {/* {error && <Text>{error}</Text>}
+          {subscribed && <Text>{subscribed}</Text>}
+          {isLoading && <ActivityIndicator size="small" color="#6949FF" />} */}
         </MotiView>
       </TouchableOpacity>
     </View>
@@ -96,12 +122,12 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 0,
     bottom: 0,
-    height: 20,
-    width: 20,
-    maxHeight: 20,
-    minHeight: 20,
-    minWidth: 20,
-    borderWidth: 1,
+    height: 30,
+    width: 30,
+    maxHeight: 30,
+    minHeight: 30,
+    minWidth: 30,
+    borderWidth: 3,
     borderColor: "white",
     backgroundColor: "white",
   },
