@@ -69,6 +69,20 @@ export const AuthProvider = ({ children }) => {
               setIsLoading(false);
             });
         },
+        GETUser: () => {
+          axiosConfig
+            .get("http://47.254.73.147/api/user", {
+              headers: {
+                Authorization: "Bearer " + user.userToken,
+              },
+            })
+            .then((response) => {
+              console.log(response.data);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        },
         register: (
           name,
           email,

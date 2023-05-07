@@ -22,11 +22,13 @@ import { useContext } from "react";
 import { ClubsContext } from "../../context/ClubsProvider";
 import { useEffect } from "react";
 import { EventsContext } from "../../context/EventsProvider";
+import { daysInWeek } from "date-fns";
 import { AuthContext } from "../../context/AuthProvider";
 
 export default function NewEventScreen({ navigation }) {
   const { isLoading, clubs, GETClubs } = useContext(ClubsContext);
-  const { user } = useContext(AuthContext);
+  const { POSTEvents } = useContext(EventsContext);
+  const { user, GETUser } = useContext(AuthContext);
 
   const [image, setImage] = useState();
   const [clubId, setClubId] = useState();
@@ -92,63 +94,21 @@ export default function NewEventScreen({ navigation }) {
     GETClubs();
   }
 
-  function handleSubmitEvent(
-    clubId,
-    title,
-    description,
-    eventType,
-    genderTarget,
-    registrationDeadline,
-    startTime,
-    endTime
-  ) {
-    // const newEvent = {
-    //   clubId,
-    //   title,
-    //   description,
-    //   eventType,
-    //   genderTarget,
-    //   registrationDeadline,
-    //   startTime,
-    //   endTime,
-    // };
-
-    POSTEvents: ({
-      clubId,
-      title,
-      description,
-      type,
-      genderTarget,
-      registrationDeadline,
-      startTime,
-      endTime,
-    }) => {
-      // communicate with backend and store token in SecureStore
-      axiosConfig
-        .post("http://47.254.73.147/api/events", {
-          headers: {
-            Authorization: "Bearer " + user.userToken,
-            "Content-Type": "multipart/form-data",
-          },
-          clubId: clubId,
-          title: title,
-          description: description,
-          type: type,
-          gender_target: genderTarget,
-          registration_deadline: registrationDeadline,
-          start_time: startTime,
-          end_time: endTime,
-        })
-        .then((response) => {
-          // setSubmissionMessage(response.data.data);
-          console.log(response.data.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+  function handleSubmitEvent() {
+    const newEvent = {
+      clubId: 1,
+      title: "title",
+      description: "description",
+      eventType: 2,
+      genderTarget: 2,
+      registrationDeadline: "2023-12-03 11:00:00",
+      startTime: "2023-12-03 11:00:00",
+      endTime: "2023-12-03 11:00:00",
     };
-    // POSTEvents(newEvent);
+    console.log(newEvent);
+    POSTEvents(newEvent);
   }
+
   return (
     <View className="bg-white flex-1 px-6 pt-5">
       {/* Event Editing Header */}
@@ -177,16 +137,7 @@ export default function NewEventScreen({ navigation }) {
         <View className="pb-2">
           <View style={styles.buttonContainer} className="w-full">
             <TouchableOpacity
-              onPress={handleSubmitEvent(
-                clubId,
-                title,
-                description,
-                eventType,
-                genderTarget,
-                registrationDeadline,
-                startTime,
-                endTime
-              )}
+              onPress={handleSubmitEvent}
               className="flex-row justify-center items-center py-5 px-4 bg-primary"
               style={styles.button}
             >

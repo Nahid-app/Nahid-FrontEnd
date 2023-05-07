@@ -61,7 +61,7 @@ const EventInputFields = (props) => {
         textFieldTitle="وصف الفعالية"
         textFieldPlaceHolder="أدخل وصف الفعالية هنا"
         multiline={true}
-        inputValue={eventTitleHandler}
+        inputValue={eventDescriptionHandler}
       />
       <DateTimePicker
         title={"توقيت بداية الفعالية"}
@@ -71,12 +71,12 @@ const EventInputFields = (props) => {
       <DateTimePicker
         title={"توقيت نهاية الفعالية"}
         placeHolder={"إختر تاريخ ووقت نهاية الفعالية"}
-        timeHandler={startTimeHandler}
+        timeHandler={endTimeHandler}
       />
       <DateTimePicker
         title={"توقيت آخر موعد للتسجيل"}
         placeHolder={"إختر تاريخ ووقت آخر موعد تسجيل"}
-        timeHandler={startTimeHandler}
+        timeHandler={endRegistrationHandler}
       />
     </View>
   );
