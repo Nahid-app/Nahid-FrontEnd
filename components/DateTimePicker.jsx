@@ -25,14 +25,16 @@ const DateTimePicker = (props) => {
     );
   }
 
+  // 2023-12-5 11:00:00
+
   const handleConfirm = (currentDate) => {
     let tempDate = new Date(currentDate);
     let formattedDate =
-      tempDate.getDate() +
-      "/" +
+      tempDate.getFullYear() +
+      "-" +
       (tempDate.getMonth() + 1) +
-      "/" +
-      tempDate.getFullYear();
+      "-" +
+      tempDate.getDate();
     let min =
       tempDate.getMinutes().toString() == "0" ? "00" : tempDate.getMinutes();
     let formattedTime =

@@ -10,7 +10,7 @@ import { AuthContext } from "./AuthProvider";
 export const EventsContext = createContext();
 
 export const EventsProvider = ({ children }) => {
-  // const [error, setError] = useState();
+  const [error, setError] = useState();
   const [events, setEvents] = useState([]);
   const [submissionMessage, setSubmissionMessage] = useState();
   const [isLoading, setIsLoading] = useState(false);
@@ -31,6 +31,7 @@ export const EventsProvider = ({ children }) => {
             .get("http://47.254.73.147/api/events", {
               headers: {
                 Authorization: "Bearer " + user.userToken,
+                "Content-Type": "multipart/form-data",
               },
             })
             .then((response) => {
@@ -43,7 +44,7 @@ export const EventsProvider = ({ children }) => {
             });
         },
         POSTEvents: ({
-          clubId,
+          club_id,
           title,
           description,
           type,
@@ -55,25 +56,25 @@ export const EventsProvider = ({ children }) => {
           // communicate with backend and store token in SecureStore
           axiosConfig
             .post("http://47.254.73.147/api/events", {
+            club_id: club_id,
+            title: title,
+            description: description,
+            type: type,
+            gender_target: gender_target,
+            registration_deadline: registration_deadline,
+            start_time: start_time,
+            end_time: end_time,
+          }, {
               headers: {
-                "Content-Type": "multipart/form-data",
-                Authorization: `bearer ${user.userToken}`,
-              },
-              clubId: clubId,
-              title: title,
-              description: description,
-              type: type,
-              gender_target: gender_target,
-              registration_deadline: registration_deadline,
-              start_time: start_time,
-              end_time: end_time,
+                Authorization: "Bearer " + user.userToken,
+                
+              }              
             })
             .then((response) => {
               setSubmissionMessage(response.data.data);
             })
             .catch((error) => {
-              console.log(error);
-              console.log(`bearer ${user.userToken}`);
+              console.log(error.response.data.message);                            
             });
         },
       }}

@@ -28,7 +28,8 @@ import { AuthContext } from "../../context/AuthProvider";
 export default function NewEventScreen({ navigation }) {
   const { isLoading, clubs, GETClubs } = useContext(ClubsContext);
   const { POSTEvents } = useContext(EventsContext);
-  const { user, GETUser } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
+  const [event, setEvent] = useState();
 
   const [image, setImage] = useState();
   const [clubId, setClubId] = useState();
@@ -41,7 +42,7 @@ export default function NewEventScreen({ navigation }) {
   const [endTime, setEndTime] = useState();
 
   const imageHandler = (data) => {
-    setimage(data);
+    setImage(data);
     console.log(data);
   };
 
@@ -91,22 +92,33 @@ export default function NewEventScreen({ navigation }) {
   }, []);
 
   function getUserData() {
+    setEvent({
+      title: title,
+      club_id: clubId,
+      description: description,
+      type: eventType,
+      gender_target: genderTarget,
+      registration_deadline: registrationDeadline,
+      start_time: startTime,
+      end_time: endTime,
+    });
     GETClubs();
+    console.log(event);
   }
 
   function handleSubmitEvent() {
-    const newEvent = {
-      clubId: 1,
-      title: "title",
-      description: "description",
-      eventType: 2,
-      genderTarget: 2,
-      registrationDeadline: "2023-12-03 11:00:00",
-      startTime: "2023-12-03 11:00:00",
-      endTime: "2023-12-03 11:00:00",
-    };
-    console.log(newEvent);
-    POSTEvents(newEvent);
+    getUserData();
+    POSTEvents(event);
+    // const newEvent = {
+    //   clubId: clubId,
+    //   title: title,
+    //   description: description,
+    //   eventType: eventType,
+    //   genderTarget: genderTarget,
+    //   registrationDeadline: registrationDeadline,
+    //   startTime: startTime,
+    //   endTime: endTime,
+    // };
   }
 
   return (
