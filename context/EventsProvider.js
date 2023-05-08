@@ -36,6 +36,7 @@ export const EventsProvider = ({ children }) => {
             })
             .then((response) => {
               setEvents(response.data.data);
+              console.log(response.data.data[response.data.data.length - 1]);
               setIsLoading(false);
             })
             .catch((error) => {
@@ -55,26 +56,30 @@ export const EventsProvider = ({ children }) => {
         }) => {
           // communicate with backend and store token in SecureStore
           axiosConfig
-            .post("http://47.254.73.147/api/events", {
-            club_id: club_id,
-            title: title,
-            description: description,
-            type: type,
-            gender_target: gender_target,
-            registration_deadline: registration_deadline,
-            start_time: start_time,
-            end_time: end_time,
-          }, {
-              headers: {
-                Authorization: "Bearer " + user.userToken,
-                
-              }              
-            })
+            .post(
+              "http://47.254.73.147/api/events",
+              {
+                club_id: club_id,
+                title: title,
+                description: description,
+                type: type,
+                gender_target: gender_target,
+                registration_deadline: registration_deadline,
+                start_time: start_time,
+                end_time: end_time,
+              },
+              {
+                headers: {
+                  Authorization: "Bearer " + user.userToken,
+                },
+              }
+            )
             .then((response) => {
               setSubmissionMessage(response.data.data);
+              console.log(title + "dude");
             })
             .catch((error) => {
-              console.log(error.response.data.message);                            
+              console.log(error.response.data.message);
             });
         },
       }}

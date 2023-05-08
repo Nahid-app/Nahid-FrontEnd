@@ -29,7 +29,7 @@ export default function NewEventScreen({ navigation }) {
   const { isLoading, clubs, GETClubs } = useContext(ClubsContext);
   const { POSTEvents } = useContext(EventsContext);
   const { user } = useContext(AuthContext);
-  const [event, setEvent] = useState();
+  const [event, setEvent] = useState({});
 
   const [image, setImage] = useState();
   const [clubId, setClubId] = useState();
@@ -87,8 +87,17 @@ export default function NewEventScreen({ navigation }) {
   };
 
   useEffect(() => {
-    getUserData();
-    // console.log(clubs);
+    GETClubs(); // console.log(clubs);
+    setEvent({
+      title: title,
+      club_id: clubId,
+      description: description,
+      type: eventType,
+      gender_target: genderTarget,
+      registration_deadline: registrationDeadline,
+      start_time: startTime,
+      end_time: endTime,
+    });
   }, []);
 
   function getUserData() {
@@ -102,12 +111,11 @@ export default function NewEventScreen({ navigation }) {
       start_time: startTime,
       end_time: endTime,
     });
-    GETClubs();
-    console.log(event);
   }
 
   function handleSubmitEvent() {
-    getUserData();
+    
+    console.log(event);
     POSTEvents(event);
     // const newEvent = {
     //   clubId: clubId,

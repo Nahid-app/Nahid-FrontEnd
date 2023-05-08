@@ -18,12 +18,10 @@ const EventsScreen = ({ navigation }) => {
   const { error, isLoading, events, GETEvents } = useContext(EventsContext);
 
   useEffect(() => {
-    getUserData();
-  }, []);
-  
-  function getUserData() {
     GETEvents();
-  }
+  }, []);
+
+  function getUserData() {}
 
   return (
     <SafeAreaView className="bg-white flex-1 px-6 pt-4">
@@ -35,7 +33,7 @@ const EventsScreen = ({ navigation }) => {
         />
       </View>
       <View>
-        <EventListCard navigation={navigation} events={events} />
+        <EventListCard events={events} navigation={navigation} />
         {error && <Text>{error}</Text>}
         {isLoading && <ActivityIndicator size="small" color="#6949FF" />}
       </View>
