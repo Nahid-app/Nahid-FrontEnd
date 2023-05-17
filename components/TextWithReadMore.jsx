@@ -14,6 +14,7 @@ const TextWithReadMore = (props) => {
   const [showMore, setShowMore] = useState(false);
 
   const toggleShowMore = () => {
+    
     setShowMore(!showMore);
   };
 
