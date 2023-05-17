@@ -23,6 +23,7 @@ import { AuthContext } from "../../context/AuthProvider";
 import { ActivityIndicator } from "react-native-paper";
 import { format, compareAsc } from "date-fns";
 import DropDownList from "../../components/DropDownList";
+import DropDownListSU from "../../components/DropDownListSU";
 
 export default function SignUpScreen({ navigation }) {
   const [visiblity, setVisibility] = useState(false);
@@ -119,7 +120,7 @@ export default function SignUpScreen({ navigation }) {
               value={phone}
             />
             <View className="pt-4">
-              <DropDownList
+              <DropDownListSU
                 itemsList={universitiesList}
                 title="الجامعة"
                 searchTitle="إختر الجامعة"
@@ -128,7 +129,7 @@ export default function SignUpScreen({ navigation }) {
                 setValue={setUniversity}
               />
               <View className="py-3"></View>
-              <DropDownList
+              <DropDownListSU
                 itemsList={genders}
                 title="الجنس"
                 searchTitle="حدد الجنس"
@@ -210,7 +211,7 @@ const styles = StyleSheet.create({
   },
 });
 const universitiesList = [
-  { label: "كليات ومعاهد الجبيل", value: 1,},
+  { label: "كليات ومعاهد الجبيل", value: 1 },
   { label: "جامعة الملك سعود", value: "2", key: "2" },
   { label: "جامعة الملك عبدالعزيز", value: "3", key: "3" },
   { label: "جامعة الملك فهد للبترول والمعادن", value: "4", key: "4" },

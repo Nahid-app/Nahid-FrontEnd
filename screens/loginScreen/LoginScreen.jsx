@@ -75,7 +75,7 @@ export default function LoginScreen({ navigation }) {
                   title={"الرقم السري"}
                   placeholder={"أدخل الرقم السري👀"}
                   textContentType={form.textContentType.password}
-                  secureTextEntry={true}
+                  // secureTextEntry={true}
                   textAlign={"right"}
                   className={form.className}
                   value={password}
