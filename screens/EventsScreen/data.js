@@ -16,7 +16,7 @@ export default [
     title: "مقدمة في علم البيانات",
     daysLeft: "متبقي 3 أيام",
     location: "الرياض",
-    imageUrl: require("../../assets/imgs/Image.png"),
+    imageUrl: require("../../assets/imgs/dataEvent.jpg"),
     registered: false,
   },
   {
@@ -26,7 +26,7 @@ export default [
     title: "مسابقة التقط العلم",
     daysLeft: "متبقي 3 أيام",
     location: "الجبيل",
-    imageUrl: require("../../assets/imgs/Image.png"),
+    imageUrl: require("../../assets/imgs/hacking.jpg"),
     registered: true,
 
   },
@@ -34,10 +34,10 @@ export default [
     avatarUrl: require("../../assets/imgs/logos/KFUPM.png"),
     clubId: "4",
     clubName: "نادي الحاسب بجامعة الملك فهد للبترول و المعادن",
-    title: "مقدمة في علم البيانات",
+    title: "مقدمة في تطوير تطبيقات الجوال",
     daysLeft: "متبقي 3 أيام",
     location: "الظهران",
-    imageUrl: require("../../assets/imgs/Image.png"),
+    imageUrl: require("../../assets/imgs/mobileDev.jpg"),
     registered: true,
   },
 ];

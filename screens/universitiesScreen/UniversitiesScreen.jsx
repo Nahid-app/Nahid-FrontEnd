@@ -12,17 +12,17 @@ import axios from "axios";
 import { ActivityIndicator } from "react-native-paper";
 
 export default function UniversitiesScreen({ navigation }) {
-  const [data, setData] = useState([]);
-  const { error, isLoading, universities, GETUniversities } =
-    useContext(UniContext);
-  const [filteredData, setFilteredData] = useState(data);
+  // const [data, setData] = useState([]);
+  // const { error, isLoading, universities, GETUniversities } =
+  //   useContext(UniContext);
+  // const [filteredData, setFilteredData] = useState(data);
 
-  useEffect(() => {
-    getUserData();
-  }, []);
-  function getUserData() {
-    GETUniversities();
-  }
+  // useEffect(() => {
+  //   getUserData();
+  // }, []);
+  // function getUserData() {
+  //   GETUniversities();
+  // }
 
   // const handleSearch = (query) => {
   //   const newData = data.filter((item) => {
@@ -43,9 +43,9 @@ export default function UniversitiesScreen({ navigation }) {
     >
       <SearchBarComponent title={"كل الجامعات"} placeholder={"إبحث عن جامعة"} />
       <View className="flex-1 w-full content-center pt-6">
-        <UniversitiesList data={universities} navigation={navigation} />
-        {error && <Text>{error}</Text>}
-        {isLoading && <ActivityIndicator size="small" color="#6949FF" />}
+        <UniversitiesList navigation={navigation} />
+        {/* {error && <Text>{error}</Text>}
+        {isLoading && <ActivityIndicator size="small" color="#6949FF" />} */}
       </View>
     </SafeAreaView>
   );

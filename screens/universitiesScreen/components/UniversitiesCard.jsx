@@ -18,17 +18,17 @@ const UniversityCard = ({
   UniversityLocation,
   clubsNumber,
 }) => {
-  const { club } = useContext(UniContext);
+  // const { club } = useContext(UniContext);
   return (
     <>
       <TouchableOpacity
         onPress={() =>
           navigation.navigate("DetailsRoute", {
             screen: "UniversityDetailsScreen",
-            params: {
-              universityName: universityName,
-              club: club,
-            },
+            // params: {
+            //   universityName: universityName,
+            //   club: club,
+            // },
           })
         }
       >

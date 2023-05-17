@@ -9,14 +9,15 @@ import React from "react";
 import EventCard from "./EventCard";
 import { MotiView } from "moti";
 import { useState } from "react";
+import data from "../data";
 
 const RenderItem = ({ item, navigation }) => {
   return (
     <EventCard
       avatarUrl={item.avatarUrl}
-      clubName={item.club.name}
+      clubName={item.clubName}
       title={item.title}
-      daysLeft={item.start_time.slice(0, 10)}
+      daysLeft={item.daysLeft}
       location={"الجبيل"}
       imageUrl={item.imageUrl}
       navigation={navigation}
@@ -27,9 +28,9 @@ const RenderItemMyEvents = ({ item, navigation }) => {
   return item.registered === true ? (
     <EventCard
       avatarUrl={item.avatarUrl}
-      clubName={item.club.name}
+      clubName={item.clubName}
       title={item.title}
-      daysLeft={item.start_time.slice(0, 10)}
+      daysLeft={item.daysLeft}
       location={"الجبيل"}
       imageUrl={item.imageUrl}
       registered={item.registered}
@@ -39,7 +40,7 @@ const RenderItemMyEvents = ({ item, navigation }) => {
     <View className="bg-primary" />
   );
 };
-const EventListCard = ({ navigation, events }) => {
+const EventListCard = ({ navigation }) => {
   const [MyEvents, setMyEvents] = useState();
   return (
     <>
@@ -86,10 +87,10 @@ const EventListCard = ({ navigation, events }) => {
         </TouchableOpacity>
       </MotiView>
       <FlatList
-        data={events}
+        data={data}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) =>
-          MyEvents ? (
+          MyEvents == true ? (
             <RenderItemMyEvents item={item} navigation={navigation} />
           ) : (
             <RenderItem item={item} navigation={navigation} />

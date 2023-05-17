@@ -1,8 +1,8 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
 
-const UniversityName = ({ route, navigation }) => {
-  const { universityName } = route.params;
+const UniversityName = ({ navigation }) => {
+  // const { universityName } = route.params;
   return (
     <View>
       <View className=" flex-row pt-5">
@@ -13,7 +13,7 @@ const UniversityName = ({ route, navigation }) => {
         />
         <View className="pl-5 items-start pt-[4] flex-1 justify-center">
           <Text className="font-[TajawalBold] text-gray900 text-h6 p-px  ">
-            {universityName}
+            كلية الجبيل الصناعية
           </Text>
           <View className="flex-row p-1">
             <Text className="font-[TajawalMedium] text-gray700">الجبيل</Text>

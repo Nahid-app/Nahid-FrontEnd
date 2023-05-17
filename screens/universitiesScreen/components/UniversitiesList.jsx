@@ -2,6 +2,7 @@ import { View, Text, FlatList } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import UniversitiesCard from "./UniversitiesCard";
+import data from "./universities";
 
 const RenderItem = ({ item, navigation }) => {
   // console.log("Here is the data:", item);
@@ -9,17 +10,17 @@ const RenderItem = ({ item, navigation }) => {
   return (
     <View className="justify-center content-center p-2">
       <UniversitiesCard
-        universityName={item.name}
-        universityAvatar={item.logo}
+        universityName={item.universitiesName}
+        universityAvatar={item.avatar}
         clubsNumber={item.clubsNumber}
-        UniversityLocation={item.location}
+        UniversityLocation={item.UniversityLocation}
         navigation={navigation}
       />
     </View>
   );
 };
 
-const UniversitiesList = ({ navigation, data }) => {
+const UniversitiesList = ({ navigation }) => {
   return (
     <FlatList
       data={data}

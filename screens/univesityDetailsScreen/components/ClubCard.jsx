@@ -40,7 +40,7 @@ const ClubCard = ({ item, index, navigation, clubs }) => {
           </View>
           <View className="items-start justify-center flex-grow flex-shrink ">
             <Text className="text-h6 font-[TajawalBold] py-1 items-start  pb-1.5 text-left">
-              {clubs}
+              {item.clubTitle}
             </Text>
             {/* uni avatar */}
             <View className="flex-row items-center w-full flex-wrap">
@@ -60,7 +60,7 @@ const ClubCard = ({ item, index, navigation, clubs }) => {
               </Text>
               <View className="items-center justify-center pt-1">
                 <Text className="font-[TajawalRegular] items-center justify-center text-gray700">
-                  عدد الطلاب: {item.clubMemberCount}
+                  الطلاب: {item.clubMemberCount}
                 </Text>
               </View>
             </View>

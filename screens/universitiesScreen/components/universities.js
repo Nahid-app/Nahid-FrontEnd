@@ -28,46 +28,4 @@ export default [
     avatar: require("../../../assets/imgs/logos/KFU.png"),
   },
 
-  {
-    id: 5,
-    universitiesName: "جامعة الملك فيصل",
-    clubsNumber: 2,
-    UniversityLocation: "الأحساء",
-    avatar: require("../../../assets/imgs/logos/KFU.png"),
-  },
-  {
-    id: 6,
-    universitiesName: "جامعة الملك فيصل ",
-    clubsNumber: 2,
-    UniversityLocation: "الأحساء",
-    avatar: require("../../../assets/imgs/logos/KFU.png"),
-  },
-  {
-    id: 7,
-    universitiesName: "جامعة الملك فيصل",
-    clubsNumber: 2,
-    UniversityLocation: "الأحساء",
-    avatar: require("../../../assets/imgs/logos/KFU.png"),
-  },
-  {
-    id: 8,
-    universitiesName: "جامعة الملك فيصل",
-    clubsNumber: 2,
-    UniversityLocation: "الأحساء",
-    avatar: require("../../../assets/imgs/logos/KFU.png"),
-  },
-  {
-    id: 9,
-    universitiesName: "جامعة الملك فيصل",
-    clubsNumber: 2,
-    UniversityLocation: "الأحساء",
-    avatar: require("../../../assets/imgs/logos/KFU.png"),
-  },
-  {
-    id: 10,
-    universitiesName: "جامعة الملك فيصل",
-    clubsNumber: 2,
-    UniversityLocation: "الأحساء",
-    avatar: require("../../../assets/imgs/logos/KFU.png"),
-  },
 ];

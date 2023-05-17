@@ -5,26 +5,21 @@ import UniversityClubsData from "./UniversityClubsData";
 import ClubCard from "./ClubCard";
 import { UniContext } from "../../../context/UniProvider";
 
-const UniversityClubsList = ({ navigation, route }) => {
-  const { clubs, GETClubs } = useContext(UniContext);
-  // console.log(clubs[0]);
+const UniversityClubsList = ({ navigation }) => {
+  // const { clubs, GETClubs } = useContext(UniContext);
+  // // console.log(clubs[0]);
 
-  function clubName() {
-    GETClubs();
-  }
-  useEffect(() => {
-    clubName();
-  }, []);
+  // function clubName() {
+  //   GETClubs();
+  // }
+  // useEffect(() => {
+  //   clubName();
+  // }, []);
 
   return (
     <View className="flex-1 ">
       {UniversityClubsData.map((university, index) => (
-        <ClubCard
-          key={index}
-          item={university}
-          navigation={navigation}
-          clubs={clubs}
-        />
+        <ClubCard key={index} item={university} navigation={navigation} />
       ))}
     </View>
   );
