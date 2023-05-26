@@ -3,11 +3,35 @@ import { View, Text, Image, FlatList } from "react-native";
 import Group from "../../../assets/svg/Group";
 import eventsData from "./eventsData";
 import { TouchableOpacity } from "react-native";
+import data from "./data";
+import EventCard from "./EventCard";
+
+const RenderItem = ({ item, navigation }) => {
+  return (
+    <EventCard
+      avatarUrl={item.avatarUrl}
+      clubName={item.clubName}
+      title={item.title}
+      daysLeft={item.daysLeft}
+      location={"الجبيل"}
+      imageUrl={item.imageUrl}
+      navigation={navigation}
+    />
+  );
+};
 
 const EventsList = ({ navigation }) => {
   return (
     <>
       <FlatList
+        showsHorizontalScrollIndicator="false"
+        data={data}
+        renderItem={({ item }) => (
+          <RenderItem item={item} navigation={navigation} />
+        )}
+        keyExtractor={(item) => item.id}
+      />
+      {/* <FlatList
         data={eventsData}
         keyExtractor={(item) => item.eventId.toString()}
         renderItem={({ item }) => (
@@ -55,7 +79,7 @@ const EventsList = ({ navigation }) => {
         )}
         ItemSeparatorComponent={<View className="py-2" />}
         showsVerticalScrollIndicator={false}
-      />
+      /> */}
     </>
   );
 };

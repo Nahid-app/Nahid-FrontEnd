@@ -14,8 +14,8 @@ export default function ProfileScreen({ navigation }) {
     <>
       {/* <StatusBar /> */}
       <SafeAreaView
-        className="pt-5 px-6 flex-1 bg-white"
-        edges={["right", "left", "bottom"]}
+        className=" px-6 flex-1 bg-white"
+        // edges={["right", "left", "bottom"]}
       >
         {/* Profile Header */}
         <ProfileHeader />

@@ -16,10 +16,10 @@ export default function Header() {
           <Text className="font-[TajawalBold] text-h5 px-4">ناهض</Text>
         </View>
         <View className="flex-row justify-between">
-          <View className="pr-4">
+          {/* <View className="pr-4">
             <MagnifyingGlass />
           </View>
-          <Notification />
+          <Notification /> */}
         </View>
       </View>
     </SafeAreaView>

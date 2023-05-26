@@ -25,6 +25,8 @@ const HomeTabScreen = ({ navigation }) => {
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={{
+        tabBarStyle: {},
+        bottomPadding: 30,
         headerShown: false,
         tabBarLabelStyle: {
           fontFamily: "TajawalMedium",

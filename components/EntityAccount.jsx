@@ -21,7 +21,7 @@ const EntityAccount = (props) => {
       </View>
       <View className="bg-primary w-16 h-9 rounded-full justify-center ">
         <Text className="font-[TajawalMedium] text-mSemiBold text-white text-center p-2">
-          {props.buttonTitle}
+          إشتراك
         </Text>
       </View>
     </View>

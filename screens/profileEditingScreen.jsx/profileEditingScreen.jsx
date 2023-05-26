@@ -15,7 +15,7 @@ export default function ProfileEditingScreen({ navigation }) {
   return (
     <>
       <SafeAreaView
-        className="bg-white flex-1 px-6 pt-5"
+        className="bg-white flex-1 px-6"
         edges={["right", "left", "bottom"]}
       >
         {/* Profile Editing Header */}

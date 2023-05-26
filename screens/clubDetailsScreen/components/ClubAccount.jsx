@@ -7,7 +7,7 @@ const EventClubAccount = () => {
       imageSource={require("../../../assets/imgs/logos/jic.png")}
       name={"نادي الحاسب الآلي"}
       accountName={"كلية الجبيل الصناعية"}
-      buttonTitle={"تابع"}
+      buttonTitle={"إشتراك"}
     />
   );
 };

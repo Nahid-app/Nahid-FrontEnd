@@ -29,15 +29,18 @@ const ProfileImage = () => {
   return (
     <View className="items-center pt-6 relative">
       <View className="rounded-full bg-primary w-32 h-32 z-0">
-        {image && (
-          <Image
-            source={{
-              uri: image,
-            }}
-            className="rounded-full"
-            style={{ width: 128, height: 128 }}
-          />
-        )}
+        {/* {image && ( */}
+        <Image
+          source={
+            require("./../../../assets/imgs/profile_picture.jpg")
+            //   {
+            //   uri: image,
+            // }
+          }
+          className="rounded-full"
+          style={{ width: 128, height: 128 }}
+        />
+        {/* )} */}
         <View className="w-6 h-6 bg-white z-10 absolute bottom-1 left-1 justify-center">
           <Pressable onPress={pickImage}>
             <OnImageEditIcon />

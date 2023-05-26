@@ -9,9 +9,9 @@ const FeaturedClubs = ({ navigation }) => {
       <View className="items-center">
         <TouchableOpacity
           className="flex-row items-center"
-          // onPress={() => {
-          //   navigation.navigate("ClubsScreen");
-          // }}
+          onPress={() => {
+            navigation.navigate("clubs");
+          }}
         >
           <Text className="font-[TajawalBold] text-h6 px-4 color-primary">
             عرض الجميع

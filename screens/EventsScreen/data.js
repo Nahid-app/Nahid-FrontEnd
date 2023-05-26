@@ -16,7 +16,7 @@ export default [
     title: "مقدمة في علم البيانات",
     daysLeft: "متبقي 3 أيام",
     location: "الرياض",
-    imageUrl: require("../../assets/imgs/dataEvent.jpg"),
+    imageUrl: require("../../assets/imgs/data_science.jpg"),
     registered: false,
   },
   {
@@ -26,9 +26,8 @@ export default [
     title: "مسابقة التقط العلم",
     daysLeft: "متبقي 3 أيام",
     location: "الجبيل",
-    imageUrl: require("../../assets/imgs/hacking.jpg"),
+    imageUrl: require("../../assets/imgs/capture_the_flag.jpg"),
     registered: true,
-
   },
   {
     avatarUrl: require("../../assets/imgs/logos/KFUPM.png"),
@@ -37,7 +36,7 @@ export default [
     title: "مقدمة في تطوير تطبيقات الجوال",
     daysLeft: "متبقي 3 أيام",
     location: "الظهران",
-    imageUrl: require("../../assets/imgs/mobileDev.jpg"),
+    imageUrl: require("../../assets/imgs/mobile_development.webp"),
     registered: true,
   },
 ];

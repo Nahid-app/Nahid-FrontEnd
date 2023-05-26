@@ -35,7 +35,7 @@ const TabBar = ({ navigation }) => {
               className=" font-[TajawalExtraBold] text-lLarge"
               style={clubTab ? { color: "white" } : { color: "#6949FF" }}
             >
-              عن النادي
+              معلومات النادي
             </Text>
           </View>
         </TouchableOpacity>

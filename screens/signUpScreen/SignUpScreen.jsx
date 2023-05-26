@@ -144,7 +144,7 @@ export default function SignUpScreen({ navigation }) {
             />
             <TextField
               textFieldTitle="إعادة الرقم السري"
-              textFieldPlaceHolder="أدخل الرقم السري"
+              textFieldPlaceHolder="أعد إدخال الرقم السري"
               // autoComplete={"new-password"}
               secureTextEntry={true}
               onChangeText={(text) => setPassword_confirmation(text)}

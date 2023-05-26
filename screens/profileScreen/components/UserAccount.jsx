@@ -7,9 +7,7 @@ const UserAccount = ({ navigation }) => {
       <View className=" flex-row ">
         <Image
           className="rounded-full"
-          source={{
-            uri: "https://media.licdn.com/dms/image/C4E03AQFsr05tUGaLeQ/profile-displayphoto-shrink_200_200/0/1653581028839?e=1684972800&v=beta&t=BYiIYD5Q2PHylqQlYniN3MfmxJlzQgETs9gHogaIRD4",
-          }}
+          source={require("./../../../assets/imgs/profile_picture.jpg")}
           style={{ width: 64, height: 64 }}
         />
         <View className="pl-5 justify-center">

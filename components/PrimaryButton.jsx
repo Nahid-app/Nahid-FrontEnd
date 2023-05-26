@@ -9,7 +9,7 @@ const PrimaryButton = () => (
       className="text-white font-[TajawalBold] py-1.5 px-2 text-center text-sBold"
       style={{ marginTop: marginTop }}
     >
-      متابعة
+      إشتراك
     </Text>
   </View>
 );

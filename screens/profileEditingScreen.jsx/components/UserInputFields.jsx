@@ -29,7 +29,7 @@ const UserInputFields = () => {
   return (
     <View className="pb-6">
       <TextField
-        textFieldTitle="الإسم الشخصي"
+        textFieldTitle="الإسم الكامل"
         textFieldPlaceHolder="فيصل يغمور"
       />
       <TextField
