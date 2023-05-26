@@ -61,11 +61,9 @@ export default function SignUpScreen({ navigation }) {
 
   function timeAndDate() {
     return (
-      "التاريخ: " +
-      dateText.toString() +
-      " مـ " +
-      " الساعة: " +
-      timeText.toString()
+      dateText.toString() + " مـ "
+      // " الساعة: " +
+      // timeText.toString()
     );
   }
 
@@ -79,14 +77,14 @@ export default function SignUpScreen({ navigation }) {
       (tempDate.getMonth() + 1) +
       "-" +
       tempDate.getDate();
-    let min =
-      tempDate.getMinutes().toString() == "0" ? "00" : tempDate.getMinutes();
-    let formattedTime =
-      tempDate.getHours() + ":" + min + ":" + tempDate.getSeconds();
+    // let min =
+    //   tempDate.getMinutes().toString() == "0" ? "00" : tempDate.getMinutes();
+    // let formattedTime =
+    //   tempDate.getHours() + ":" + min + ":" + tempDate.getSeconds();
     setDateText(formattedDate);
-    setTimeText(formattedTime);
+    // setTimeText(formattedTime);
     let dateTimeText = formattedDate + " " + formattedTime;
-    setDate_birth(dateTimeText);
+    setDate_birth(dateText);
     props.timeHandler(dateTimeText);
     visibiltyStatus();
   };
@@ -205,7 +203,7 @@ export default function SignUpScreen({ navigation }) {
               </Pressable>
               <DateTimePickerModal
                 isVisible={visiblity}
-                mode="datetime"
+                mode="date"
                 textColor="black"
                 onConfirm={handleConfirm}
                 onCancel={visibiltyStatus}

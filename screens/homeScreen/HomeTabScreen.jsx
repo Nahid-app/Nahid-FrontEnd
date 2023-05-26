@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React, { useContext, useEffect } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import ProfileRoute from "../../routes/profile/ProfileRoute";
@@ -24,15 +24,27 @@ const HomeTabScreen = ({ navigation }) => {
   return (
     <Tab.Navigator
       initialRouteName="Home"
-      screenOptions={{
-        tabBarStyle: {},
-        bottomPadding: 30,
+      screenOptions={({ route }) => ({
+        tabBarActiveTintColor: "#35383F",
+        tabBarInactiveTintColor: "#9E9E9E",
+        tabBarStyle: {
+          display: getRouteName(route),
+          backgroundColor: "white",
+          // position: "absolute",
+          paddingTop: 12,
+          paddingBottom: 12,
+          borderTopEndRadius: 12,
+          borderTopStartRadius: 12,
+          height: 60,
+          zIndex: 999,
+        },
         headerShown: false,
         tabBarLabelStyle: {
           fontFamily: "TajawalMedium",
+          fontSize: 11,
+          paddingTop: 8,
         },
-        tabBarActiveTintColor: "#212121",
-      }}
+      })}
     >
       <Tab.Screen
         name="universities"
@@ -41,9 +53,6 @@ const HomeTabScreen = ({ navigation }) => {
           tabBarLabel: "الجامعات",
           tabBarIcon: ({ focused }) =>
             focused ? <UniversitiesIconBold /> : <UniversitiesIconBorder />,
-          tabBarStyle: {
-            display: getRouteName(route),
-          },
         })}
       />
       <Tab.Screen
@@ -53,9 +62,6 @@ const HomeTabScreen = ({ navigation }) => {
           tabBarLabel: "الأنشطة",
           tabBarIcon: ({ focused }) =>
             focused ? <EventsIconBold /> : <EventsIconBorder />,
-          tabBarStyle: {
-            display: getRouteName(route),
-          },
         })}
       />
       <Tab.Screen
@@ -65,9 +71,6 @@ const HomeTabScreen = ({ navigation }) => {
           tabBarLabel: "الرئيسية",
           tabBarIcon: ({ focused }) =>
             focused ? <HomeIconBold /> : <HomeIconBorder />,
-          tabBarStyle: {
-            display: getRouteName(route),
-          },
         })}
       />
       <Tab.Screen
@@ -77,9 +80,6 @@ const HomeTabScreen = ({ navigation }) => {
           tabBarLabel: "الأندية",
           tabBarIcon: ({ focused }) =>
             focused ? <ClubsIconBold /> : <ClubsIconBorder />,
-          tabBarStyle: {
-            display: getRouteName(route),
-          },
         })}
       />
       <Tab.Screen
@@ -89,9 +89,6 @@ const HomeTabScreen = ({ navigation }) => {
           tabBarLabel: "حسابي",
           tabBarIcon: ({ focused }) =>
             focused ? <ProfileIconBold /> : <ProfileIconBorder />,
-          tabBarStyle: {
-            display: getRouteName(route),
-          },
         })}
       />
     </Tab.Navigator>
@@ -111,5 +108,4 @@ const getRouteName = (route) => {
     return "flex";
   }
 };
-
 export default HomeTabScreen;

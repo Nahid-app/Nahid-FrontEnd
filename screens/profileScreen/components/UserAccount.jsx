@@ -15,7 +15,7 @@ const UserAccount = ({ navigation }) => {
             فيصل يغمور
           </Text>
           <Text className="font-[TajawalMedium] text-gray700 text-left">
-            @FaisalYaghmur
+            admin@example.com
           </Text>
         </View>
       </View>

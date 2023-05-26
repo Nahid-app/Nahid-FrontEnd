@@ -12,7 +12,7 @@ function EventsIconBorder(props) {
       {...props}
     >
       <G
-        stroke="#212121"
+        stroke="#9E9E9E"
         strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"

@@ -34,13 +34,13 @@ const UserInputFields = () => {
       />
       <TextField
         textFieldTitle="الإيميل"
-        textFieldPlaceHolder="Faisalyaghmur@gmail.com"
+        textFieldPlaceHolder="admin@example.com"
       />
       <TextField
         textFieldTitle="رقم الجوال"
         textFieldPlaceHolder="+966 54 264 9369"
       />
-      
+
       <Pressable onPress={visibiltyStatus}>
         <TextField
           editable={false}

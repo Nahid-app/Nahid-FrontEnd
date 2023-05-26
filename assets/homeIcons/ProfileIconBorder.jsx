@@ -9,7 +9,7 @@ const ProfileIconBorder = (props) => (
     fill="none"
   >
     <G
-      stroke="#212121"
+      stroke="#9E9E9E"
       strokeLinecap="round"
       strokeLinejoin="round"
       clipRule="evenodd"
