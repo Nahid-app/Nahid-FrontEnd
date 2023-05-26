@@ -24,6 +24,7 @@ import { ActivityIndicator } from "react-native-paper";
 import { format, compareAsc } from "date-fns";
 import DropDownList from "../../components/DropDownList";
 import DropDownListSU from "../../components/DropDownListSU";
+import NewEventTF from "../../components/NewEventTF";
 
 export default function SignUpScreen({ navigation }) {
   const [visiblity, setVisibility] = useState(false);
@@ -35,23 +36,58 @@ export default function SignUpScreen({ navigation }) {
   const [phone, setPhone] = useState("");
   const [university, setUniversity] = useState("");
   const [gender, setGender] = useState("");
+  let dateTimeText;
+  const [dateText, setDateText] = useState("");
+  const [timeText, setTimeText] = useState("");
 
   const { error, isLoading, register } = useContext(AuthContext);
   const visibiltyStatus = () => {
     setVisibility(!visiblity);
   };
 
-  const handleConfirm = (currentDate) => {
-    let tempDate = format(new Date(currentDate), "Y-mm-dd");
+  // const handleConfirm = (currentDate) => {
+  //   let tempDate = format(new Date(currentDate), "Y-mm-dd");
 
-    // let formattedDate =
-    //   tempDate.getUTCDay() +
-    //   "-" +
-    //   (tempDate.getUTCMonth() + 1) +
-    //   "-" +
-    //   tempDate.getUTCFullYear();
-    console.log(tempDate);
-    setDate_birth(tempDate);
+  //   // let formattedDate =
+  //   //   tempDate.getUTCDay() +
+  //   //   "-" +
+  //   //   (tempDate.getUTCMonth() + 1) +
+  //   //   "-" +
+  //   //   tempDate.getUTCFullYear();
+  //   console.log(tempDate);
+  //   setDate_birth(tempDate);
+  //   visibiltyStatus();
+  // };
+
+  function timeAndDate() {
+    return (
+      "التاريخ: " +
+      dateText.toString() +
+      " مـ " +
+      " الساعة: " +
+      timeText.toString()
+    );
+  }
+
+  // 2023-12-5 11:00:00
+
+  const handleConfirm = (currentDate) => {
+    let tempDate = new Date(currentDate);
+    let formattedDate =
+      tempDate.getFullYear() +
+      "-" +
+      (tempDate.getMonth() + 1) +
+      "-" +
+      tempDate.getDate();
+    let min =
+      tempDate.getMinutes().toString() == "0" ? "00" : tempDate.getMinutes();
+    let formattedTime =
+      tempDate.getHours() + ":" + min + ":" + tempDate.getSeconds();
+    setDateText(formattedDate);
+    setTimeText(formattedTime);
+    let dateTimeText = formattedDate + " " + formattedTime;
+    setDate_birth(dateTimeText);
+    props.timeHandler(dateTimeText);
     visibiltyStatus();
   };
 
@@ -60,6 +96,9 @@ export default function SignUpScreen({ navigation }) {
       className="flex-1 bg-white"
       edges={["right", "left", "bottom"]}
     >
+      <View className="px-6">
+        <SubScreenHeader navigation={navigation} />
+      </View>
       <ScrollView
         className="flex-1"
         contentContainerStyle={{
@@ -67,8 +106,7 @@ export default function SignUpScreen({ navigation }) {
         }}
         showsVerticalScrollIndicator={false}
       >
-        <View className="px-6">
-          <SubScreenHeader navigation={navigation} />
+        <View className="px-6 pb-2">
           <View style={styles.header} className="w-full justify-center">
             <Text className="text-h3 font-[TajawalBold] text-center">
               إنشاء حساب ✏️
@@ -137,7 +175,7 @@ export default function SignUpScreen({ navigation }) {
                 setValue={(text) => setGender(text)}
               />
             </View>
-            <Pressable onPress={visibiltyStatus}>
+            {/* <Pressable onPress={visibiltyStatus}>
               <TextField
                 editable={false}
                 textFieldTitle="تاريخ الميلاد"
@@ -153,7 +191,26 @@ export default function SignUpScreen({ navigation }) {
               textColor="black"
               onConfirm={handleConfirm}
               onCancel={visibiltyStatus}
-            />
+            /> */}
+            <View>
+              <Pressable onPress={visibiltyStatus}>
+                <NewEventTF
+                  editable={false}
+                  textFieldTitle={"تاريخ الميلاد"}
+                  textFieldPlaceHolder={
+                    dateText === "" ? "أدخل تاريخ ميلادك" : timeAndDate()
+                  }
+                  icon={<Calendar />}
+                />
+              </Pressable>
+              <DateTimePickerModal
+                isVisible={visiblity}
+                mode="datetime"
+                textColor="black"
+                onConfirm={handleConfirm}
+                onCancel={visibiltyStatus}
+              />
+            </View>
           </View>
           <View className=" justify-between content-center items-center w-full    ">
             <PrimaryColorButton

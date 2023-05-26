@@ -7,7 +7,9 @@ const ClubsActivities = ({ navigation }) => {
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         <TouchableOpacity
           onPress={() =>
-            navigation.navigate("DetailsRoute", { screen: "ClubDetailsScreen" })
+            navigation.navigate("DetailsRoute", {
+              screen: "EventDetailsScreen",
+            })
           }
         >
           <View className="h-36 w-52 bg-green mr-5 rounded-t-2xl relative items-center justify-center">
@@ -25,19 +27,19 @@ const ClubsActivities = ({ navigation }) => {
               </View>
             </View>
           </View>
-          <View className="h-28 w-52 border-x border-gray200 border-b-4 rounded-2xl p-3 justify-between">
+          <View className="h-28 w-52 border-x border-gray200 border-b-4 rounded-b-2xl p-3 justify-between items-start">
             <Text className="font-[TajawalBold] text-h6 ml-4 text-gray900">
               مسابقة إلتقط العلم
             </Text>
             <View>
-              <View className="h-8 w-8 ml-3 rounded-full flex-row items-center">
+              <View className="h-8 w-8 ml-3  flex-row items-center justify-start w-[80%]">
                 <Image
                   className="h-8 w-8 bg-cover"
                   source={{
                     uri: "https://destinationlisting.com/wp-content/uploads/2015/10/jubail-in.png",
                   }}
                 />
-                <Text className="font-[TajawalLight] text-xsSemiBold w-32 text-gray800">
+                <Text className="font-[TajawalLight] text-xsSemiBold text-gray800 ">
                   كلية الجبيل الصناعية
                 </Text>
               </View>
@@ -46,7 +48,9 @@ const ClubsActivities = ({ navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() =>
-            navigation.navigate("DetailsRoute", { screen: "ClubDetailsScreen" })
+            navigation.navigate("DetailsRoute", {
+              screen: "EventDetailsScreen",
+            })
           }
         >
           <View className="h-36 w-52 bg-green mr-5 rounded-t-2xl relative items-center justify-center">
@@ -64,19 +68,19 @@ const ClubsActivities = ({ navigation }) => {
               </View>
             </View>
           </View>
-          <View className="h-28 w-52 border-x border-gray200 border-b-4 rounded-2xl p-3 justify-between">
+          <View className="h-28 w-52 border-x border-gray200 border-b-4 rounded-b-2xl p-3 justify-between items-start">
             <Text className="font-[TajawalBold] text-h6 ml-4 text-gray900">
               مسابقة إلتقط العلم
             </Text>
             <View>
-              <View className="h-8 w-8 ml-3 rounded-full flex-row items-center">
+              <View className="h-8 w-8 ml-3  flex-row items-center justify-start w-[80%]">
                 <Image
                   className="h-8 w-8 bg-cover"
                   source={{
                     uri: "https://destinationlisting.com/wp-content/uploads/2015/10/jubail-in.png",
                   }}
                 />
-                <Text className="font-[TajawalLight] text-xsSemiBold w-32 text-gray800">
+                <Text className="font-[TajawalLight] text-xsSemiBold text-gray800 ">
                   كلية الجبيل الصناعية
                 </Text>
               </View>
@@ -85,7 +89,9 @@ const ClubsActivities = ({ navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() =>
-            navigation.navigate("DetailsRoute", { screen: "ClubDetailsScreen" })
+            navigation.navigate("DetailsRoute", {
+              screen: "EventDetailsScreen",
+            })
           }
         >
           <View className="h-36 w-52 bg-green mr-5 rounded-t-2xl relative items-center justify-center">
@@ -103,19 +109,19 @@ const ClubsActivities = ({ navigation }) => {
               </View>
             </View>
           </View>
-          <View className="h-28 w-52 border-x border-gray200 border-b-4 rounded-2xl p-3 justify-between">
+          <View className="h-28 w-52 border-x border-gray200 border-b-4 rounded-b-2xl p-3 justify-between items-start">
             <Text className="font-[TajawalBold] text-h6 ml-4 text-gray900">
               مسابقة إلتقط العلم
             </Text>
             <View>
-              <View className="h-8 w-8 ml-3 rounded-full flex-row items-center">
+              <View className="h-8 w-8 ml-3  flex-row items-center justify-start w-[80%]">
                 <Image
                   className="h-8 w-8 bg-cover"
                   source={{
                     uri: "https://destinationlisting.com/wp-content/uploads/2015/10/jubail-in.png",
                   }}
                 />
-                <Text className="font-[TajawalLight] text-xsSemiBold w-32 text-gray800">
+                <Text className="font-[TajawalLight] text-xsSemiBold text-gray800 ">
                   كلية الجبيل الصناعية
                 </Text>
               </View>

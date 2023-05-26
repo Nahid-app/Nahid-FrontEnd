@@ -14,12 +14,19 @@
     },
     "extra": {
       "supportsRTL": true,
-      "plugins": ["expo-localization"]
+      "plugins": [
+        "expo-localization"
+      ],
+      "eas": {
+        "projectId": "f77bf56e-8687-4710-919b-1e1506ae4875"
+      }
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -27,7 +34,11 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.faisalmy.NahidApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"

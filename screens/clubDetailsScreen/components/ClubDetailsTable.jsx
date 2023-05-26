@@ -6,14 +6,14 @@ const ClubDetailsTable = () => {
   return (
     <View>
       <FourCellsGridTable
-        topRightTitle={"الوقت"}
-        topRightInfo={"4:00 PM"}
-        topLeftTitle={"اليوم"}
-        topLeftInfo={"2nd of May"}
+        topRightTitle={"عدد الفعاليات"}
+        topRightInfo={"16"}
+        topLeftTitle={"عدد الطلاب"}
+        topLeftInfo={"134"}
         bottomRightTitle={"المكان"}
         bottomRightInfo={"MIS Room 38"}
-        bottomLeftTitle={"نوع النشاط"}
-        bottomLeftInfo={"ندوة"}
+        bottomLeftTitle={"النشاط"}
+        bottomLeftInfo={"فني"}
       />
     </View>
   );

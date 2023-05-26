@@ -1,7 +1,7 @@
 export default [
   {
     avatarUrl: require("../../assets/imgs/logos/KFU.png"),
-    clubId: "1",
+    clubId: 1,
     clubName: "نادي الحاسب بالأحساء",
     title: "بداية في علم الحاسب",
     daysLeft: "متبقي 3 أيام",
@@ -11,7 +11,7 @@ export default [
   },
   {
     avatarUrl: require("../../assets/imgs/logos/King_Saud_University_logo.png"),
-    clubId: "2",
+    clubId: 2,
     clubName: "نادي الحاسب بجامعة الملك سعود",
     title: "مقدمة في علم البيانات",
     daysLeft: "متبقي 3 أيام",
@@ -21,7 +21,7 @@ export default [
   },
   {
     avatarUrl: require("../../assets/imgs/logos/jic.png"),
-    clubId: "3",
+    clubId: 3,
     clubName: "نادي الحاسب بكلية الجبيل الصناعية",
     title: "مسابقة التقط العلم",
     daysLeft: "متبقي 3 أيام",
@@ -32,7 +32,7 @@ export default [
   },
   {
     avatarUrl: require("../../assets/imgs/logos/KFUPM.png"),
-    clubId: "4",
+    clubId: 4,
     clubName: "نادي الحاسب بجامعة الملك فهد للبترول و المعادن",
     title: "مقدمة في تطوير تطبيقات الجوال",
     daysLeft: "متبقي 3 أيام",

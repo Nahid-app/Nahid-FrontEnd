@@ -88,7 +88,6 @@ const EventListCard = ({ navigation }) => {
       </MotiView>
       <FlatList
         data={data}
-        keyExtractor={(item) => item.id}
         renderItem={({ item }) =>
           MyEvents == true ? (
             <RenderItemMyEvents item={item} navigation={navigation} />
@@ -96,6 +95,8 @@ const EventListCard = ({ navigation }) => {
             <RenderItem item={item} navigation={navigation} />
           )
         }
+        keyExtractor={(item) => item.id}
+
       />
     </>
   );

@@ -12,6 +12,8 @@ import PrimaryColorButton from "../../components/buttons/PrimaryColorButton";
 import Checkbox from "expo-checkbox";
 import { AuthContext } from "../../context/AuthProvider";
 import { ActivityIndicator } from "react-native-paper";
+import SubScreenHeader from "../../components/SubScreenHeader";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function LoginScreen({ navigation }) {
   const [isChecked, setChecked] = useState(false);
@@ -40,7 +42,11 @@ export default function LoginScreen({ navigation }) {
   };
 
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+    // <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+    <View className="flex-1 bg-white">
+      <View className="mx-6">
+        <SubScreenHeader navigation={navigation} />
+      </View>
       <View className=" flex-1 w-full flex-col content-center items-center p-6 bg-white">
         <View className="items-start w-full justify-center ">
           <Text className="font-[TajawalBold] text-h3 items-start pt-6 ">
@@ -75,7 +81,7 @@ export default function LoginScreen({ navigation }) {
                   title={"الرقم السري"}
                   placeholder={"أدخل الرقم السري👀"}
                   textContentType={form.textContentType.password}
-                  // secureTextEntry={true}
+                  secureTextEntry={true}
                   textAlign={"right"}
                   className={form.className}
                   value={password}
@@ -121,6 +127,7 @@ export default function LoginScreen({ navigation }) {
           </View>
         </View>
       </View>
-    </TouchableWithoutFeedback>
+    </View>
+    /* </TouchableWithoutFeedback> */
   );
 }

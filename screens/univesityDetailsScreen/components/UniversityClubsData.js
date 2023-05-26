@@ -4,7 +4,7 @@ export default [
     clubId: "0",
     clubTitle: "نادي الحاسب",
     clubDate: "قبل 3 أيام",
-    clubMemberCount: 69,
+    clubMemberCount: 134,
     clubMajor: "حاسب ",
   },
   {
@@ -12,7 +12,7 @@ export default [
     clubId: "1",
     clubTitle: "النادي الرياضي ",
     clubDate: "مستمر",
-    clubMemberCount: 69,
+    clubMemberCount: 100,
     clubMajor: "رياضي",
   },
   {
@@ -20,7 +20,7 @@ export default [
     clubId: "3",
     clubTitle: "نادي التصميم الداخلي الانهائي",
     clubDate: "قبل شهر",
-    clubMemberCount: 69,
+    clubMemberCount: 150,
     clubMajor: "فن",
   },
   {
@@ -28,7 +28,7 @@ export default [
     clubId: "4",
     clubTitle: "نادي التصوير",
     clubDate: "قبل انفنتي أيام",
-    clubMemberCount: 69,
+    clubMemberCount: 50,
     clubMajor: "فن",
   },
 ];

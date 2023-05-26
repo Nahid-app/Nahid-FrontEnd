@@ -34,7 +34,7 @@ const DropDownList = (props) => {
         language="AR"
         searchPlaceholder={props.searchTitle}
         disableBorderRadius={true}
-        onChangeValue={props.handleValue(value)}
+        // onChangeValue={props.handleValue(value)}
         dropDownContainerStyle={{
           borderColor: "#E0E0E0",
           borderBottomEndRadius: 8,
