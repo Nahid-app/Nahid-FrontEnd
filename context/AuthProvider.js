@@ -23,30 +23,30 @@ export const AuthProvider = ({ children }) => {
         login: (email, password) => {
           // communicate with backend and store token in SecureStore
           setIsLoading(true);
-          axiosConfig
-            .post("/login", {
-              email,
-              password,
-              device_name: "mobile",
-            })
-            .then((response) => {
-              const userResponse = {
-                userToken: response.data.access_token,
-              };
-              setUser(userResponse);
-              setError(null);
-              SecureStore.setItemAsync(
-                "userToken",
-                JSON.stringify(userResponse)
-              );
+          // axiosConfig
+          //   .post("/login", {
+          //     email,
+          //     password,
+          //     device_name: "mobile",
+          //   })
+          //   .then((response) => {
+          //     const userResponse = {
+          //       userToken: response.data.access_token,
+          //     };
+              // setUser(userResponse);
+              // setError(null);
+              // SecureStore.setItemAsync(
+              //   "userToken",
+              //   JSON.stringify("admin")
+              // );
               setIsLoading(false);
-            })
-            .catch((error) => {
-              // console.log(error.response.data.message);
-              // const key = Object.keys(error.response.data.errors)[0];
-              setIsLoading(false);
-              throw setError(error.response.data.message);
-            });
+            // })
+            // .catch((error) => {
+            //   // console.log(error.response.data.message);
+            //   // const key = Object.keys(error.response.data.errors)[0];
+            //   setIsLoading(false);
+            //   throw setError(error.response.data.message);
+            // });
         },
         logout: () => {
           setIsLoading(true);
